@@ -1,7 +1,7 @@
 import house.Kitchen;
 import house.Room;
-import stuff.Device;
-import stuff.Fridge;
+import stuff.devices.Device;
+import stuff.devices.Fridge;
 import stuff.state.RestingState;
 
 public class Main {

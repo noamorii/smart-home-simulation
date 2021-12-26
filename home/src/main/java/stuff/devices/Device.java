@@ -1,9 +1,10 @@
-package stuff;
+package stuff.devices;
 import house.Room;
+import stuff.UsableObject;
 import stuff.state.DeviceState;
 import stuff.state.RestingState;
 
-public abstract class Device implements UsableObject{
+public abstract class Device implements UsableObject {
 
     DeviceState state;
     int electricityUsed = 0;

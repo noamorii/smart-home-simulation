@@ -1,6 +1,6 @@
 package stuff.state;
 
-import stuff.Device;
+import stuff.devices.Device;
 
 public interface DeviceState {
 
