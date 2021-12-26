@@ -1,8 +1,7 @@
 package stuff.devices;
 import house.Room;
 import stuff.UsableObject;
-import stuff.state.DeviceState;
-import stuff.state.RestingState;
+import stuff.state.*;
 
 public abstract class Device implements UsableObject {
 
@@ -61,4 +60,29 @@ public abstract class Device implements UsableObject {
         state.usingElectricity();
     }
 
+    public void usingDevice(){
+        setState(new UsingState(this));
+    }
+
+    public void breakingDevice(){
+        setState(new BrokenState(this));
+    }
+
+    public void fixingDevice(){
+        setState(new FixingState(this));
+    }
+
+    @Override
+    public String toString() {
+        return "Device{" +
+                "state=" + state +
+                ", electricityUsed=" + electricityUsed +
+                ", room=" + room +
+                ", name='" + name + '\'' +
+                ", electricityInRestingState=" + electricityInRestingState +
+                ", electricityInBrokenState=" + electricityInBrokenState +
+                ", electricityInFixingState=" + electricityInFixingState +
+                ", electricityInUsingState=" + electricityInUsingState +
+                '}';
+    }
 }

@@ -2,11 +2,11 @@ package stuff.state;
 
 import stuff.devices.Device;
 
-public class UsingState implements DeviceState{
+public class FixingState implements DeviceState{
 
     Device device;
 
-    public UsingState(Device device){
+    public FixingState(Device device){
         this.device = device;
     }
 
@@ -17,11 +17,11 @@ public class UsingState implements DeviceState{
 
     @Override
     public void setDevice(Device device) {
-        this.device = device;
+
     }
 
     @Override
     public void usingElectricity() {
-        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInUsingState());
+        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInFixingState());
     }
 }
