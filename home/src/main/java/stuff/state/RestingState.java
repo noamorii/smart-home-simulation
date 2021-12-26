@@ -1,6 +1,5 @@
 package stuff.state;
 
-import stuff.DeviceFactory;
 import stuff.devices.Device;
 
 public class RestingState implements DeviceState{
