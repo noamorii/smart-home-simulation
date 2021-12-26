@@ -1,10 +1,15 @@
 package stuff.state;
 
+import stuff.DeviceFactory;
 import stuff.devices.Device;
 
 public class RestingState implements DeviceState{
 
     Device device;
+
+    public RestingState(Device device){
+        this.device = device;
+    }
 
     @Override
     public Device getDevice() {

@@ -1,13 +1,15 @@
 package stuff.devices;
 
 import house.Room;
-import stuff.devices.Device;
-import stuff.state.DeviceState;
 
 public class Fridge extends Device {
 
-    public Fridge(DeviceState state, Room room) {
-        super(room);
+    public Fridge(Room room) {
+        super(room, "Fridge", 5, 7,  5);
+    }
+
+    public String sayHelloToMyLittleFriend(){
+        return "Hi";
     }
 
 }

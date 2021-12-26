@@ -1,4 +1,10 @@
 package stuff.devices;
 
-public class Computer {
+import house.Room;
+
+public class Computer extends Device{
+
+    public Computer(Room room) {
+        super(room, "Computer", 3, 12,  10);
+    }
 }
