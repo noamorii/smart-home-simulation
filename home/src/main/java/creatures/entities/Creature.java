@@ -3,6 +3,7 @@ package creatures.entities;
 import creatures.CreaturesType;
 import creatures.state.CreatureState;
 import house.Room;
+import stuff.devices.Device;
 
 public abstract class Creature {
 
@@ -20,7 +21,8 @@ public abstract class Creature {
 
     public abstract void say();
     public abstract void moveTo();
-    public abstract void brakeStuff();
+    public abstract void brakeStuff(Device device);
+    public abstract void useStuff(Device device);
 
     public void useFeeder() {
         switch (type) {

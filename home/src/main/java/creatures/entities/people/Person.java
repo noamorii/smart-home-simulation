@@ -4,28 +4,29 @@ import creatures.CreaturesType;
 import creatures.entities.Creature;
 import stuff.devices.Device;
 
-public class Child extends Person {
+public abstract class Person extends Creature {
 
-    public Child(String name, int age, CreaturesType type) {
+    public Person(String name, int age, CreaturesType type) {
         super(name, age, type);
     }
 
+    @Override
     public void say() {
-        System.out.println("Crying...");
+
     }
 
     @Override
     public void moveTo() {
+
     }
 
     @Override
     public void brakeStuff(Device device) {
-
+        device.breakingDevice();
     }
 
     @Override
     public void useStuff(Device device){
         device.usingDevice();
     }
-
 }

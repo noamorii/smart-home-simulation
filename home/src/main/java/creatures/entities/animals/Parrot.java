@@ -1,9 +1,9 @@
 package creatures.entities.animals;
 
 import creatures.CreaturesType;
-import creatures.entities.Creature;
+import stuff.devices.Device;
 
-public class Parrot extends Creature {
+public class Parrot extends Pet {
 
     public Parrot(String name, int age, CreaturesType type) {
         super(name, age, type);
@@ -15,10 +15,18 @@ public class Parrot extends Creature {
 
     @Override
     public void moveTo() {
+
     }
 
     @Override
-    public void brakeStuff() {
+    public void brakeStuff(Device device) {
 
     }
+
+    @Override
+    public void useStuff(Device device) {
+
+    }
+
+
 }

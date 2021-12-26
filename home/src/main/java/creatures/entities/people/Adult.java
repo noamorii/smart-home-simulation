@@ -1,8 +1,9 @@
 package creatures.entities.people;
 import creatures.CreaturesType;
 import creatures.entities.Creature;
+import stuff.devices.Device;
 
-public class Adult extends Creature {
+public class Adult extends Person {
 
     public Adult(String name, int age, CreaturesType type) {
         super(name, age, type);
@@ -16,8 +17,12 @@ public class Adult extends Creature {
     public void moveTo() {
     }
 
-    @Override
-    public void brakeStuff() {
+    public void repairStuff(Device device) {
+        device.breakingDevice();
+    }
 
+    @Override
+    public void useStuff(Device device){
+        device.usingDevice();
     }
 }
