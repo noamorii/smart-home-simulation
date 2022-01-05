@@ -30,7 +30,7 @@ public class Home {
 
     public static HomeBuilder newBuilder() {
         if (instance != null) {
-            throw new IllegalStateException("Device has already been built.");
+            throw new IllegalStateException("Home has already been built.");
         }
         return new HomeBuilder();
     }

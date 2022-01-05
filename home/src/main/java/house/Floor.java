@@ -6,12 +6,12 @@ import java.util.List;
 public class Floor {
 
     private final int level;
-    private final Home home;
+//    private final Home home;
     private List<Room> rooms = new ArrayList<>();
 
-    public Floor(int level, Home home) {
+    public Floor(int level, List<Room> rooms) {
         this.level = level;
-        this.home = home;
+        this.rooms = rooms;
     }
 
     public void addRoom(Room room) {
@@ -22,9 +22,9 @@ public class Floor {
         rooms.remove(room);
     }
 
-    public Home getHome() {
-        return home;
-    }
+//    public Home getHome() {
+//        return home;
+//    }
 
     public List<Room> getRooms() {
         return rooms;

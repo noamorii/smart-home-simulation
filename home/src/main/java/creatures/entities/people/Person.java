@@ -26,7 +26,7 @@ public abstract class Person extends Creature {
     }
 
     @Override
-    public void useStuff(Device device){
+    public void useStuff(Device device) {
         device.usingDevice();
     }
 }
