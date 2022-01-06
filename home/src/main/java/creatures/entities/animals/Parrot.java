@@ -1,6 +1,6 @@
 package creatures.entities.animals;
 
-import creatures.CreaturesType;
+import creatures.factories.CreaturesType;
 import house.Room;
 
 public class Parrot extends Pet {

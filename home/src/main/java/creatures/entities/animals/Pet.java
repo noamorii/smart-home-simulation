@@ -1,6 +1,6 @@
 package creatures.entities.animals;
 
-import creatures.CreaturesType;
+import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
@@ -11,6 +11,7 @@ public abstract class Pet implements Creature {
     private final int age;
     private final CreaturesType type;
     private Room room;
+    private int hungerLevel = 0;
 
     public Pet(String nickname, String breed, int age, CreaturesType type, Room room) {
         this.nickname = nickname;
@@ -20,15 +21,34 @@ public abstract class Pet implements Creature {
         this.room = room;
     }
 
-    public void moveTo() {
+    @Override
+    public abstract void say();
 
+    @Override
+    public void moveTo(Room room) {
+        this.room = room;
     }
 
     public void brakeStuff(Device device) {
-
     }
 
     public void useStuff(Device device) {
+    }
+
+    public void increaseHungerLevel() {
+        if (hungerLevel < 10) hungerLevel++;
+    }
+
+    public boolean isHungry() {
+        return hungerLevel >= 8;
+    }
+
+    public int getHungerLevel() {
+        return hungerLevel;
+    }
+
+    public void resetHungerLevel() {
+        hungerLevel = 0;
     }
 
     public String getNickname() {

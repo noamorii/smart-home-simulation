@@ -1,6 +1,6 @@
-package creatures.state;
+package creatures.states.animals;
 
-public class SleepingState implements CreatureState {
+public class Playing extends PetState {
 
     @Override
     public void generateReport() {
@@ -9,5 +9,4 @@ public class SleepingState implements CreatureState {
     @Override
     public void doActivity() {
     }
-
 }

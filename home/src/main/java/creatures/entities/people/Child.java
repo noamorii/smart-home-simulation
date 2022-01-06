@@ -1,6 +1,6 @@
 package creatures.entities.people;
 
-import creatures.CreaturesType;
+import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.devices.Device;
 
@@ -16,11 +16,6 @@ public class Child extends Person {
         System.out.println("Crying...");
     }
 
-    @Override
-    public void moveTo() {
-    }
-
-    @Override
     public void useStuff(Device device){
         Random rand = new Random();
         int upperbound = 11;
@@ -32,7 +27,6 @@ public class Child extends Person {
         }
     }
 
-    @Override
     public void brakeStuff(Device device) {
         System.out.println("Moooooooooom!");
         device.breakingDevice();

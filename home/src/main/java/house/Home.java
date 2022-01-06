@@ -55,7 +55,7 @@ public class Home {
         return instance.devices;
     }
 
-    /*===================================*/
+    /*================BUILDER===================*/
 
     public static final class HomeBuilder {
         private String address;

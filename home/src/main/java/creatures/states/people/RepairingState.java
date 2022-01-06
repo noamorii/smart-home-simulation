@@ -1,6 +1,6 @@
-package creatures.state;
+package creatures.states.people;
 
-public class UsingState implements CreatureState {
+public class RepairingState extends PersonState {
 
     @Override
     public void doActivity() {

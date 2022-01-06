@@ -1,5 +1,5 @@
 package creatures.entities.people;
-import creatures.CreaturesType;
+import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.devices.Device;
 
@@ -13,10 +13,6 @@ public class Adult extends Person {
 
     public void say() {
         System.out.println("Hello");
-    }
-
-    @Override
-    public void moveTo() {
     }
 
     public void repairStuff(Device device) {

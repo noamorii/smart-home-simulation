@@ -1,10 +1,12 @@
-import creatures.PeopleFactory;
-import creatures.PetFactory;
-import creatures.CreaturesType;
+import creatures.factories.PeopleFactory;
+import creatures.factories.PetFactory;
+import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.*;
-import stuff.DeviceFactory;
+import stuff.devices.factory.DeviceFactory;
 import stuff.devices.Device;
+import stuff.devices.factory.DeviceType;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -57,17 +59,17 @@ public class Main {
 
 
         DeviceFactory deviceFactory = new DeviceFactory();
-        Device fridge = deviceFactory.createDevice(kitchen,"Fridge");
-        Device airConditioner = deviceFactory.createDevice(hallway,"Air Conditioner");
-        Device audioSystem = deviceFactory.createDevice(livingRoom,"Audio System");
-        Device computer = deviceFactory.createDevice(bedroom,"Computer");
-        Device computer1 = deviceFactory.createDevice(bedroom2,"Computer");
-        Device petFeeder = deviceFactory.createDevice(hallway,"Pet Feeder");
-        Device smartPhone1 = deviceFactory.createDevice(bedroom,"Smart Phone");
-        Device smartPhone2 = deviceFactory.createDevice(bedroom2,"Smart Phone");
-        Device smartPhone3 = deviceFactory.createDevice(livingRoom,"Smart Phone");
-        Device smartVacuum = deviceFactory.createDevice(hallway,"Smart Vacuum");
-        Device tv = deviceFactory.createDevice(kitchen,"TV");
+        Device fridge = deviceFactory.createDevice(kitchen, DeviceType.FRIDGE);
+        Device airConditioner = deviceFactory.createDevice(hallway,DeviceType.CONDITIONER);
+        Device audioSystem = deviceFactory.createDevice(livingRoom,DeviceType.AUDIO_SYSTEM);
+        Device computer = deviceFactory.createDevice(bedroom,DeviceType.COMPUTER);
+        Device computer1 = deviceFactory.createDevice(bedroom2,DeviceType.COMPUTER);
+        Device petFeeder = deviceFactory.createDevice(hallway,DeviceType.PET_FEEDER);
+        Device smartPhone1 = deviceFactory.createDevice(bedroom,DeviceType.PHONE);
+        Device smartPhone2 = deviceFactory.createDevice(bedroom2,DeviceType.PHONE);
+        Device smartPhone3 = deviceFactory.createDevice(livingRoom,DeviceType.PHONE);
+        Device smartVacuum = deviceFactory.createDevice(hallway,DeviceType.VACUUM);
+        Device tv = deviceFactory.createDevice(kitchen,DeviceType.TV);
 
         hallway.setDevices(Arrays.asList(smartVacuum, petFeeder, airConditioner));
         bedroom.setDevices(Arrays.asList(computer, smartPhone1));

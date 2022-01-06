@@ -1,12 +1,13 @@
 package creatures.entities;
 
+import house.Room;
 import stuff.devices.Device;
 
 public interface Creature {
 
     void say();
 
-    void moveTo();
+    void moveTo(Room room);
 
     void brakeStuff(Device device);
 

@@ -1,6 +1,6 @@
 package creatures.entities.people;
 
-import creatures.CreaturesType;
+import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
@@ -18,6 +18,9 @@ public abstract class Person implements Creature {
         this.room = room;
         this.type = type;
     }
+
+    @Override
+    public abstract void say();
 
     public void moveTo(Room room) {
         this.room = room;

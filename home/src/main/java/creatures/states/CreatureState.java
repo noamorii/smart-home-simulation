@@ -1,4 +1,4 @@
-package creatures.state;
+package creatures.states;
 
 public interface CreatureState {
 

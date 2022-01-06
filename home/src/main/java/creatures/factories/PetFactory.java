@@ -1,9 +1,8 @@
-package creatures;
+package creatures.factories;
 
 import creatures.entities.animals.Cat;
 import creatures.entities.animals.Parrot;
 import creatures.entities.animals.Pet;
-import creatures.entities.people.Person;
 import house.Room;
 
 import java.util.ArrayList;

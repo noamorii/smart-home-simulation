@@ -1,4 +1,4 @@
-package creatures;
+package creatures.factories;
 
 import creatures.entities.people.Adult;
 import creatures.entities.people.Child;
