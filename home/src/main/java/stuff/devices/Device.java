@@ -52,10 +52,6 @@ public abstract class Device implements UsableObject {
         return electricityUsed;
     }
 
-    public void setElectricityUsed(int electricityUsed) {
-        this.electricityUsed = electricityUsed;
-    }
-
     public void usingElectricity(){
         state.usingElectricity();
     }
