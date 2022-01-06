@@ -23,7 +23,7 @@ public class DeviceFactory {
             default -> throw new Exception("We don't have device: "+ type + " in the house");
         };
 
-        room.getDevices().add(device);
+        room.addDevice(device);
         devices.add(device);
         return device;
     }

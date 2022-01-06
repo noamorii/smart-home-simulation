@@ -1,6 +1,8 @@
 package stuff.observe;
 
+import stuff.devices.Device;
+
 public interface Observer {
 
-    void handleEvent();
+    void handleEvent(Device device);
 }

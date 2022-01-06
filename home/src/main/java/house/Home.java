@@ -9,7 +9,7 @@ public class Home {
 
     private final String address;
     private final List<Floor> floors;
-    private final List<Creature> creatures;
+    private  List<Creature> creatures;
 
     private Home(HomeBuilder builder) {
         address = builder.address;
@@ -37,7 +37,7 @@ public class Home {
         return instance.floors;
     }
 
-    public static List<Creature> creatures() {
+    public static List<Creature> getCreatures() {
         return instance.creatures;
     }
 

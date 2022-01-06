@@ -4,6 +4,10 @@ import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
+import stuff.devices.Fridge;
+import stuff.devices.PetFeeder;
+
+import java.util.List;
 
 public abstract class Person implements Creature {
 
@@ -27,11 +31,19 @@ public abstract class Person implements Creature {
     }
 
     public void brakeStuff(Device device) {
+        moveTo(device.getRoom());
         device.breakingDevice();
     }
 
     public void useStuff(Device device) {
+        moveTo(device.getRoom());
         device.usingDevice();
+    }
+
+    public void refillPetFeeder(PetFeeder petFeeder){
+        moveTo(petFeeder.getRoom());
+        System.out.println(this.name + " is going to refill Pet Feeder");
+        petFeeder.refillingFeed();
     }
 
     public String getName() {
@@ -48,5 +60,15 @@ public abstract class Person implements Creature {
 
     public CreaturesType getType() {
         return type;
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", room=" + room +
+                ", type=" + type +
+                '}';
     }
 }

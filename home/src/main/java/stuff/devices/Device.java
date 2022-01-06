@@ -1,10 +1,14 @@
 package stuff.devices;
 import house.Room;
 import stuff.UsableObject;
+import stuff.observe.Observed;
+import stuff.observe.Observer;
+import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
-public abstract class Device implements UsableObject {
+public abstract class Device implements UsableObject, Observed{
 
+    private static PositronicBrain positronicBrain = new PositronicBrain();
     private DeviceState state;
     private int electricityUsed = 0;
     final private Room room;
@@ -22,6 +26,9 @@ public abstract class Device implements UsableObject {
         this.electricityInUsingState = electricityInUsingState;
         this.state = new RestingState(this);
         this.room = room;
+    }
+    public String getName() {
+        return name;
     }
 
     public DeviceState getState() {
@@ -56,6 +63,10 @@ public abstract class Device implements UsableObject {
         this.electricityUsed = electricityUsed;
     }
 
+    public Room getRoom() {
+        return room;
+    }
+
     public void usingElectricity(){
         state.usingElectricity();
     }
@@ -65,11 +76,20 @@ public abstract class Device implements UsableObject {
     }
 
     public void breakingDevice(){
+        System.out.println(this.getName() + " is broken");
+        notifyObserver();
         setState(new BrokenState(this));
     }
 
     public void fixingDevice(){
+        System.out.println(this.getName() + "is in the fixing state");
         setState(new FixingState(this));
+    }
+
+    @Override
+    public void notifyObserver() {
+        System.out.println("Positronic Brain handle event with " + this.getName());
+        positronicBrain.handleEvent(this);
     }
 
     @Override

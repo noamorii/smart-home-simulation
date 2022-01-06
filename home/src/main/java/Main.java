@@ -1,3 +1,5 @@
+import creatures.entities.people.Adult;
+import creatures.entities.people.Person;
 import creatures.factories.PeopleFactory;
 import creatures.factories.PetFactory;
 import creatures.factories.CreaturesType;
@@ -10,6 +12,7 @@ import stuff.devices.factory.DeviceType;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Random;
 
 
 public class Main {
@@ -21,8 +24,8 @@ public class Main {
 //            papa.useStuff(fridge);
 //            System.out.println(fridge.toString());
 //        }
-
-
+//
+//
 //        List<Device> devices = new ArrayList<>();
 //        Room room = new Kitchen();
 //        Device device1 = new Computer(room);
@@ -30,7 +33,7 @@ public class Main {
 //
 //        CreatureFactory creatureFactory = new CreatureFactory();
 //        Creature man = creatureFactory.createCreature(CreaturesType.ADULT, "Name1", 23);
-//
+
 
 
                             /* test configuration*/
@@ -48,7 +51,7 @@ public class Main {
 
         PetFactory petFactory = new PetFactory();
         PeopleFactory peopleFactory = new PeopleFactory();
-        peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
+        Adult papa = (Adult) peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
         peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
         peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
         peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
@@ -70,6 +73,8 @@ public class Main {
         Device smartPhone3 = deviceFactory.createDevice(livingRoom,DeviceType.PHONE);
         Device smartVacuum = deviceFactory.createDevice(hallway,DeviceType.VACUUM);
         Device tv = deviceFactory.createDevice(kitchen,DeviceType.TV);
+        List<Device> devices= deviceFactory.getDevices();
+
 
         hallway.setDevices(Arrays.asList(smartVacuum, petFeeder, airConditioner));
         bedroom.setDevices(Arrays.asList(computer, smartPhone1));
@@ -86,5 +91,16 @@ public class Main {
 
         Home.HomeBuilder home = Home.newBuilder();
         Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
+
+//        for (int i = 0; i < 100; i++) {
+//            Random rand = new Random();
+//            int upperbound = devices.size();
+//            int int_random = rand.nextInt(upperbound);
+//            Device device = devices.get(int_random);
+//            papa.useStuff(device);
+//            System.out.println(device.toString());
+//            System.out.println(papa.toString());
+//        }
+
     }
 }
