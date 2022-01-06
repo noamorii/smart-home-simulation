@@ -1,34 +1,17 @@
 package creatures.entities.animals;
 
 import creatures.CreaturesType;
-import creatures.entities.Creature;
-import stuff.devices.Device;
+import house.Room;
 
 public class Cat extends Pet {
 
-    public Cat(String name, int age, CreaturesType type) {
-        super(name, age, type);
+    public Cat(String name, int age, String breed, CreaturesType type, Room room) {
+        super(name, breed, age, type, room);
     }
 
     @Override
     public void say() {
         System.out.println("Meow");
     }
-
-    @Override
-    public void moveTo() {
-
-    }
-
-    @Override
-    public void brakeStuff(Device device) {
-
-    }
-
-    @Override
-    public void useStuff(Device device) {
-
-    }
-
 }
 

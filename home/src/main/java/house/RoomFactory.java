@@ -2,7 +2,7 @@ package house;
 
 public class RoomFactory {
 
-    public RoomImpl createRoom(String name) throws Exception {
+    public RoomImpl create(String name) throws Exception {
         return switch (name) {
             case "Kitchen" -> new RoomImpl("Kitchen");
             case "Parents' bedroom" -> new RoomImpl("Parents' bedroom");

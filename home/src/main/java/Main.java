@@ -1,10 +1,12 @@
-import creatures.CreatureFactory;
+import creatures.PeopleFactory;
+import creatures.PetFactory;
 import creatures.CreaturesType;
 import creatures.entities.Creature;
 import house.*;
 import stuff.DeviceFactory;
 import stuff.devices.Device;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 
@@ -30,35 +32,29 @@ public class Main {
 
 
                             /* test configuration*/
-        CreatureFactory creatureFactory = new CreatureFactory();
-        Creature papa = creatureFactory.createCreature(CreaturesType.ADULT, "Papa", 40);
-        Creature mama = creatureFactory.createCreature(CreaturesType.ADULT, "Mama", 35);
-        Creature child1 = creatureFactory.createCreature(CreaturesType.CHILD, "Pepa", 14);
-        Creature child2 = creatureFactory.createCreature(CreaturesType.CHILD, "George", 9);
-        Creature cat = creatureFactory.createCreature(CreaturesType.CAT, "Fluffy", 2);
-        List<Creature> creatures = new ArrayList<>();
-        creatures.add(papa);
-        creatures.add(mama);
-        creatures.add(child1);
-        creatures.add(child2);
-        creatures.add(cat);
-        String address = "Revolution 550/1";
-        RoomFactory roomFactory = new RoomFactory();
-        RoomImpl hallway = roomFactory.createRoom("Hallway");
-        RoomImpl garage = roomFactory.createRoom("Garage");
-        RoomImpl kitchen = roomFactory.createRoom("Kitchen");
-        RoomImpl bedroom = roomFactory.createRoom("Children's bedroom");
-        RoomImpl bedroom2 = roomFactory.createRoom("Parents' bedroom");
-        RoomImpl livingRoom = roomFactory.createRoom("Living room");
 
-        List<Room> roomsForFirstFloor = new ArrayList<>();
-        roomsForFirstFloor.add(hallway);
-        roomsForFirstFloor.add(kitchen);
-        roomsForFirstFloor.add(garage);
-        List<Room> roomsForSecondFloor = new ArrayList<>();
-        roomsForSecondFloor.add(bedroom);
-        roomsForSecondFloor.add(bedroom2);
-        roomsForSecondFloor.add(livingRoom);
+        RoomFactory roomFactory = new RoomFactory();
+        RoomImpl hallway = roomFactory.create("Hallway");
+        RoomImpl garage = roomFactory.create("Garage");
+        RoomImpl kitchen = roomFactory.create("Kitchen");
+        RoomImpl bedroom = roomFactory.create("Children's bedroom");
+        RoomImpl bedroom2 = roomFactory.create("Parents' bedroom");
+        RoomImpl livingRoom = roomFactory.create("Living room");
+
+        List<Room> roomsForFirstFloor = Arrays.asList(hallway, kitchen, garage);
+        List<Room> roomsForSecondFloor = Arrays.asList(bedroom, bedroom2, livingRoom);
+
+        PetFactory petFactory = new PetFactory();
+        PeopleFactory peopleFactory = new PeopleFactory();
+        peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
+        peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
+        peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
+        peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
+        petFactory.create(CreaturesType.CAT, "Fluffy", 2, "White", livingRoom);
+        List<Creature> creatures = new ArrayList<>();
+        creatures.addAll(peopleFactory.getPeople());
+        creatures.addAll(petFactory.getPets());
+
 
         DeviceFactory deviceFactory = new DeviceFactory();
         Device fridge = deviceFactory.createDevice(kitchen,"Fridge");
@@ -73,31 +69,12 @@ public class Main {
         Device smartVacuum = deviceFactory.createDevice(hallway,"Smart Vacuum");
         Device tv = deviceFactory.createDevice(kitchen,"TV");
 
-        List<Device> devicesForKitchen = new ArrayList<>();
-        devicesForKitchen.add(fridge);
-        devicesForKitchen.add(tv);
-        List<Device> devicesForBedroom1 = new ArrayList<>();
-        devicesForBedroom1.add(computer);
-        devicesForBedroom1.add(smartPhone1);
-        List<Device> devicesForBedroom2 = new ArrayList<>();
-        devicesForBedroom2.add(smartPhone2);
-        devicesForBedroom2.add(computer1);
-        List<Device> devicesForLivingRoom = new ArrayList<>();
-        devicesForLivingRoom.add(audioSystem);
-        devicesForLivingRoom.add(smartPhone3);
-        List<Device> devicesForGarage = new ArrayList<>();
-        List<Device> devicesForHallway = new ArrayList<>();
-        devicesForHallway.add(smartVacuum);
-        devicesForHallway.add(petFeeder);
-        devicesForHallway.add(airConditioner);
-
-        hallway.setDevices(devicesForHallway);
-        bedroom.setDevices(devicesForBedroom1);
-        bedroom2.setDevices(devicesForBedroom2);
-        livingRoom.setDevices(devicesForLivingRoom);
-        kitchen.setDevices(devicesForKitchen);
-        garage.setDevices(devicesForGarage);
-
+        hallway.setDevices(Arrays.asList(smartVacuum, petFeeder, airConditioner));
+        bedroom.setDevices(Arrays.asList(computer, smartPhone1));
+        bedroom2.setDevices(Arrays.asList(smartPhone2, computer1));
+        livingRoom.setDevices(Arrays.asList(audioSystem,smartPhone3));
+        kitchen.setDevices(Arrays.asList(fridge, tv));
+        garage.setDevices(new ArrayList<>());
 
         Floor firstFloor = new Floor(1, roomsForFirstFloor);
         Floor secondFloor = new Floor(2, roomsForSecondFloor);
@@ -106,7 +83,7 @@ public class Main {
         floors.add(secondFloor);
 
         Home.HomeBuilder home = Home.newBuilder();
-        Home house = home.address(address).creatures(creatures).floors(floors).build();
+        Home house = home.address("Revolution 550/1").creatures(creatures).floors(floors).build();
 
 
 

@@ -2,31 +2,48 @@ package creatures.entities.people;
 
 import creatures.CreaturesType;
 import creatures.entities.Creature;
+import house.Room;
 import stuff.devices.Device;
 
-public abstract class Person extends Creature {
+public abstract class Person implements Creature {
 
-    public Person(String name, int age, CreaturesType type) {
-        super(name, age, type);
+    private final String name;
+    private final int age;
+    private Room room;
+    private final CreaturesType type;
+
+    public Person(String name, int age, Room room, CreaturesType type) {
+        this.name = name;
+        this.age = age;
+        this.room = room;
+        this.type = type;
     }
 
-    @Override
-    public void say() {
-
+    public void moveTo(Room room) {
+        this.room = room;
     }
 
-    @Override
-    public void moveTo() {
-
-    }
-
-    @Override
     public void brakeStuff(Device device) {
         device.breakingDevice();
     }
 
-    @Override
     public void useStuff(Device device) {
         device.usingDevice();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public CreaturesType getType() {
+        return type;
     }
 }

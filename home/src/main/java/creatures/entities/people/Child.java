@@ -1,15 +1,15 @@
 package creatures.entities.people;
 
 import creatures.CreaturesType;
-import creatures.entities.Creature;
+import house.Room;
 import stuff.devices.Device;
 
 import java.util.Random;
 
 public class Child extends Person {
 
-    public Child(String name, int age, CreaturesType type) {
-        super(name, age, type);
+    public Child(String name, int age, Room room, CreaturesType type) {
+        super(name, age, room, type);
     }
 
     public void say() {
