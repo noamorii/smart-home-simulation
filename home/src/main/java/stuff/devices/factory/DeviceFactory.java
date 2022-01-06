@@ -1,6 +1,5 @@
 package stuff.devices.factory;
 
-import creatures.entities.people.Person;
 import house.Room;
 import stuff.devices.*;
 

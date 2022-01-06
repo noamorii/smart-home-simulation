@@ -2,14 +2,14 @@ package house;
 
 public class RoomFactory {
 
-    public RoomImpl create(String name) throws Exception {
+    public Room create(String name) throws Exception {
         return switch (name) {
-            case "Kitchen" -> new RoomImpl("Kitchen");
-            case "Parents' bedroom" -> new RoomImpl("Parents' bedroom");
-            case "Children's bedroom" -> new RoomImpl("Children's bedroom");
-            case "Garage" -> new RoomImpl("Garage");
-            case "Living room" -> new RoomImpl("Living room");
-            case "Hallway" -> new RoomImpl("Hallway");
+            case "Kitchen" -> new Room("Kitchen");
+            case "Parents' bedroom" -> new Room("Parents' bedroom");
+            case "Children's bedroom" -> new Room("Children's bedroom");
+            case "Garage" -> new Room("Garage");
+            case "Living room" -> new Room("Living room");
+            case "Hallway" -> new Room("Hallway");
             default -> throw new Exception("This room does not exist");
         };
     }

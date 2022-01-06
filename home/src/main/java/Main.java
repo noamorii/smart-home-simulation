@@ -36,12 +36,12 @@ public class Main {
                             /* test configuration*/
 
         RoomFactory roomFactory = new RoomFactory();
-        RoomImpl hallway = roomFactory.create("Hallway");
-        RoomImpl garage = roomFactory.create("Garage");
-        RoomImpl kitchen = roomFactory.create("Kitchen");
-        RoomImpl bedroom = roomFactory.create("Children's bedroom");
-        RoomImpl bedroom2 = roomFactory.create("Parents' bedroom");
-        RoomImpl livingRoom = roomFactory.create("Living room");
+        Room hallway = roomFactory.create("Hallway");
+        Room garage = roomFactory.create("Garage");
+        Room kitchen = roomFactory.create("Kitchen");
+        Room bedroom = roomFactory.create("Children's bedroom");
+        Room bedroom2 = roomFactory.create("Parents' bedroom");
+        Room livingRoom = roomFactory.create("Living room");
 
         List<Room> roomsForFirstFloor = Arrays.asList(hallway, kitchen, garage);
         List<Room> roomsForSecondFloor = Arrays.asList(bedroom, bedroom2, livingRoom);

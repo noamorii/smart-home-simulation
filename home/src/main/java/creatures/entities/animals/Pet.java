@@ -24,7 +24,6 @@ public abstract class Pet implements Creature {
     @Override
     public abstract void say();
 
-    @Override
     public void moveTo(Room room) {
         this.room = room;
     }
