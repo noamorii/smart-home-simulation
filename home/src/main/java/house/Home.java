@@ -1,8 +1,6 @@
 package house;
 
 import creatures.entities.Creature;
-import stuff.devices.Device;
-
 import java.util.List;
 
 public class Home {
@@ -10,17 +8,13 @@ public class Home {
     private static Home instance = null;
 
     private final String address;
-    private final List<Room> rooms;
     private final List<Floor> floors;
     private final List<Creature> creatures;
-    private final List<Device> devices;
 
     private Home(HomeBuilder builder) {
         address = builder.address;
-        rooms = builder.rooms;
         floors = builder.floors;
         creatures = builder.creatures;
-        devices = builder.devices;
         instance = this;
     }
 
@@ -39,10 +33,6 @@ public class Home {
         return instance.address;
     }
 
-    public static List<Room> rooms() {
-        return instance.rooms;
-    }
-
     public static List<Floor> floors() {
         return instance.floors;
     }
@@ -51,18 +41,13 @@ public class Home {
         return instance.creatures;
     }
 
-    public static List<Device> devices() {
-        return instance.devices;
-    }
-
     /*================BUILDER===================*/
 
     public static final class HomeBuilder {
+
         private String address;
-        private List<Room> rooms;
         private List<Floor> floors;
         private List<Creature> creatures;
-        private List<Device> devices;
 
         private HomeBuilder(){
         }
@@ -72,23 +57,13 @@ public class Home {
             return this;
         }
 
-        public HomeBuilder rooms(List<Room> rooms) {
-            this.rooms = rooms;
-            return this;
-        }
-
-        public HomeBuilder floors(List<Floor> floors) {
+        public HomeBuilder addFloors(List<Floor> floors) {
             this.floors = floors;
             return this;
         }
 
-        public HomeBuilder creatures(List<Creature> creatures) {
+        public HomeBuilder addCreatures(List<Creature> creatures) {
             this.creatures = creatures;
-            return this;
-        }
-
-        public HomeBuilder devices(List<Device> devices) {
-            this.devices = devices;
             return this;
         }
 

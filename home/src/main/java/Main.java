@@ -85,9 +85,6 @@ public class Main {
         floors.add(secondFloor);
 
         Home.HomeBuilder home = Home.newBuilder();
-        Home house = home.address("Revolution 550/1").creatures(creatures).floors(floors).build();
-
-
-
+        Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
     }
 }
