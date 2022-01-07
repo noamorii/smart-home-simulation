@@ -30,17 +30,17 @@ public abstract class Person implements Creature {
     }
 
     public void brakeStuff(Device device) {
-        moveTo(device.getRoom());
+        moveTo(device.getCurrentRoom());
         device.breakingDevice();
     }
 
     public void useStuff(Device device) {
-        moveTo(device.getRoom());
+        moveTo(device.getCurrentRoom());
         device.usingDevice();
     }
 
     public void refillPetFeeder(PetFeeder petFeeder){
-        moveTo(petFeeder.getRoom());
+        moveTo(petFeeder.getCurrentRoom());
         System.out.println(this.name + " is going to refill Pet Feeder");
         petFeeder.refillingFeed();
     }

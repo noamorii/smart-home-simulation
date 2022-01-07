@@ -39,15 +39,15 @@ public class Adult extends Person {
             useStuff(positronicBrain.adviceWhatToDo());
         }else {
             Device currentDevice = getToDoList().get(0);
-            switch (currentDevice.getName()) {
-                case "Fridge":
+            switch (currentDevice.getType()) {
+                case FRIDGE:
                     if (((Fridge) currentDevice).isEmpty()) {
                         refillFridge((Fridge) currentDevice);
                     } else {
                         repairStuff(currentDevice);
                     }
                     break;
-                case "Pet Feeder":
+                case PET_FEEDER:
                     if (((PetFeeder) currentDevice).isEmpty()) {
                         refillPetFeeder((PetFeeder) currentDevice);
                     } else {
@@ -65,7 +65,7 @@ public class Adult extends Person {
         if (device == null) {
             System.out.println("Pizda");
         } else {
-            moveTo(device.getRoom());
+            moveTo(device.getCurrentRoom());
             Random rand = new Random();
             int upperbound = 100;
             int int_random = rand.nextInt(upperbound);
@@ -80,20 +80,20 @@ public class Adult extends Person {
 
     @Override
     public void brakeStuff(Device device) {
-        moveTo(device.getRoom());
-        System.out.println(this.getName() + " says: Kurva! I broke " + device.getName());
+        moveTo(device.getCurrentRoom());
+        System.out.println(this.getName() + " says: Kurva! I broke " + device.getType());
         device.breakingDevice();
     }
 
     public void repairStuff(Device device) {
-        moveTo(device.getRoom());
-        System.out.println(this.getName() + " is going to repair the " + device.getName());
+        moveTo(device.getCurrentRoom());
+        System.out.println(this.getName() + " is going to repair the " + device.getType());
         device.fixingDevice();
         device.setState(new RestingState(device));
     }
 
     public void refillFridge(Fridge fridge) {
-        moveTo(fridge.getRoom());
-        System.out.println(this.getName() + " is going to refill the " + fridge.getName());
+        moveTo(fridge.getCurrentRoom());
+        System.out.println(this.getName() + " is going to refill the " + fridge.getType());
     }
 }

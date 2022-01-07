@@ -1,43 +1,44 @@
 package stuff.devices;
 import house.Room;
 import stuff.UsableObject;
+import stuff.devices.factory.DeviceType;
 import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
-public abstract class Device  implements Observed{
+public abstract class Device extends UsableObject implements Observed{
 
     private final PositronicBrain positronicBrain = PositronicBrain.getInstance();
-    private DeviceState state = new RestingState(this);
+    private DeviceState currentState = new RestingState(this);
 
-    final private Room room;
-    final private String name;
+    final private DeviceType type;
 
     private int electricityUsed = 0;
-    final int electricityInRestingState;
-    final int electricityInBrokenState;
-    final int electricityInFixingState = 0;
-    final int electricityInUsingState;
+
+    private final int electricityInRestingState;
+    private final int electricityInBrokenState;
+    private final int electricityInFixingState = 0;
+    private final int electricityInUsingState;
 
 
-    public Device(Room room, String name, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState){
-        //super(usingTicks);
-        this.name = name;
+    public Device(Room room, DeviceType type, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState, int usingTicks){
+        super(usingTicks, room);
+        this.type = type;
         this.electricityInRestingState = electricityInRestingState;
         this.electricityInBrokenState = electricityInBrokenState;
         this.electricityInUsingState = electricityInUsingState;
-        this.room = room;
-    }
-    public String getName() {
-        return name;
     }
 
-    public DeviceState getState() {
-        return state;
+    public DeviceType getType() {
+        return type;
     }
 
-    public void setState(DeviceState state) {
-        this.state = state;
+    public DeviceState getCurrentState() {
+        return currentState;
+    }
+
+    public void setState(DeviceState newState) {
+        this.currentState = newState;
     }
 
     public int getElectricityInRestingState() {
@@ -60,16 +61,8 @@ public abstract class Device  implements Observed{
         return electricityUsed;
     }
 
-    public void setElectricityUsed(int electricityUsed) {
-        this.electricityUsed = electricityUsed;
-    }
-
-    public Room getRoom() {
-        return room;
-    }
-
     public void usingElectricity(){
-        state.usingElectricity();
+        currentState.usingElectricity();
     }
 
     public void usingDevice(){
@@ -78,31 +71,31 @@ public abstract class Device  implements Observed{
     }
 
     public void breakingDevice(){
-        System.out.println(this.getName() + " is broken");
+        System.out.println(getType() + " is broken");
         notifyObserver();
         setState(new BrokenState(this));
         usingElectricity();
     }
 
     public void fixingDevice(){
-        System.out.println(this.getName() + " is in the fixing state");
+        System.out.println(getType() + "is in the fixing state");
         setState(new FixingState(this));
         usingElectricity();
     }
 
     @Override
     public void notifyObserver() {
-        System.out.println("Positronic Brain handle event with " + this.getName());
+        System.out.println("Positronic Brain handle event with " + getType());
         positronicBrain.handleEvent(this);
     }
 
     @Override
     public String toString() {
         return "Device{" +
-                "state=" + state.getName() +
+                "state=" + currentState +
                 ", electricityUsed=" + electricityUsed +
-                ", room = " + room.getName() +
-                ", name ='" + name + '\'' +
+                ", room=" + getCurrentRoom() +
+                ", name='" + getType() + '\'' +
                 ", electricityInRestingState=" + electricityInRestingState +
                 ", electricityInBrokenState=" + electricityInBrokenState +
                 ", electricityInFixingState=" + electricityInFixingState +

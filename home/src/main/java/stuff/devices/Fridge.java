@@ -1,14 +1,23 @@
 package stuff.devices;
 
 import house.Room;
+import stuff.devices.factory.DeviceType;
 
 public class Fridge extends Device implements FoodContainer {
 
-    private int foodCapacity = 10;
+    private static final int USING_TICKS = 2;
+    private static final int MAX_FOOD_CAPACITY = 10;
+    private static final int RESTING_ELECTRICITY = 5;
+    private static final int BROKEN_ELECTRICITY = 7;
+    private static final int IN_USING_ELECTRICITY = 5;
+
+    private int currentFoodCapacity = MAX_FOOD_CAPACITY;
+
     private boolean isEmpty = false;
 
     public Fridge(Room room) {
-        super(room, "Fridge", 5, 7, 5);
+        super(room, DeviceType.FRIDGE,
+                RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY, USING_TICKS);
     }
 
     @Override
@@ -17,28 +26,23 @@ public class Fridge extends Device implements FoodContainer {
     }
 
     @Override
-    public void setEmpty(boolean empty) {
-        isEmpty = empty;
-    }
-
-    @Override
     public int getFoodCapacity() {
-        return foodCapacity;
+        return currentFoodCapacity;
     }
 
     @Override
     public void refillingFeed() {
-        this.foodCapacity = 10;
+        currentFoodCapacity = MAX_FOOD_CAPACITY;
     }
 
     @Override
     public void eating() {
-        if (foodCapacity > 0) {
-            foodCapacity--;
+        if (currentFoodCapacity > 0) {
+            currentFoodCapacity--;
             System.out.println("Food in Fridge is running out, my lord");
         } else {
             System.out.println("Food in Fridge is over");
-            setEmpty(true);
+            isEmpty = true;
             notifyObserver();
         }
     }

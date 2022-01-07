@@ -3,7 +3,7 @@ package util;
 public class TimeRepresentation {
 
     private int currentMinutes, currentHours = 0;
-    final int TICK_TIME = 10;
+    private static final int TICK_TIME = 10;
 
     public void increase() {
 

@@ -5,16 +5,16 @@ import stuff.devices.Device;
 public class BrokenState implements DeviceState{
 
     Device device;
-    final private String name;
+    final private StateType type;
 
     public BrokenState(Device device){
         this.device = device;
-        this.name = "BrokenState";
+        this.type = StateType.BROKEN;
     }
 
     @Override
-    public String getName() {
-        return name;
+    public StateType getType() {
+        return type;
     }
 
     @Override
@@ -29,6 +29,6 @@ public class BrokenState implements DeviceState{
 
     @Override
     public void usingElectricity() {
-        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInBrokenState());
+        //device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInBrokenState());
     }
 }

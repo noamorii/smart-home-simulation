@@ -5,16 +5,16 @@ import stuff.devices.Device;
 public class UsingState implements DeviceState{
 
     Device device;
-    final private String name;
+    final private StateType type;
 
     public UsingState(Device device){
         this.device = device;
-        this.name = "UsingState";
+        this.type = StateType.USING;
     }
 
     @Override
-    public String getName() {
-        return name;
+    public StateType getType() {
+        return type;
     }
 
     @Override
@@ -29,6 +29,6 @@ public class UsingState implements DeviceState{
 
     @Override
     public void usingElectricity() {
-        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInUsingState());
+        //device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInUsingState());
     }
 }

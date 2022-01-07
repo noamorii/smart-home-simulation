@@ -4,7 +4,7 @@ import stuff.devices.Device;
 
 public interface DeviceState {
 
-    String getName();
+    StateType getType();
 
     Device getDevice();
 

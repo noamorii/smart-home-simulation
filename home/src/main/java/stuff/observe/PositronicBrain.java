@@ -4,6 +4,7 @@ import creatures.entities.people.Adult;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
 import stuff.devices.factory.DeviceFactory;
+import stuff.state.StateType;
 
 import java.util.List;
 
@@ -29,12 +30,12 @@ public class PositronicBrain implements Observer {
         int allElectricity = 0;
         for (Device device : devices) {
             allElectricity += device.getElectricityUsed();
-            System.out.println(device.getName() + " has used " + device.getElectricityUsed() + " electricity for today" );
+            System.out.println(device.getType() + " has used " + device.getElectricityUsed() + " electricity for today" );
         }
         System.out.println("All electricity used by day: " + allElectricity);
     }
 
     public Device adviceWhatToDo() {
-        return devices.stream().filter((s) -> s.getState().getName().equals("RestingState")).findAny().orElse(Adult.getToDoList().stream().findFirst().orElse(null));
+        return devices.stream().filter((s) -> s.getType().equals(StateType.RESTING)).findAny().orElse(Adult.getToDoList().stream().findFirst().orElse(null));
     }
 }
