@@ -4,10 +4,7 @@ import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
-import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
-
-import java.util.List;
 
 public abstract class Person implements Creature {
 
@@ -15,6 +12,8 @@ public abstract class Person implements Creature {
     private final int age;
     private Room room;
     private final CreaturesType type;
+
+    private int currentActionProgress = 0;
 
     public Person(String name, int age, Room room, CreaturesType type) {
         this.name = name;

@@ -1,4 +1,11 @@
 package stuff.sport;
 
-public abstract class Sport {
+import stuff.UsableObject;
+
+public abstract class Sport  {
+
+
+//    public Sport() {
+//        super(usingTicks);
+//    }
 }

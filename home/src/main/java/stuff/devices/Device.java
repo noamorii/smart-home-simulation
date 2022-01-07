@@ -5,13 +5,15 @@ import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
-public abstract class Device implements UsableObject, Observed{
+public abstract class Device  implements Observed{
 
-    private static final PositronicBrain positronicBrain = new PositronicBrain();
-    private DeviceState state;
-    private int electricityUsed = 0;
+    private final PositronicBrain positronicBrain = PositronicBrain.getInstance();
+    private DeviceState state = new RestingState(this);
+
     final private Room room;
     final private String name;
+
+    private int electricityUsed = 0;
     final int electricityInRestingState;
     final int electricityInBrokenState;
     final int electricityInFixingState = 0;
@@ -19,11 +21,11 @@ public abstract class Device implements UsableObject, Observed{
 
 
     public Device(Room room, String name, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState){
+        //super(usingTicks);
         this.name = name;
         this.electricityInRestingState = electricityInRestingState;
         this.electricityInBrokenState = electricityInBrokenState;
         this.electricityInUsingState = electricityInUsingState;
-        this.state = new RestingState(this);
         this.room = room;
     }
     public String getName() {
