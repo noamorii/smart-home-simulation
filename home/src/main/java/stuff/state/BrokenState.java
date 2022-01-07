@@ -22,6 +22,6 @@ public class BrokenState implements DeviceState{
 
     @Override
     public void usingElectricity() {
-        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInBrokenState());
+        //device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInBrokenState());
     }
 }

@@ -5,6 +5,8 @@ import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
 
+import java.util.List;
+
 public abstract class Pet implements Creature {
 
     private final String nickname, breed;

@@ -5,6 +5,10 @@ import house.Room;
 
 public class Parrot extends Pet {
 
+    public void hello() {
+        say();
+    }
+
     public Parrot(String name, int age, String breed, CreaturesType type, Room room) {
         super(name, breed, age, type, room);
     }

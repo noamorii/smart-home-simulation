@@ -22,6 +22,6 @@ public class UsingState implements DeviceState{
 
     @Override
     public void usingElectricity() {
-        device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInUsingState());
+        //device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInUsingState());
     }
 }
