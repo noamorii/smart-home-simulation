@@ -29,6 +29,6 @@ public class FixingState implements DeviceState{
 
     @Override
     public void usingElectricity() {
-        //device.setElectricityUsed(device.getElectricityUsed() + device.getElectricityInFixingState());
+        device.addUsedElectricity(device.getElectricityUsed() + device.getElectricityInFixingState());
     }
 }

@@ -61,6 +61,10 @@ public abstract class Device extends UsableObject implements Observed{
         return electricityUsed;
     }
 
+    public void addUsedElectricity(int electricity) {
+        electricityUsed += electricityUsed;
+    }
+
     public void usingElectricity(){
         currentState.usingElectricity();
     }
