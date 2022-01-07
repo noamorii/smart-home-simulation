@@ -5,6 +5,7 @@ import house.Room;
 import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
+import stuff.observe.PositronicBrain;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
@@ -34,41 +35,46 @@ public class Adult extends Person {
 
     public void doToDo() {
         if (getToDoList().size() == 0) {
-            System.out.println("Poka chilim");
-            //найти себе занятие
-        }
-        Device currentDevice = getToDoList().get(0);
-        switch (currentDevice.getName()) {
-            case "Fridge":
-                if (((Fridge) currentDevice).isEmpty()) {
-                    refillFridge((Fridge) currentDevice);
-                } else {
+            PositronicBrain positronicBrain = PositronicBrain.getInstance();
+            useStuff(positronicBrain.adviceWhatToDo());
+        }else {
+            Device currentDevice = getToDoList().get(0);
+            switch (currentDevice.getName()) {
+                case "Fridge":
+                    if (((Fridge) currentDevice).isEmpty()) {
+                        refillFridge((Fridge) currentDevice);
+                    } else {
+                        repairStuff(currentDevice);
+                    }
+                    break;
+                case "Pet Feeder":
+                    if (((PetFeeder) currentDevice).isEmpty()) {
+                        refillPetFeeder((PetFeeder) currentDevice);
+                    } else {
+                        repairStuff(currentDevice);
+                    }
+                    break;
+                default:
                     repairStuff(currentDevice);
-                }
-                break;
-            case "Pet Feeder":
-                if (((PetFeeder) currentDevice).isEmpty()) {
-                    refillPetFeeder((PetFeeder) currentDevice);
-                } else {
-                    repairStuff(currentDevice);
-                }
-                break;
-            default: repairStuff(currentDevice);
+            }
         }
-
     }
 
     @Override
     public void useStuff(Device device) {
-        moveTo(device.getRoom());
-        Random rand = new Random();
-        int upperbound = 100;
-        int int_random = rand.nextInt(upperbound);
-        if (int_random > 90) {
-            brakeStuff(device);
+        if (device == null) {
+            System.out.println("Pizda");
         } else {
-            device.usingDevice();
-            device.setState(new RestingState(device));
+            moveTo(device.getRoom());
+            Random rand = new Random();
+            int upperbound = 100;
+            int int_random = rand.nextInt(upperbound);
+            if (int_random > 90) {
+                brakeStuff(device);
+            } else {
+                device.usingDevice();
+//            device.setState(new RestingState(device));
+            }
         }
     }
 

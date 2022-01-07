@@ -74,17 +74,20 @@ public abstract class Device  implements Observed{
 
     public void usingDevice(){
         setState(new UsingState(this));
+        usingElectricity();
     }
 
     public void breakingDevice(){
         System.out.println(this.getName() + " is broken");
         notifyObserver();
         setState(new BrokenState(this));
+        usingElectricity();
     }
 
     public void fixingDevice(){
-        System.out.println(this.getName() + "is in the fixing state");
+        System.out.println(this.getName() + " is in the fixing state");
         setState(new FixingState(this));
+        usingElectricity();
     }
 
     @Override
@@ -96,10 +99,10 @@ public abstract class Device  implements Observed{
     @Override
     public String toString() {
         return "Device{" +
-                "state=" + state +
+                "state=" + state.getName() +
                 ", electricityUsed=" + electricityUsed +
-                ", room=" + room +
-                ", name='" + name + '\'' +
+                ", room = " + room.getName() +
+                ", name ='" + name + '\'' +
                 ", electricityInRestingState=" + electricityInRestingState +
                 ", electricityInBrokenState=" + electricityInBrokenState +
                 ", electricityInFixingState=" + electricityInFixingState +

@@ -8,6 +8,7 @@ import house.*;
 import stuff.devices.factory.DeviceFactory;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceType;
+import stuff.observe.PositronicBrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -92,15 +93,21 @@ public class Main {
         Home.HomeBuilder home = Home.newBuilder();
         Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
 
-//        for (int i = 0; i < 100; i++) {
-//            Random rand = new Random();
+        PositronicBrain positronicBrain = PositronicBrain.getInstance();
+        for (int i = 0; i < 20; i++) {
+            Random rand = new Random();
 //            int upperbound = devices.size();
 //            int int_random = rand.nextInt(upperbound);
 //            Device device = devices.get(int_random);
-//            papa.useStuff(device);
-//            System.out.println(device.toString());
-//            System.out.println(papa.toString());
-//        }
+            Device device = positronicBrain.adviceWhatToDo();
+            papa.doToDo();
+            if(device == null){
+                System.out.println("v maine toze pizda");
+            }else{
+            System.out.println(device.toString());
+            System.out.println(papa.toString());}
+        }
+        positronicBrain.generateReportAboutElectricityUsedByDay();
 
     }
 }

@@ -66,7 +66,7 @@ public abstract class Person implements Creature {
         return "Person{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
-                ", room=" + room +
+                ", room=" + room.getName() +
                 ", type=" + type +
                 '}';
     }

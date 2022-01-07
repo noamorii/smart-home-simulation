@@ -1,10 +1,5 @@
 package stuff;
 
-public abstract class UsableObject {
+public interface UsableObject {
 
-    //private final static int usingTicks;
-
-    protected UsableObject(int usingTicks) {
-        //this.usingTicks = usingTicks;
-    }
 }
