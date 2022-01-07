@@ -3,7 +3,7 @@ package stuff;
 import creatures.entities.people.Adult;
 import house.Home;
 
-public class Auto implements UsableObject{
+public class Auto {
     public void goForFood(Adult adult){
         Home.getCreatures().remove(adult);
         System.out.println("go for food");

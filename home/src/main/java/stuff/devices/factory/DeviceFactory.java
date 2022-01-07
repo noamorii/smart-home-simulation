@@ -1,5 +1,6 @@
 package stuff.devices.factory;
 
+import house.Home;
 import house.Room;
 import stuff.devices.*;
 
@@ -7,6 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DeviceFactory {
+
+    private static DeviceFactory instance = null;
+    private DeviceFactory(){};
+
+    public static DeviceFactory getInstance() {
+        if (instance == null) instance = new DeviceFactory();
+        return instance;
+    }
 
     private List<Device> devices = new ArrayList<>();
 

@@ -1,3 +1,5 @@
+package util;
+
 public class TimeRepresentation {
 
     private int currentMinutes, currentHours = 0;

@@ -2,13 +2,12 @@ package stuff.devices;
 import house.Room;
 import stuff.UsableObject;
 import stuff.observe.Observed;
-import stuff.observe.Observer;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
 public abstract class Device implements UsableObject, Observed{
 
-    private static PositronicBrain positronicBrain = new PositronicBrain();
+    private static final PositronicBrain positronicBrain = new PositronicBrain();
     private DeviceState state;
     private int electricityUsed = 0;
     final private Room room;

@@ -61,7 +61,7 @@ public class Main {
         creatures.addAll(petFactory.getPets());
 
 
-        DeviceFactory deviceFactory = new DeviceFactory();
+        DeviceFactory deviceFactory = DeviceFactory.getInstance();
         Device fridge = deviceFactory.createDevice(kitchen, DeviceType.FRIDGE);
         Device airConditioner = deviceFactory.createDevice(hallway,DeviceType.CONDITIONER);
         Device audioSystem = deviceFactory.createDevice(livingRoom,DeviceType.AUDIO_SYSTEM);
