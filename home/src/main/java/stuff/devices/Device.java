@@ -62,7 +62,7 @@ public abstract class Device extends UsableObject implements Observed{
     }
 
     public void addUsedElectricity(int electricity) {
-        electricityUsed += electricityUsed;
+        electricityUsed += electricity;
     }
 
     public void usingElectricity(){
@@ -75,14 +75,12 @@ public abstract class Device extends UsableObject implements Observed{
     }
 
     public void breakingDevice(){
-        System.out.println(getType() + " is broken");
         notifyObserver();
         setState(new BrokenState(this));
         usingElectricity();
     }
 
     public void fixingDevice(){
-        System.out.println(getType() + "is in the fixing state");
         setState(new FixingState(this));
         usingElectricity();
     }
@@ -96,9 +94,9 @@ public abstract class Device extends UsableObject implements Observed{
     @Override
     public String toString() {
         return "Device{" +
-                "state=" + currentState +
+                "state=" + currentState.getType() +
                 ", electricityUsed=" + electricityUsed +
-                ", room=" + getCurrentRoom() +
+                ", room=" + getCurrentRoom().getName() +
                 ", name='" + getType() + '\'' +
                 ", electricityInRestingState=" + electricityInRestingState +
                 ", electricityInBrokenState=" + electricityInBrokenState +

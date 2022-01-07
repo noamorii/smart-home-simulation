@@ -72,8 +72,9 @@ public class Adult extends Person {
             if (int_random > 90) {
                 brakeStuff(device);
             } else {
+                System.out.println(this.getName() + " says: I am using " + device.getType());
                 device.usingDevice();
-//            device.setState(new RestingState(device));
+                device.setState(new RestingState(device));
             }
         }
     }
@@ -81,7 +82,7 @@ public class Adult extends Person {
     @Override
     public void brakeStuff(Device device) {
         moveTo(device.getCurrentRoom());
-        System.out.println(this.getName() + " says: Kurva! I broke " + device.getType());
+        System.out.println(this.getName() + " says: I broke " + device.getType());
         device.breakingDevice();
     }
 
@@ -89,6 +90,7 @@ public class Adult extends Person {
         moveTo(device.getCurrentRoom());
         System.out.println(this.getName() + " is going to repair the " + device.getType());
         device.fixingDevice();
+        toDoList.remove(device);
         device.setState(new RestingState(device));
     }
 

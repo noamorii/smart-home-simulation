@@ -14,10 +14,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 
 public class Main {
     public static void main(String[] args) throws Exception {
+
+        Logger LOGGER = Logger.getLogger("d");
 
 
 
@@ -53,7 +57,7 @@ public class Main {
         PetFactory petFactory = new PetFactory();
         PeopleFactory peopleFactory = new PeopleFactory();
         Adult papa = (Adult) peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
-        peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
+        Adult mama = (Adult)peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
         peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
         peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
         petFactory.create(CreaturesType.CAT, "Fluffy", 2, "White", livingRoom);
@@ -94,18 +98,20 @@ public class Main {
         Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
 
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        for (int i = 0; i < 20; i++) {
-            Random rand = new Random();
+        for (int i = 0; i < 4; i++) {
+ //           Random rand = new Random();
 //            int upperbound = devices.size();
 //            int int_random = rand.nextInt(upperbound);
 //            Device device = devices.get(int_random);
             Device device = positronicBrain.adviceWhatToDo();
+            mama.doToDo();
             papa.doToDo();
             if(device == null){
-                System.out.println("v maine toze pizda");
-            }else{
-            System.out.println(device.toString());
-            System.out.println(papa.toString());}
+                LOGGER.log(Level.INFO, "v maine toze pizda");
+            }
+//            }else{
+//            System.out.println(device.toString());
+//            System.out.println(papa.toString());}
         }
         positronicBrain.generateReportAboutElectricityUsedByDay();
 
