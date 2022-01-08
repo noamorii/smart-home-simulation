@@ -4,6 +4,7 @@ import creatures.factories.PetFactory;
 import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.*;
+import stuff.Auto;
 import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
 import stuff.devices.Device;
@@ -92,8 +93,11 @@ public class Main {
         floors.add(firstFloor);
         floors.add(secondFloor);
 
+        Auto auto = new Auto(garage);
+
         Home.HomeBuilder home = Home.newBuilder();
-        Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
+        Home house = home.address("Revolution 550/1")
+                .addFloors(floors).addCreatures(creatures).addAuto(auto).build();
 
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
         for (int i = 0; i < 15; i++) {

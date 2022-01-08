@@ -4,6 +4,8 @@ import stuff.UsableObject;
 
 public class RestingState implements UsableObjectState {
 
+    private final static int RESTING_TICKS = 0;
+
     UsableObject stuff;
     final private StateType type;
 
@@ -31,4 +33,10 @@ public class RestingState implements UsableObjectState {
     public void usingElectricity() {
         stuff.addUsedElectricity(stuff.getElectricityInRestingState());
     }
+
+    @Override
+    public int getTicks() {
+        return RESTING_TICKS;
+    }
+
 }

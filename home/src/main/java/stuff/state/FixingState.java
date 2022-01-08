@@ -7,6 +7,8 @@ public class FixingState implements UsableObjectState {
     UsableObject stuff;
     final private StateType type;
 
+    private final static int IN_FIXING_TICKS = 4;
+
     public FixingState(UsableObject stuff){
         this.stuff = stuff;
         this.type = StateType.BROKEN;
@@ -30,5 +32,10 @@ public class FixingState implements UsableObjectState {
     @Override
     public void usingElectricity() {
         stuff.addUsedElectricity(stuff.getElectricityInFixingState());
+    }
+
+    @Override
+    public int getTicks() {
+        return IN_FIXING_TICKS;
     }
 }

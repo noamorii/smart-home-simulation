@@ -31,4 +31,9 @@ public class UsingState implements UsableObjectState {
     public void usingElectricity() {
         stuff.addUsedElectricity(stuff.getElectricityInUsingState());
     }
+
+    @Override
+    public int getTicks() {
+        return stuff.getTicks();
+    }
 }

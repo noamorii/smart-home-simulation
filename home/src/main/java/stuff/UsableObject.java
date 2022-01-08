@@ -1,6 +1,7 @@
 package stuff;
 
 import house.Room;
+import stuff.devices.Manual;
 import stuff.devices.StuffType;
 import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
@@ -9,17 +10,17 @@ import stuff.state.*;
 public abstract class UsableObject implements Observed{
 
     private final int usingTicks;
+    private final StuffType type;
+
+    private Manual manual;
     private Room currentRoom;
     private UsableObjectState currentState = new RestingState(this);
-    private StuffType type;
 
     private int electricityUsed = 0;
-
     private final int electricityInRestingState;
     private final int electricityInBrokenState;
     private final int electricityInFixingState = 0;
     private final int electricityInUsingState;
-
 
     protected UsableObject(int usingTicks, Room room, StuffType type,
            int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
@@ -46,12 +47,19 @@ public abstract class UsableObject implements Observed{
         return type;
     }
 
-    public int getUsingTicks() {
+    public int getTicks() {
+        if (currentState.getType() != StateType.USING) {
+            return currentState.getTicks();
+        }
         return usingTicks;
     }
 
     public Room getCurrentRoom() {
         return currentRoom;
+    }
+
+    public void changeRoom(Room destination) {
+        this.currentRoom = destination;
     }
 
     public int getElectricityInRestingState() {
@@ -96,6 +104,12 @@ public abstract class UsableObject implements Observed{
     public void fixingDevice(){
         setState(new FixingState(this));
         usingElectricity();
+    }
+
+    public Manual getManual() {
+        System.out.println("Taking out a huge book from the shelf");
+        if (manual == null) manual = new Manual(this);
+        return manual;
     }
 
     @Override

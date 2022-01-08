@@ -12,8 +12,8 @@ public class Auto extends UsableObject {
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 0;
 
-    protected Auto(int usingTicks, Room room) {
-        super(usingTicks, room, StuffType.AUTO, RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
+    public Auto(Room room) {
+        super(USING_TICKS, room, StuffType.AUTO, RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 
     public void goForFood(Adult adult){

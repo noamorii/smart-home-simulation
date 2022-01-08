@@ -3,7 +3,6 @@ package creatures.entities;
 import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
-import stuff.devices.Device;
 
 public interface Creature {
 

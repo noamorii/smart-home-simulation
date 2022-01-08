@@ -11,4 +11,6 @@ public interface UsableObjectState {
     void setUsableObject(UsableObject usableObject);
 
     void usingElectricity();
+
+    int getTicks();
 }

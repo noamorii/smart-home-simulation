@@ -4,6 +4,8 @@ import stuff.UsableObject;
 
 public class BrokenState implements UsableObjectState {
 
+    private final static int BROKEN_TICKS = 0;
+
     UsableObject stuff;
     final private StateType type;
 
@@ -30,5 +32,10 @@ public class BrokenState implements UsableObjectState {
     @Override
     public void usingElectricity() {
         stuff.addUsedElectricity(stuff.getElectricityInBrokenState());
+    }
+
+    @Override
+    public int getTicks() {
+        return BROKEN_TICKS;
     }
 }

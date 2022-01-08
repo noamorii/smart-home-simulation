@@ -9,5 +9,4 @@ public abstract class Sport extends UsableObject{
     public Sport(int usingTicks, Room room, StuffType type, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState){
         super(usingTicks, room, type, electricityInRestingState, electricityInBrokenState, electricityInUsingState);
     }
-
 }

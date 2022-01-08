@@ -5,6 +5,7 @@ import stuff.UsableObject;
 public class Manual {
 
     private final UsableObject object;
+    private final static int READING_TIME = 3;
 
     public Manual(UsableObject object) {
         this.object = object;
@@ -16,10 +17,15 @@ public class Manual {
 
     public void readManual() {
         System.out.println("Reading the manual...");
+        System.out.println(manualText + object.getType());
     }
 
     public String getManualText() {
         return manualText;
+    }
+
+    public int getReadingTime() {
+        return READING_TIME;
     }
 }
 

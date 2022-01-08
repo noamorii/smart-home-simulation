@@ -1,6 +1,8 @@
 package house;
 
 import creatures.entities.Creature;
+import stuff.Auto;
+
 import java.util.List;
 
 public class Home {
@@ -9,12 +11,14 @@ public class Home {
 
     private final String address;
     private final List<Floor> floors;
-    private  List<Creature> creatures;
+    private List<Creature> creatures;
+    private final Auto auto;
 
     private Home(HomeBuilder builder) {
         address = builder.address;
         floors = builder.floors;
         creatures = builder.creatures;
+        auto = builder.auto;
         instance = this;
     }
 
@@ -41,6 +45,18 @@ public class Home {
         return instance.creatures;
     }
 
+    public void goOut(Creature creature) {
+        creatures.remove(creature);
+    }
+
+    public void comeBackHome(Creature creature) {
+        creatures.add(creature);
+    }
+
+    public Auto getAuto() {
+        return auto;
+    }
+
     /*================BUILDER===================*/
 
     public static final class HomeBuilder {
@@ -48,9 +64,9 @@ public class Home {
         private String address;
         private List<Floor> floors;
         private List<Creature> creatures;
+        private Auto auto;
 
-        private HomeBuilder(){
-        }
+        private HomeBuilder(){}
 
         public HomeBuilder address(String address) {
             this.address = address;
@@ -64,6 +80,11 @@ public class Home {
 
         public HomeBuilder addCreatures(List<Creature> creatures) {
             this.creatures = creatures;
+            return this;
+        }
+
+        public HomeBuilder addAuto(Auto auto) {
+            this.auto = auto;
             return this;
         }
 
