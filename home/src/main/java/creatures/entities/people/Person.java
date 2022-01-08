@@ -9,6 +9,7 @@ import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
 import stuff.observe.PositronicBrain;
 import stuff.sport.Sport;
+import stuff.state.RestingState;
 
 public abstract class Person implements Creature {
 
@@ -49,6 +50,7 @@ public abstract class Person implements Creature {
     public void useStuff(UsableObject usableObject) {
         moveTo(usableObject.getCurrentRoom());
         usableObject.usingDevice();
+        usableObject.setState(new RestingState(usableObject));
     }
 
 //    public void doSport(Sport sport) {

@@ -5,6 +5,7 @@ import house.Room;
 import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.observe.PositronicBrain;
+import stuff.state.RestingState;
 
 import java.util.Random;
 
@@ -29,6 +30,7 @@ public class Child extends Person {
             brakeStuff(usableObject);
         } else {
             usableObject.usingDevice();
+            usableObject.setState(new RestingState(usableObject));
         }
     }
 

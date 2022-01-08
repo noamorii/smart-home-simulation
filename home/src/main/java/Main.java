@@ -120,7 +120,7 @@ public class Main {
 ////            System.out.println(papa.toString());}
 //        }
 //        positronicBrain.generateReportAboutElectricityUsedByDay();
-        Simulation simulation = new Simulation(240, "8:15");
+        Simulation simulation = new Simulation(144, "8:10");
         simulation.run();
     }
 }
