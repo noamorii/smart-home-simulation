@@ -26,13 +26,9 @@ public class PositronicBrain implements Observer {
 
         for (Device device: devices) {
             switch (device.getType()) {
-
-                case CONDITIONER, AUDIO_SYSTEM, COMPUTER, FRIDGE, PHONE -> {
-                    devicesForHumans.add(device);
-                }
-                case PET_FEEDER, PET_TOY -> {
-                    devicesForPets.add(device);
-                }
+                case CONDITIONER, AUDIO_SYSTEM,
+                     COMPUTER, FRIDGE, PHONE -> devicesForHumans.add(device);
+                case PET_FEEDER, PET_TOY -> devicesForPets.add(device);
                 default -> {
                     devicesForPets.add(device);
                     devicesForHumans.add(device);
