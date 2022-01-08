@@ -81,12 +81,12 @@ public class Main {
         List<Device> devices= deviceFactory.getDevices();
 
 
-        hallway.setDevices(Arrays.asList(smartVacuum, petFeeder, airConditioner));
-        bedroom.setDevices(Arrays.asList(computer, smartPhone1));
-        bedroom2.setDevices(Arrays.asList(smartPhone2, computer1));
-        livingRoom.setDevices(Arrays.asList(audioSystem,smartPhone3));
-        kitchen.setDevices(Arrays.asList(fridge, tv));
-        garage.setDevices(new ArrayList<>());
+        hallway.setStuff(Arrays.asList(smartVacuum, petFeeder, airConditioner));
+        bedroom.setStuff(Arrays.asList(computer, smartPhone1));
+        bedroom2.setStuff(Arrays.asList(smartPhone2, computer1));
+        livingRoom.setStuff(Arrays.asList(audioSystem,smartPhone3));
+        kitchen.setStuff(Arrays.asList(fridge, tv));
+        garage.setStuff(new ArrayList<>());
 
         Floor firstFloor = new Floor(1, roomsForFirstFloor);
         Floor secondFloor = new Floor(2, roomsForSecondFloor);
@@ -98,7 +98,7 @@ public class Main {
         Home house = home.address("Revolution 550/1").addFloors(floors).addCreatures(creatures).build();
 
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 15; i++) {
  //           Random rand = new Random();
 //            int upperbound = devices.size();
 //            int int_random = rand.nextInt(upperbound);

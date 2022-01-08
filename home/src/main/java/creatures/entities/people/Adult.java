@@ -6,6 +6,7 @@ import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
 import stuff.observe.PositronicBrain;
+import stuff.sport.Sport;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
@@ -36,8 +37,13 @@ public class Adult extends Person {
     public void doToDo() {
         if (getToDoList().size() == 0) {
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
-            useStuff(positronicBrain.adviceWhatToDo());
-        }else {
+         //   boolean randomChoice = new Random().nextBoolean();
+        //    if (randomChoice) {
+                useStuff(positronicBrain.adviceWhatToDo());
+//            } else {
+//                doSport();
+//            }
+        } else {
             Device currentDevice = getToDoList().get(0);
             switch (currentDevice.getType()) {
                 case FRIDGE:

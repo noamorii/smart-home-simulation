@@ -5,6 +5,7 @@ import creatures.entities.Creature;
 import house.Room;
 import stuff.devices.Device;
 import stuff.devices.PetFeeder;
+import stuff.sport.Sport;
 
 public abstract class Person implements Creature {
 
@@ -38,6 +39,12 @@ public abstract class Person implements Creature {
         moveTo(device.getCurrentRoom());
         device.usingDevice();
     }
+
+//    public void doSport(Sport sport) {
+//        System.out.println("I am going to sport on " + sport.getName);
+//        moveTo(sport.getCurrentRoom());
+//        sport.usingDevice();
+//    }
 
     public void refillPetFeeder(PetFeeder petFeeder){
         moveTo(petFeeder.getCurrentRoom());

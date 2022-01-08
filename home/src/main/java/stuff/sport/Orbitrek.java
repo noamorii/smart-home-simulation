@@ -3,13 +3,11 @@ package stuff.sport;
 import house.Room;
 import stuff.sport.factory.SportType;
 
-public class Bike extends Sport {
+public class Orbitrek extends Sport{
 
     private static final int USING_TICKS = 4;
 
-    public Bike(Room room) {
-        super(USING_TICKS, room, SportType.BIKE);
+    public Orbitrek(Room room) {
+        super(USING_TICKS, room, SportType.ORBITREK);
     }
-
-
 }

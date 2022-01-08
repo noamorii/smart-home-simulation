@@ -1,6 +1,6 @@
 package house;
 
-import stuff.devices.Device;
+import stuff.UsableObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,22 +8,22 @@ import java.util.List;
 public class Room {
 
     private String name;
-    private List<Device> devices = new ArrayList<>();
+    private List<UsableObject> usableObjects = new ArrayList<>();
 
     public Room(String name){
         this.name = name;
     }
 
-    public List<Device> getDevices() {
-        return devices;
+    public List<UsableObject> getStuff() {
+        return usableObjects;
     }
 
-    public void setDevices(List<Device> devices) {
-        this.devices = devices;
+    public void setStuff(List<UsableObject> usableObjects) {
+        this.usableObjects = usableObjects;
     }
 
-    public void addDevice(Device device){
-        devices.add(device);
+    public void addStuff(UsableObject stuff){
+        usableObjects.add(stuff);
     }
 
     public String getName() {
