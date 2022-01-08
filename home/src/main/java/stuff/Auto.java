@@ -4,7 +4,6 @@ import creatures.entities.people.Adult;
 import house.Home;
 import house.Room;
 import stuff.devices.StuffType;
-
 public class Auto extends UsableObject {
 
     private static final int USING_TICKS = 6;

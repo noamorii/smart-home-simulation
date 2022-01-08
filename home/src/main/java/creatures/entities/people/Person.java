@@ -33,6 +33,14 @@ public abstract class Person implements Creature {
         this.room = room;
     }
 
+    public int getCurrentActionProgress() {
+        return currentActionProgress;
+    }
+
+    public void stopCurrentAction() {
+        currentActionProgress = 0;
+    }
+
     public void brakeStuff(UsableObject usableObject) {
         moveTo(usableObject.getCurrentRoom());
         usableObject.breakingDevice();

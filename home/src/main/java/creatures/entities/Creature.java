@@ -20,5 +20,9 @@ public interface Creature {
 
     CreaturesType getMainCreatureType();
 
+    int getCurrentActionProgress();
+
+    void stopCurrentAction();
+
     void findActivity();
 }

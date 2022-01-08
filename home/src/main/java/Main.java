@@ -101,24 +101,26 @@ public class Main {
                 .addFloors(floors).addCreatures(creatures).addAuto(auto).build();
 
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        papa.zratb();
-        mama.zratb();
-        for (int i = 0; i < 1000; i++) {
- //           Random rand = new Random();
-//            int upperbound = devices.size();
-//            int int_random = rand.nextInt(upperbound);
-//            Device device = devices.get(int_random);
-            Device device = positronicBrain.adviceWhatToDoFor(papa);
-            mama.findActivity();
-            papa.findActivity();
-            pepa.findActivity();
-            if(device == null){
-                LOGGER.log(Level.INFO, "v maine toze pizda");
-            }
-//            }else{
-//            System.out.println(device.toString());
-//            System.out.println(papa.toString());}
-        }
-        positronicBrain.generateReportAboutElectricityUsedByDay();
+//        papa.zratb();
+//        mama.zratb();
+//        for (int i = 0; i < 1000; i++) {
+//            //           Random rand = new Random();
+////            int upperbound = devices.size();
+////            int int_random = rand.nextInt(upperbound);
+////            Device device = devices.get(int_random);
+//            Device device = positronicBrain.adviceWhatToDoFor(papa);
+//            mama.findActivity();
+//            papa.findActivity();
+//            pepa.findActivity();
+//            if(device == null){
+//                LOGGER.log(Level.INFO, "v maine toze pizda");
+//            }
+////            }else{
+////            System.out.println(device.toString());
+////            System.out.println(papa.toString());}
+//        }
+//        positronicBrain.generateReportAboutElectricityUsedByDay();
+        Simulation simulation = new Simulation(240, "8:15");
+        simulation.run();
     }
 }
