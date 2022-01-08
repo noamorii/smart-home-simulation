@@ -9,10 +9,4 @@ public abstract class Device extends UsableObject implements Observed{
         super(usingTicks, room, type, electricityInRestingState, electricityInBrokenState, electricityInUsingState);
     }
 
-    @Override
-    public String toString() {
-        return "Device{" +
-                "type=" + getType() +
-                '}';
-    }
 }

@@ -8,8 +8,6 @@ import stuff.state.*;
 
 public abstract class UsableObject implements Observed{
 
-    private final PositronicBrain positronicBrain = PositronicBrain.getInstance();
-
     private final int usingTicks;
     private Room currentRoom;
     private UsableObjectState currentState = new RestingState(this);
@@ -23,13 +21,17 @@ public abstract class UsableObject implements Observed{
     private final int electricityInUsingState;
 
 
-    protected UsableObject(int usingTicks, Room room, StuffType type, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
+    protected UsableObject(int usingTicks, Room room, StuffType type,
+           int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
+
         this.usingTicks = usingTicks;
         this.currentRoom = room;
+        this.type = type;
+
         this.electricityInRestingState = electricityInRestingState;
         this.electricityInBrokenState = electricityInBrokenState;
         this.electricityInUsingState = electricityInUsingState;
-        this.type = type;
+
     }
 
     public UsableObjectState getCurrentState() {
@@ -99,7 +101,7 @@ public abstract class UsableObject implements Observed{
     @Override
     public void notifyObserver() {
         System.out.println("Positronic Brain handle event with " + getType());
-        positronicBrain.handleEvent(this);
+        PositronicBrain.getInstance().handleEvent(this);
     }
 
 }

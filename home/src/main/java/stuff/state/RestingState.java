@@ -9,7 +9,7 @@ public class RestingState implements UsableObjectState {
 
     public RestingState(UsableObject stuff){
         this.stuff = stuff;
-        this.type = StateType.BROKEN;
+        this.type = StateType.RESTING;
     }
 
     @Override
