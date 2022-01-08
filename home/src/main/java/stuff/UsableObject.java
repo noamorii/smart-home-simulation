@@ -114,6 +114,7 @@ public abstract class UsableObject implements Observed{
 
     @Override
     public void notifyObserver() {
+        PositronicBrain positronicBrain = PositronicBrain.getInstance();
         System.out.println("Positronic Brain handle event with " + getType());
         PositronicBrain.getInstance().handleEvent(this);
     }

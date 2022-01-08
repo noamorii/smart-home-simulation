@@ -1,4 +1,5 @@
 import creatures.entities.people.Adult;
+import creatures.entities.people.Child;
 import creatures.factories.PeopleFactory;
 import creatures.factories.PetFactory;
 import creatures.factories.CreaturesType;
@@ -58,7 +59,7 @@ public class Main {
         Adult papa = (Adult) peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
         Adult mama = (Adult)peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
         peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
-        peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
+        Child pepa = (Child) peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
         petFactory.create(CreaturesType.CAT, "Fluffy", 2, "White", livingRoom);
         List<Creature> creatures = new ArrayList<>();
         creatures.addAll(peopleFactory.getPeople());
@@ -100,14 +101,17 @@ public class Main {
                 .addFloors(floors).addCreatures(creatures).addAuto(auto).build();
 
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        for (int i = 0; i < 15; i++) {
+        papa.zratb();
+        mama.zratb();
+        for (int i = 0; i < 1000; i++) {
  //           Random rand = new Random();
 //            int upperbound = devices.size();
 //            int int_random = rand.nextInt(upperbound);
 //            Device device = devices.get(int_random);
             Device device = positronicBrain.adviceWhatToDoFor(papa);
-            mama.doToDo();
-            papa.doToDo();
+            mama.findActivity();
+            papa.findActivity();
+            pepa.findActivity();
             if(device == null){
                 LOGGER.log(Level.INFO, "v maine toze pizda");
             }

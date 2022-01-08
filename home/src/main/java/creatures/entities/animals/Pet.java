@@ -86,5 +86,10 @@ public abstract class Pet implements Creature {
     public CreaturesType getMainCreatureType() {
         return CreaturesType.PET;
     }
+
+    @Override
+    public void findActivity() {
+
+    }
 }
 

@@ -5,7 +5,9 @@ import creatures.entities.Creature;
 import house.Room;
 import stuff.UsableObject;
 import stuff.devices.Device;
+import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
+import stuff.observe.PositronicBrain;
 import stuff.sport.Sport;
 
 public abstract class Person implements Creature {
@@ -64,6 +66,9 @@ public abstract class Person implements Creature {
     public Room getCurrentRoom() {
         return room;
     }
+
+    @Override
+    public abstract void findActivity();
 
     @Override
     public CreaturesType getMainCreatureType() {

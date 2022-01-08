@@ -1,11 +1,15 @@
 package creatures.entities.people;
 
 import creatures.factories.CreaturesType;
+import house.Home;
 import house.Room;
+import stuff.Auto;
 import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
+import stuff.devices.StuffType;
+import stuff.devices.factory.DeviceFactory;
 import stuff.observe.PositronicBrain;
 import stuff.state.RestingState;
 
@@ -31,7 +35,8 @@ public class Adult extends Person {
         System.out.println("Hello");
     }
 
-    public void doToDo() {
+    @Override
+    public void findActivity() {
         if (getToDoList().isEmpty()) {
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
             useStuff(positronicBrain.adviceWhatToDoFor(this));
@@ -77,6 +82,18 @@ public class Adult extends Person {
         }
     }
 
+    public void zratb(){
+        System.out.println(this.getName() + " goes to zratb");
+        DeviceFactory deviceFactory = DeviceFactory.getInstance();
+        List<Device> devices = deviceFactory.getDevices();
+        for (Device d: devices) {
+            if(d.getType().equals(StuffType.FRIDGE)){
+                Fridge fridge = (Fridge) d;
+                fridge.eating();
+            }
+        }
+    }
+
     @Override
     public void brakeStuff(UsableObject usableObject) {
         moveTo(usableObject.getCurrentRoom());
@@ -92,7 +109,11 @@ public class Adult extends Person {
     }
 
     public void refillFridge(Fridge fridge) {
+        Auto auto = Home.getInstance().getAuto();
+        this.moveTo(auto.getCurrentRoom());
+        auto.goForFood(this);
         moveTo(fridge.getCurrentRoom());
+        fridge.refillingFeed();
         System.out.println(this.getName() + " is going to refill the " + fridge.getType());
     }
 }

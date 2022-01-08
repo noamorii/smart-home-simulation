@@ -7,7 +7,7 @@ import stuff.devices.StuffType;
 
 public class Auto extends UsableObject {
 
-    private static final int USING_TICKS = 5;
+    private static final int USING_TICKS = 6;
     private static final int RESTING_ELECTRICITY = 15;
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 0;
@@ -16,15 +16,15 @@ public class Auto extends UsableObject {
         super(USING_TICKS, room, StuffType.AUTO, RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 
-    public void goForFood(Adult adult){
-        Home.getCreatures().remove(adult);
-        System.out.println("go for food");
-        returnAtHome(adult);
-        //какое-то время спустя
-    }
 
-    private void returnAtHome(Adult adult){
-        Home.getCreatures().add(adult);
+
+    public void goForFood(Adult adult){
+        Home home = Home.getInstance();
+        home.goOut(adult);
+        System.out.println(adult.getName() + " goes for food");
+        //какое-то время спустя
+        home.comeBackHome(adult);
+
     }
 }
 

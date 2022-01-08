@@ -19,4 +19,6 @@ public interface Creature {
     Room getCurrentRoom();
 
     CreaturesType getMainCreatureType();
+
+    void findActivity();
 }
