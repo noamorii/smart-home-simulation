@@ -64,12 +64,10 @@ public class PositronicBrain implements Observer {
     }
 
     public Device getRandomFreeDevice(List<Device> devices) {
-        int randomIndexOfList = new Random().nextInt(devices.size() - 1);
-
         List<Device> freeDevices = devices.stream()
                 .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
                 .collect(Collectors.toList());
-
+        int randomIndexOfList = new Random().nextInt(freeDevices.size());
         return freeDevices.get(randomIndexOfList);
     }
 }
