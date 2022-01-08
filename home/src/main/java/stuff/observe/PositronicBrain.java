@@ -1,26 +1,55 @@
 package stuff.observe;
 
+import creatures.entities.Creature;
 import creatures.entities.people.Adult;
+import creatures.factories.CreaturesType;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
 import stuff.state.StateType;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 public class PositronicBrain implements Observer {
 
-    DeviceFactory deviceFactory = DeviceFactory.getInstance();
-    private List<Device> devices = deviceFactory.getDevices();
+    private final List<Device> devices;
     private static PositronicBrain instance = null;
 
-    private PositronicBrain() {
-    }
+    private final List<Device> devicesForPets = new ArrayList<>();
+    private final List<Device> devicesForHumans = new ArrayList<>();
 
+    private PositronicBrain() {
+
+        devices = DeviceFactory.getInstance().getDevices();
+
+        for (Device device: devices) {
+            switch (device.getType()) {
+
+                case CONDITIONER, AUDIO_SYSTEM, COMPUTER, FRIDGE, PHONE -> {
+                    devicesForHumans.add(device);
+                }
+                case PET_FEEDER, PET_TOY -> {
+                    devicesForPets.add(device);
+                }
+                default -> {
+                    devicesForPets.add(device);
+                    devicesForHumans.add(device);
+                }
+            }
+        }
+    }
 
     public static PositronicBrain getInstance() {
         if (instance == null) instance = new PositronicBrain();
         return instance;
+    }
+
+    public Device adviceWhatToDoFor(Creature creature) {
+        if (creature.getMainCreatureType() == CreaturesType.PET)
+            return getRandomFreeDevice(devicesForPets);
+        return getRandomFreeDevice(devicesForHumans);
     }
 
     @Override
@@ -37,17 +66,11 @@ public class PositronicBrain implements Observer {
         System.out.println("All electricity used by day: " + allElectricity);
     }
 
-    public Device adviceWhatToDo() {
-        Random rand = new Random();
-        int deviceCounter = devices.size() - 1;
-        while (true) {
-            int int_random = rand.nextInt(deviceCounter);
-            Device device = devices.get(int_random);
-            if (device.getCurrentState().getType().equals(StateType.RESTING)) {
-                return device;
-            }
-            //return devices.stream().filter((d) -> d.getCurrentState().getType().equals(StateType.RESTING)).findAny().orElse(Adult.getToDoList().stream().findFirst().orElse(null));
-
-        }
+    public Device getRandomFreeDevice(List<Device> devices) {
+        int randomIndexOfList = new Random().nextInt(devices.size());
+        List<Device> freeDevices = devices.stream()
+                .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
+                .collect(Collectors.toList());
+        return freeDevices.get(randomIndexOfList);
     }
 }

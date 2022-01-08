@@ -60,8 +60,13 @@ public abstract class Person implements Creature {
         return age;
     }
 
-    public Room getRoom() {
+    public Room getCurrentRoom() {
         return room;
+    }
+
+    @Override
+    public CreaturesType getMainCreatureType() {
+        return CreaturesType.PERSON;
     }
 
     public CreaturesType getType() {

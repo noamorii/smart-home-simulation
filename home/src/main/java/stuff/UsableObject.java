@@ -4,8 +4,6 @@ import house.Room;
 
 public abstract class UsableObject {
 
-    private static final int USING_TICKS = 4;
-
     private final int usingTicks;
     private Room currentRoom;
 

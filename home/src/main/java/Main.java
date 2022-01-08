@@ -1,5 +1,4 @@
 import creatures.entities.people.Adult;
-import creatures.entities.people.Person;
 import creatures.factories.PeopleFactory;
 import creatures.factories.PetFactory;
 import creatures.factories.CreaturesType;
@@ -103,7 +102,7 @@ public class Main {
 //            int upperbound = devices.size();
 //            int int_random = rand.nextInt(upperbound);
 //            Device device = devices.get(int_random);
-            Device device = positronicBrain.adviceWhatToDo();
+            Device device = positronicBrain.adviceWhatToDoFor(papa);
             mama.doToDo();
             papa.doToDo();
             if(device == null){
@@ -114,6 +113,5 @@ public class Main {
 //            System.out.println(papa.toString());}
         }
         positronicBrain.generateReportAboutElectricityUsedByDay();
-
     }
 }

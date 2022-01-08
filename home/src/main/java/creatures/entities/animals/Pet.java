@@ -76,8 +76,13 @@ public abstract class Pet implements Creature {
         return type;
     }
 
-    public Room getRoom() {
+    public Room getCurrentRoom() {
         return room;
+    }
+
+    @Override
+    public CreaturesType getMainCreatureType() {
+        return CreaturesType.PET;
     }
 }
 

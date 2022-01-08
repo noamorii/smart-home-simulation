@@ -6,27 +6,23 @@ import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
 import stuff.observe.PositronicBrain;
-import stuff.sport.Sport;
-import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 
 public class Adult extends Person {
 
-    private static List<Device> toDoList = new ArrayList<>();
+    private static Queue<Device> toDoList = new LinkedList<>();
 
     public Adult(String name, int age, Room room, CreaturesType type) {
         super(name, age, room, type);
     }
 
-    public static List<Device> getToDoList() {
+    public static Queue<Device> getToDoList() {
         return toDoList;
     }
 
-    public static void setToDoList(List<Device> toDoList) {
+    public static void setToDoList(Queue<Device> toDoList) {
         Adult.toDoList = toDoList;
     }
 
@@ -35,16 +31,11 @@ public class Adult extends Person {
     }
 
     public void doToDo() {
-        if (getToDoList().size() == 0) {
+        if (getToDoList().isEmpty()) {
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
-         //   boolean randomChoice = new Random().nextBoolean();
-        //    if (randomChoice) {
-                useStuff(positronicBrain.adviceWhatToDo());
-//            } else {
-//                doSport();
-//            }
-        } else {
-            Device currentDevice = getToDoList().get(0);
+            useStuff(positronicBrain.adviceWhatToDoFor(this));
+        }else {
+            Device currentDevice = getToDoList().poll(); //todo sport
             switch (currentDevice.getType()) {
                 case FRIDGE:
                     if (((Fridge) currentDevice).isEmpty()) {
@@ -96,7 +87,6 @@ public class Adult extends Person {
         moveTo(device.getCurrentRoom());
         System.out.println(this.getName() + " is going to repair the " + device.getType());
         device.fixingDevice();
-        toDoList.remove(device);
         device.setState(new RestingState(device));
     }
 

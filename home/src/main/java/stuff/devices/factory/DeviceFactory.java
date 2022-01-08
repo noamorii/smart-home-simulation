@@ -22,6 +22,7 @@ public class DeviceFactory {
     public Device createDevice(Room room, DeviceType type) throws Exception {
         Device device = switch (type) {
             case COMPUTER -> new Computer(room);
+            case PET_TOY -> new PetToy(room);
             case FRIDGE -> new Fridge(room);
             case VACUUM -> new SmartVacuum(room);
             case CONDITIONER -> new AirConditioner(room);
@@ -32,7 +33,7 @@ public class DeviceFactory {
             default -> throw new Exception("We don't have device: "+ type + " in the house");
         };
 
-        room.addDevice(device);
+        room.addStuff(device);
         devices.add(device);
         return device;
     }
