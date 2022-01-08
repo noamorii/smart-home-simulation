@@ -4,15 +4,14 @@ import creatures.factories.PetFactory;
 import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.*;
+import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
 import stuff.devices.Device;
-import stuff.devices.factory.DeviceType;
 import stuff.observe.PositronicBrain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -66,17 +65,17 @@ public class Main {
 
 
         DeviceFactory deviceFactory = DeviceFactory.getInstance();
-        Device fridge = deviceFactory.createDevice(kitchen, DeviceType.FRIDGE);
-        Device airConditioner = deviceFactory.createDevice(hallway,DeviceType.CONDITIONER);
-        Device audioSystem = deviceFactory.createDevice(livingRoom,DeviceType.AUDIO_SYSTEM);
-        Device computer = deviceFactory.createDevice(bedroom,DeviceType.COMPUTER);
-        Device computer1 = deviceFactory.createDevice(bedroom2,DeviceType.COMPUTER);
-        Device petFeeder = deviceFactory.createDevice(hallway,DeviceType.PET_FEEDER);
-        Device smartPhone1 = deviceFactory.createDevice(bedroom,DeviceType.PHONE);
-        Device smartPhone2 = deviceFactory.createDevice(bedroom2,DeviceType.PHONE);
-        Device smartPhone3 = deviceFactory.createDevice(livingRoom,DeviceType.PHONE);
-        Device smartVacuum = deviceFactory.createDevice(hallway,DeviceType.VACUUM);
-        Device tv = deviceFactory.createDevice(kitchen,DeviceType.TV);
+        Device fridge = deviceFactory.createDevice(kitchen, StuffType.FRIDGE);
+        Device airConditioner = deviceFactory.createDevice(hallway,StuffType.CONDITIONER);
+        Device audioSystem = deviceFactory.createDevice(livingRoom,StuffType.AUDIO_SYSTEM);
+        Device computer = deviceFactory.createDevice(bedroom,StuffType.COMPUTER);
+        Device computer1 = deviceFactory.createDevice(bedroom2,StuffType.COMPUTER);
+        Device petFeeder = deviceFactory.createDevice(hallway,StuffType.PET_FEEDER);
+        Device smartPhone1 = deviceFactory.createDevice(bedroom,StuffType.PHONE);
+        Device smartPhone2 = deviceFactory.createDevice(bedroom2,StuffType.PHONE);
+        Device smartPhone3 = deviceFactory.createDevice(livingRoom,StuffType.PHONE);
+        Device smartVacuum = deviceFactory.createDevice(hallway,StuffType.VACUUM);
+        Device tv = deviceFactory.createDevice(kitchen,StuffType.TV);
         List<Device> devices= deviceFactory.getDevices();
 
 

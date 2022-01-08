@@ -3,6 +3,7 @@ package creatures.entities.people;
 import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
+import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.PetFeeder;
 import stuff.sport.Sport;
@@ -30,14 +31,14 @@ public abstract class Person implements Creature {
         this.room = room;
     }
 
-    public void brakeStuff(Device device) {
-        moveTo(device.getCurrentRoom());
-        device.breakingDevice();
+    public void brakeStuff(UsableObject usableObject) {
+        moveTo(usableObject.getCurrentRoom());
+        usableObject.breakingDevice();
     }
 
-    public void useStuff(Device device) {
-        moveTo(device.getCurrentRoom());
-        device.usingDevice();
+    public void useStuff(UsableObject usableObject) {
+        moveTo(usableObject.getCurrentRoom());
+        usableObject.usingDevice();
     }
 
 //    public void doSport(Sport sport) {

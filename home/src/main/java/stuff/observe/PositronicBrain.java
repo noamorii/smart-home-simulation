@@ -3,6 +3,7 @@ package stuff.observe;
 import creatures.entities.Creature;
 import creatures.entities.people.Adult;
 import creatures.factories.CreaturesType;
+import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
 import stuff.state.StateType;
@@ -49,8 +50,8 @@ public class PositronicBrain implements Observer {
     }
 
     @Override
-    public void handleEvent(Device device) {
-        Adult.getToDoList().add(device);
+    public void handleEvent(UsableObject stuff) {
+        Adult.getToDoList().add(stuff);
     }
 
     public void generateReportAboutElectricityUsedByDay() {

@@ -1,9 +1,6 @@
-package stuff.devices.factory;
+package stuff.devices;
 
-import stuff.devices.TV;
-
-public enum DeviceType {
-
+public enum StuffType {
     CONDITIONER,
     AUDIO_SYSTEM,
     COMPUTER,
@@ -12,5 +9,10 @@ public enum DeviceType {
     PET_FEEDER,
     PHONE,
     VACUUM,
-    TV
+    TV,
+    BIKE,
+    TREADMILL,
+    STEPPER,
+    ORBITREK,
+    AUTO
 }

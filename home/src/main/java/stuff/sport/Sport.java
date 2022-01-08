@@ -2,15 +2,12 @@ package stuff.sport;
 
 import house.Room;
 import stuff.UsableObject;
-import stuff.sport.factory.SportType;
+import stuff.devices.StuffType;
 
 public abstract class Sport extends UsableObject{
 
-    SportType type;
-
-    public Sport(int usingTicks, Room room, SportType type){
-        super(usingTicks, room);
-        this.type = type;
+    public Sport(int usingTicks, Room room, StuffType type, int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState){
+        super(usingTicks, room, type, electricityInRestingState, electricityInBrokenState, electricityInUsingState);
     }
 
 }

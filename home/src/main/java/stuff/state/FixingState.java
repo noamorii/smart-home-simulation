@@ -1,15 +1,15 @@
 package stuff.state;
 
-import stuff.devices.Device;
+import stuff.UsableObject;
 
-public class FixingState implements DeviceState{
+public class FixingState implements UsableObjectState {
 
-    Device device;
+    UsableObject stuff;
     final private StateType type;
 
-    public FixingState(Device device){
-        this.device = device;
-        this.type = StateType.FIXING;
+    public FixingState(UsableObject stuff){
+        this.stuff = stuff;
+        this.type = StateType.BROKEN;
     }
 
     @Override
@@ -18,17 +18,17 @@ public class FixingState implements DeviceState{
     }
 
     @Override
-    public Device getDevice() {
-        return device;
+    public UsableObject getUsableObject() {
+        return stuff;
     }
 
     @Override
-    public void setDevice(Device device) {
-
+    public void setUsableObject(UsableObject stuff) {
+        this.stuff = stuff;
     }
 
     @Override
     public void usingElectricity() {
-        device.addUsedElectricity(device.getElectricityInFixingState());
+        stuff.addUsedElectricity(stuff.getElectricityInFixingState());
     }
 }

@@ -1,13 +1,18 @@
 package stuff.sport;
 
 import house.Room;
-import stuff.sport.factory.SportType;
+import stuff.devices.StuffType;
 
-public class Treadmill extends Sport{
+public class Treadmill extends Sport {
 
-    private static final int USING_TICKS = 4;
+    private static final int USING_TICKS = 5;
+    private static final int RESTING_ELECTRICITY = 1;
+    private static final int BROKEN_ELECTRICITY = 6;
+    private static final int IN_USING_ELECTRICITY = 4;
 
     public Treadmill(Room room) {
-        super(USING_TICKS, room, SportType.TREADMILL);
+        super(USING_TICKS, room, StuffType.STEPPER,
+                RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
+
 }

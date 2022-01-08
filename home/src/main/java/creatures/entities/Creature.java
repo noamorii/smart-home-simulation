@@ -2,6 +2,7 @@ package creatures.entities;
 
 import creatures.factories.CreaturesType;
 import house.Room;
+import stuff.UsableObject;
 import stuff.devices.Device;
 
 public interface Creature {
@@ -10,9 +11,9 @@ public interface Creature {
 
     void moveTo(Room room);
 
-    void brakeStuff(Device device);
+    void brakeStuff(UsableObject usableObject);
 
-    void useStuff(Device device);
+    void useStuff(UsableObject usableObject);
 
     CreaturesType getType();
 

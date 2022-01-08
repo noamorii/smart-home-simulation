@@ -2,6 +2,7 @@ package creatures.entities.people;
 
 import creatures.factories.CreaturesType;
 import house.Room;
+import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
@@ -12,17 +13,17 @@ import java.util.*;
 
 public class Adult extends Person {
 
-    private static Queue<Device> toDoList = new LinkedList<>();
+    private static Queue<UsableObject> toDoList = new LinkedList<>();
 
     public Adult(String name, int age, Room room, CreaturesType type) {
         super(name, age, room, type);
     }
 
-    public static Queue<Device> getToDoList() {
+    public static Queue<UsableObject> getToDoList() {
         return toDoList;
     }
 
-    public static void setToDoList(Queue<Device> toDoList) {
+    public static void setToDoList(Queue<UsableObject> toDoList) {
         Adult.toDoList = toDoList;
     }
 
@@ -35,59 +36,59 @@ public class Adult extends Person {
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
             useStuff(positronicBrain.adviceWhatToDoFor(this));
         }else {
-            Device currentDevice = getToDoList().poll(); //todo sport
-            switch (currentDevice.getType()) {
+            UsableObject currentStuff = getToDoList().poll(); //todo sport
+            switch (currentStuff.getType()) {
                 case FRIDGE:
-                    if (((Fridge) currentDevice).isEmpty()) {
-                        refillFridge((Fridge) currentDevice);
+                    if (((Fridge) currentStuff).isEmpty()) {
+                        refillFridge((Fridge) currentStuff);
                     } else {
-                        repairStuff(currentDevice);
+                        repairStuff(currentStuff);
                     }
                     break;
                 case PET_FEEDER:
-                    if (((PetFeeder) currentDevice).isEmpty()) {
-                        refillPetFeeder((PetFeeder) currentDevice);
+                    if (((PetFeeder) currentStuff).isEmpty()) {
+                        refillPetFeeder((PetFeeder) currentStuff);
                     } else {
-                        repairStuff(currentDevice);
+                        repairStuff(currentStuff);
                     }
                     break;
                 default:
-                    repairStuff(currentDevice);
+                    repairStuff(currentStuff);
             }
         }
     }
 
     @Override
-    public void useStuff(Device device) {
-        if (device == null) {
+    public void useStuff(UsableObject usableObject) {
+        if (usableObject == null) {
             System.out.println("Pizda");
         } else {
-            moveTo(device.getCurrentRoom());
+            moveTo(usableObject.getCurrentRoom());
             Random rand = new Random();
             int upperbound = 100;
             int int_random = rand.nextInt(upperbound);
             if (int_random > 90) {
-                brakeStuff(device);
+                brakeStuff(usableObject);
             } else {
-                System.out.println(this.getName() + " says: I am using " + device.getType());
-                device.usingDevice();
-                device.setState(new RestingState(device));
+                System.out.println(this.getName() + " says: I am using " + usableObject.getType());
+                usableObject.usingDevice();
+                usableObject.setState(new RestingState(usableObject));
             }
         }
     }
 
     @Override
-    public void brakeStuff(Device device) {
-        moveTo(device.getCurrentRoom());
-        System.out.println(this.getName() + " says: I broke " + device.getType());
-        device.breakingDevice();
+    public void brakeStuff(UsableObject usableObject) {
+        moveTo(usableObject.getCurrentRoom());
+        System.out.println(this.getName() + " says: I broke " + usableObject.getType());
+        usableObject.breakingDevice();
     }
 
-    public void repairStuff(Device device) {
-        moveTo(device.getCurrentRoom());
-        System.out.println(this.getName() + " is going to repair the " + device.getType());
-        device.fixingDevice();
-        device.setState(new RestingState(device));
+    public void repairStuff(UsableObject usableObject) {
+        moveTo(usableObject.getCurrentRoom());
+        System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
+        usableObject.fixingDevice();
+        usableObject.setState(new RestingState(usableObject));
     }
 
     public void refillFridge(Fridge fridge) {

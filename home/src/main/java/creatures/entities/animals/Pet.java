@@ -3,7 +3,7 @@ package creatures.entities.animals;
 import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
 import house.Room;
-import stuff.devices.Device;
+import stuff.UsableObject;
 
 public abstract class Pet implements Creature {
 
@@ -30,10 +30,12 @@ public abstract class Pet implements Creature {
         this.room = room;
     }
 
-    public void brakeStuff(Device device) {
+    @Override
+    public void brakeStuff(UsableObject usableObject) {
     }
 
-    public void useStuff(Device device) {
+    @Override
+    public void useStuff(UsableObject usableObject) {
     }
 
     public void stopCurrentAction() {

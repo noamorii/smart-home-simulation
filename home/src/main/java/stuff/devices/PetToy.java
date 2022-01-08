@@ -1,7 +1,6 @@
 package stuff.devices;
 
 import house.Room;
-import stuff.devices.factory.DeviceType;
 
 public class PetToy extends Device {
 
@@ -11,7 +10,7 @@ public class PetToy extends Device {
     private static final int IN_USING_ELECTRICITY = 2;
 
     public PetToy(Room room) {
-        super(room, DeviceType.PET_TOY,
-                RESTING_ELECTRICITY, BROKEN_ELECTRICITY,  IN_USING_ELECTRICITY, USING_TICKS);
+        super(USING_TICKS, room, StuffType.PET_TOY,
+                RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 }

@@ -1,6 +1,7 @@
 package stuff.sport.factory;
 
 import house.Room;
+import stuff.devices.StuffType;
 import stuff.sport.*;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ public class SportFactory {
 
     private List<Sport> sports = new ArrayList<>();
 
-    public Sport createSport(Room room, SportType type) throws Exception {
+    public Sport createSport(Room room, StuffType type) throws Exception {
         Sport sport = switch (type) {
             case TREADMILL -> new Treadmill(room);
             case BIKE -> new Bike(room);

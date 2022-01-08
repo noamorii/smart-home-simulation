@@ -1,7 +1,6 @@
 package stuff.devices;
 
 import house.Room;
-import stuff.devices.factory.DeviceType;
 
 public class PetFeeder extends Device implements FoodContainer {
 
@@ -15,8 +14,8 @@ public class PetFeeder extends Device implements FoodContainer {
     private boolean isEmpty = false;
 
     public PetFeeder(Room room) {
-        super(room, DeviceType.PET_FEEDER,
-                RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY, USING_TICKS);
+        super(USING_TICKS, room, StuffType.PET_FEEDER,
+                RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 
     @Override

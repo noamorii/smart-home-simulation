@@ -10,7 +10,7 @@ import java.util.List;
 public class DeviceFactory {
 
     private static DeviceFactory instance = null;
-    private DeviceFactory(){};
+    private DeviceFactory(){}
 
     public static DeviceFactory getInstance() {
         if (instance == null) instance = new DeviceFactory();
@@ -19,7 +19,7 @@ public class DeviceFactory {
 
     private List<Device> devices = new ArrayList<>();
 
-    public Device createDevice(Room room, DeviceType type) throws Exception {
+    public Device createDevice(Room room, StuffType type) throws Exception {
         Device device = switch (type) {
             case COMPUTER -> new Computer(room);
             case PET_TOY -> new PetToy(room);
