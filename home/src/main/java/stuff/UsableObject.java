@@ -13,13 +13,14 @@ public abstract class UsableObject implements Observed {
     private final StuffType type;
 
     private Manual manual;
-    private Room currentRoom;
+    private final Room currentRoom;
     private UsableObjectState currentState = new RestingState(this);
+
+    private final static int ELECTRICITY_IN_FIXING = 0;
 
     private int electricityUsed = 0;
     private final int electricityInRestingState;
     private final int electricityInBrokenState;
-    private final int electricityInFixingState = 0;
     private final int electricityInUsingState;
 
     protected UsableObject(int usingTicks, Room room, StuffType type,
@@ -58,10 +59,6 @@ public abstract class UsableObject implements Observed {
         return currentRoom;
     }
 
-    public void changeRoom(Room destination) {
-        this.currentRoom = destination;
-    }
-
     public int getElectricityInRestingState() {
         return electricityInRestingState;
     }
@@ -71,7 +68,7 @@ public abstract class UsableObject implements Observed {
     }
 
     public int getElectricityInFixingState() {
-        return electricityInFixingState;
+        return ELECTRICITY_IN_FIXING;
     }
 
     public int getElectricityInUsingState() {
@@ -86,11 +83,11 @@ public abstract class UsableObject implements Observed {
         electricityUsed += electricity;
     }
 
-    public void usingElectricity(){
+    public void usingElectricity() {
         currentState.usingElectricity();
     }
 
-    public void usingDevice(){
+    public void usingStuff() {
         setState(new UsingState(this));
         usingElectricity();
     }

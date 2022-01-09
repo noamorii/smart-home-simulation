@@ -11,19 +11,17 @@ import stuff.observe.PositronicBrain;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
-import java.util.Random;
-
 public abstract class Pet implements Creature {
 
-    private final Random rand = new Random();
+    private static final int PET_PERCENT_CHANCE = 95; // 5%
 
     private final String name, breed;
     private final int age;
     private final CreaturesType type;
     private Room room;
 
-    private int hungerLevel = 0;
-    private int currentActionProgress = 1;
+    private int hungerLevel = DEFAULT_HUNGRY_LEVEL;
+    private int currentActionProgress = STARTING_ACTION_ITERATION;
     private UsableObject usingObject = null;
 
     public Pet(String name, String breed, int age, CreaturesType type, Room room) {
@@ -35,8 +33,31 @@ public abstract class Pet implements Creature {
     }
 
     @Override
+    public void findActivity() {
+        PositronicBrain positronicBrain = PositronicBrain.getInstance();
+        Device device = positronicBrain.adviceDeviceFor(this);
+        useStuff(device);
+        increaseHungerLevel();
+    }
+
+    private boolean isEmptyPetFeeder(UsableObject usableObject) {
+
+        if (usableObject.getType() == StuffType.PET_FEEDER) {
+
+            if (((PetFeeder) usableObject).isEmpty()) {
+                usableObject.setState(new BrokenState(usableObject));
+                System.out.println("Food in Pet Feeder is over");
+                usableObject.notifyObserver();
+                return true;
+            }
+            resetHungerLevel();
+        } return false;
+    }
+
+    @Override
     public abstract void say();
 
+    @Override
     public void moveTo(Room room) {
         this.room = room;
     }
@@ -44,10 +65,9 @@ public abstract class Pet implements Creature {
     @Override
     public boolean chanceBrakeStuff(UsableObject usableObject) {
 
-        final int maxPercent = 100;
-        final int randomPercent = rand.nextInt(maxPercent);
+        final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
-        if (randomPercent > 95) {
+        if (randomPercent > PET_PERCENT_CHANCE) {
             System.out.println(this.getName() + " says: I broke " + usableObject.getType());
             usableObject.breakingDevice();
             return true;
@@ -58,64 +78,50 @@ public abstract class Pet implements Creature {
     @Override
     public void useStuff(UsableObject usableObject) {
 
-        if (usableObject == null) {
-            System.out.println("Pet " + this.name + " is waiting for now");
-            return;
-        }
-        System.out.println(this.getName() + " says: I am using " + usableObject.getType());
-        moveTo(usableObject.getCurrentRoom());
-        if (usableObject.getType() == StuffType.PET_FEEDER) {
-            if (((PetFeeder) usableObject).isEmpty()) {
-                usableObject.setState(new BrokenState(usableObject));
-                System.out.println("Food in Pet Feeder is over");
-                usableObject.notifyObserver();
+        if (usableObject != null) {
+            System.out.println(this.getName() + " says: I am using " + usableObject.getType());
+            if (!isEmptyPetFeeder(usableObject) && !chanceBrakeStuff(usableObject)) {
+                moveTo(usableObject.getCurrentRoom());
+                usableObject.usingStuff();
+                usingObject = usableObject;
                 return;
             }
-        }
-        if (!chanceBrakeStuff(usableObject)) {
-            usableObject.usingDevice();
-            usingObject = usableObject;
-        }
+        } waiting();
     }
 
+    @Override
     public void stopCurrentAction() {
         currentActionProgress = 1;
         getCurrentObject().setState(new RestingState(usingObject));
         usingObject = null;
     }
 
+    @Override
+    public void waiting() {
+        System.out.println("Pet " + this.name + " is waiting for now");
+    }
+
+    @Override
     public int getCurrentActionProgress() {
         return currentActionProgress;
     }
 
+    @Override
     public void increaseHungerLevel() {
-        if (hungerLevel < 10) hungerLevel++;
+        if (hungerLevel < MAX_HUNGRY_LEVEL) hungerLevel++;
     }
 
-    public boolean isHungry() {
-        return hungerLevel >= 8;
-    }
-
-    public int getHungerLevel() {
-        return hungerLevel;
-    }
-
+    @Override
     public void resetHungerLevel() {
-        hungerLevel = 0;
+        hungerLevel = DEFAULT_HUNGRY_LEVEL;
     }
 
-    public String getBreed() {
-        return breed;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
+    @Override
     public CreaturesType getType() {
         return type;
     }
 
+    @Override
     public Room getCurrentRoom() {
         return room;
     }
@@ -140,11 +146,12 @@ public abstract class Pet implements Creature {
         return CreaturesType.PET;
     }
 
-    @Override
-    public void findActivity() {
-        PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        Device device = positronicBrain.adviceDeviceFor(this);
-        useStuff(device);
+    public String getBreed() {
+        return breed;
+    }
+
+    public int getAge() {
+        return age;
     }
 
 }

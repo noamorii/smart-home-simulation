@@ -6,8 +6,7 @@ import java.util.List;
 public class Floor {
 
     private final int level;
-//    private final Home home;
-    private List<Room> rooms = new ArrayList<>();
+    private final List<Room> rooms;
 
     public Floor(int level, List<Room> rooms) {
         this.level = level;
@@ -21,10 +20,6 @@ public class Floor {
     public void removeRoom(Room room) {
         rooms.remove(room);
     }
-
-//    public Home getHome() {
-//        return home;
-//    }
 
     public List<Room> getRooms() {
         return rooms;

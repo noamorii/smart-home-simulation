@@ -16,7 +16,7 @@ public class SportFactory {
         return instance;
     }
 
-    private List<Sport> sports = new ArrayList<>();
+    private final List<Sport> sports = new ArrayList<>();
 
     public List<Sport> getSports() {
         return sports;

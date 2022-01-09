@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PetFactory {
 
-    private List<Pet> pets = new ArrayList<>();
+    private final List<Pet> pets = new ArrayList<>();
 
     public Pet create(CreaturesType type, String petName, int petAge, String petBreed, Room room) throws Exception {
         Pet pet = switch (type) {

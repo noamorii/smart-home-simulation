@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PeopleFactory {
 
-    private List<Person> people = new ArrayList<>();
+    private final List<Person> people = new ArrayList<>();
 
     public Person create(CreaturesType type, String name, int age, Room room) throws Exception {
         Person person = switch (type) {

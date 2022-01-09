@@ -7,29 +7,18 @@ import stuff.Auto;
 import stuff.UsableObject;
 import stuff.devices.*;
 
-import stuff.observe.PositronicBrain;
-import stuff.state.UsingState;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
-import java.util.Random;
 
 public class Adult extends Person {
 
-    private final Random rand = new Random();
+    private static final int ADULT_PERCENT_CHANCE = 95; // 5%
 
-    private static Queue<UsableObject> toDoList = new LinkedList<>();
+    private static final Queue<UsableObject> toDoList = new LinkedList<>();
 
     public Adult(String name, int age, Room room, CreaturesType type) {
         super(name, age, room, type);
-    }
-
-    public static Queue<UsableObject> getToDoList() {
-        return toDoList;
-    }
-
-    public static void setToDoList(Queue<UsableObject> toDoList) {
-        Adult.toDoList = toDoList;
     }
 
     public void say() {
@@ -59,8 +48,7 @@ public class Adult extends Person {
                     (FoodContainer) currentStuff.getClass().cast(currentStuff);
 
             if (container.isEmpty()) {
-                refillFridge(container);
-                //container.refill();
+                refill(container);
             }
         }
         repairStuff(currentStuff);
@@ -69,10 +57,9 @@ public class Adult extends Person {
     @Override
     public boolean chanceBrakeStuff(UsableObject usableObject) {
 
-        final int maxPercent = 100;
-        final int randomPercent = rand.nextInt(maxPercent);
+        final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
-        if (randomPercent > 95) {
+        if (randomPercent > ADULT_PERCENT_CHANCE) {
             System.out.println(this.getName() + " says: I broke " + usableObject.getType());
             usableObject.breakingDevice();
             return true;
@@ -82,17 +69,31 @@ public class Adult extends Person {
 
     public void repairStuff(UsableObject usableObject) {
         System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
+        Manual manual = usableObject.getManual();
+        manual.readManual();
         usingObject = usableObject;
         usableObject.fixingDevice();
     }
 
-    public void refillFridge(FoodContainer container) {
+    public void refill(FoodContainer container) {
         Auto auto = Home.getInstance().getAuto();
+
         this.moveTo(auto.getCurrentRoom());
         auto.goOutFromHome(this);
+
+        auto.comeBackHome(this);
         moveTo(container.getCurrentRoom());
+
         container.refill();
         usingObject = (UsableObject) container;
         System.out.println(this.getName() + " is going to refill the " + container.getType());
+    }
+
+    public static Queue<UsableObject> getToDoList() {
+        return toDoList;
+    }
+
+    public static void addTask(UsableObject object) {
+        toDoList.add(object);
     }
 }

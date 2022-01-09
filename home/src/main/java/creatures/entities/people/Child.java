@@ -3,11 +3,10 @@ package creatures.entities.people;
 import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
-import java.util.Random;
 
 public class Child extends Person {
 
-    private final Random rand = new Random();
+    private static final int CHILD_PERCENT_CHANCE = 90; // 10%
 
     public Child(String name, int age, Room room, CreaturesType type) {
         super(name, age, room, type);
@@ -20,10 +19,9 @@ public class Child extends Person {
     @Override
     public boolean chanceBrakeStuff(UsableObject usableObject) {
 
-        final int maxPercent = 100;
-        final int randomPercent = rand.nextInt(maxPercent);
+        final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
-        if (randomPercent > 90) {
+        if (randomPercent > CHILD_PERCENT_CHANCE) {
             System.out.println(this.getName() + " says: I broke " + usableObject.getType());
             System.out.println("Moooooooooom!");
             usableObject.breakingDevice();

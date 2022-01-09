@@ -11,10 +11,9 @@ public class PetFeeder extends Device implements FoodContainer {
     private static final int RESTING_ELECTRICITY = 1;
     private static final int BROKEN_ELECTRICITY = 3;
     private static final int IN_USING_ELECTRICITY = 2;
-    private static final int MAX_FOOD_CAPACITY = 4;
+    private static final int MAX_FOOD_CAPACITY = 6;
 
-    private int currentFoodCapacity = 10;
-    private boolean isEmpty = false;
+    private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
     public PetFeeder(Room room) {
         super(USING_TICKS, room, StuffType.PET_FEEDER,
@@ -26,10 +25,6 @@ public class PetFeeder extends Device implements FoodContainer {
         return currentFoodCapacity == 0;
     }
 
-    public int getFoodCapacity() {
-        return currentFoodCapacity;
-    }
-
     @Override
     public void refill() {
         currentFoodCapacity = MAX_FOOD_CAPACITY;
@@ -37,31 +32,18 @@ public class PetFeeder extends Device implements FoodContainer {
     }
 
     @Override
-    public void usingDevice(){
-        if (currentFoodCapacity <= 0) {
+    public void usingStuff() {
+
+        if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Pet Feeder is over");
-            isEmpty = true;
             notifyObserver();
         } else {
             setState(new UsingState(this));
+
             currentFoodCapacity--;
             System.out.println("Food in Pet Feeder is running out, my lord");
         }
         usingElectricity();
-    }
-
-    @Override
-    public void eating() {
-//        if (currentFoodCapacity <= 0) {
-//            setState(new BrokenState(this));
-//            System.out.println("Food in Pet Feeder is over");
-//            isEmpty = true;
-//            notifyObserver();
-//        } else {
-//            setState(new UsingState(this));
-//            currentFoodCapacity--;
-//            System.out.println("Food in Pet Feeder is running out, my lord");
-//        }
     }
 }

@@ -1,7 +1,6 @@
 package stuff.sport;
 
 import creatures.entities.people.Person;
-import house.Home;
 import house.Room;
 import stuff.Transport;
 import stuff.devices.StuffType;
@@ -25,7 +24,6 @@ public class Bike extends Sport implements Transport{
     @Override
     public void goOutFromHome(Person person) {
         setState(new UsingState(this));
-        Home home = Home.getInstance();
         home.goOut(person);
         System.out.println(person.getName() + " is going to ride a bike");
         int breakChance = new Random().nextInt(5);
@@ -34,7 +32,11 @@ public class Bike extends Sport implements Transport{
             setState(new BrokenState(this));
             notifyObserver();
         }
-        home.comeBackHome(person);
+    }
 
+    @Override
+    public void comeBackHome(Person person) {
+        home.comeBackHome(person);
+        System.out.println("I'm home!");
     }
 }

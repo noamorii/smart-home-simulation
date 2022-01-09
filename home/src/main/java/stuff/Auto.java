@@ -20,17 +20,21 @@ public class Auto extends UsableObject implements Transport{
 
     @Override
     public void goOutFromHome(Person person) {
+
         if (person.getType().equals(CreaturesType.ADULT)) {
             setState(new UsingState(this));
             person.setUsingObject(this);
-            Home home = Home.getInstance();
             home.goOut(person);
             System.out.println(person.getName() + " goes for food");
-            home.comeBackHome(person);
         } else {
             System.out.println("Children can not drive a car");
         }
+    }
 
+    @Override
+    public void comeBackHome(Person person) {
+        home.comeBackHome(person);
+        System.out.println("I'm home!");
     }
 }
 

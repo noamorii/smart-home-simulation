@@ -53,7 +53,7 @@ public class PositronicBrain implements Observer {
 
     @Override
     public void handleEvent(UsableObject stuff) {
-        Adult.getToDoList().add(stuff);
+        Adult.addTask(stuff);
     }
 
     public void generateReportAboutElectricityUsedByDay() {

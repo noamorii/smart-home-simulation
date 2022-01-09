@@ -11,7 +11,7 @@ public class Home {
 
     private final String address;
     private final List<Floor> floors;
-    private List<Creature> creatures;
+    private final List<Creature> creatures;
     private final Auto auto;
 
     private Home(HomeBuilder builder) {

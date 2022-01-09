@@ -2,14 +2,13 @@ package stuff.devices;
 
 import house.Room;
 import stuff.state.BrokenState;
-import stuff.state.FixingState;
 import stuff.state.RestingState;
 import stuff.state.UsingState;
 
 public class Fridge extends Device implements FoodContainer {
 
     private static final int USING_TICKS = 2;
-    private static final int MAX_FOOD_CAPACITY = 2;
+    private static final int MAX_FOOD_CAPACITY = 10;
     private static final int RESTING_ELECTRICITY = 5;
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 5;
@@ -27,20 +26,15 @@ public class Fridge extends Device implements FoodContainer {
     }
 
     @Override
-    public int getFoodCapacity() {
-        return currentFoodCapacity;
-    }
-
-    @Override
     public void refill() {
-        System.out.println("Kladu kolbasu v cholodos");
+        System.out.println("Kladu klosabu do lednicky");
         currentFoodCapacity = MAX_FOOD_CAPACITY;
         setState(new RestingState(this));
     }
 
     @Override
-    public void usingDevice(){
-        if (currentFoodCapacity == 0) {
+    public void usingStuff(){
+        if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
             notifyObserver();
@@ -50,19 +44,5 @@ public class Fridge extends Device implements FoodContainer {
             System.out.println("Food in Fridge is running out, my lord");
         }
         usingElectricity();
-    }
-
-    @Override
-    public void eating() {
-//        if (currentFoodCapacity == 0) {
-//            setState(new BrokenState(this));
-//            System.out.println("Food in Fridge is over");
-//            isEmpty = true;
-//            notifyObserver();
-//        } else {
-//            setState(new UsingState(this));
-//            currentFoodCapacity--;
-//            System.out.println("Food in Fridge is running out, my lord");
-//        }
     }
 }

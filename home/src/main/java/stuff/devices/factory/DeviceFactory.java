@@ -16,7 +16,7 @@ public class DeviceFactory {
         return instance;
     }
 
-    private List<Device> devices = new ArrayList<>();
+    private final List<Device> devices = new ArrayList<>();
 
     public Device createDevice(Room room, StuffType type) throws Exception {
         Device device = switch (type) {
