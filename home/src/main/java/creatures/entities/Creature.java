@@ -10,7 +10,7 @@ public interface Creature {
 
     void moveTo(Room room);
 
-    void brakeStuff(UsableObject usableObject);
+    boolean chanceBrakeStuff(UsableObject usableObject);
 
     void useStuff(UsableObject usableObject);
 

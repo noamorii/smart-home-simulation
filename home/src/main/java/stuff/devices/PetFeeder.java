@@ -45,7 +45,7 @@ public class PetFeeder extends Device implements FoodContainer {
     @Override
     public void eating() {
         if (currentFoodCapacity > 0) {
-            setState(new UsingState(this));
+            //setState(new UsingState(this));
             currentFoodCapacity--;
             System.out.println("Food in Pet Feeder is running out, my lord");
         } else {

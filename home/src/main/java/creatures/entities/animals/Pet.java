@@ -5,10 +5,16 @@ import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
 import stuff.devices.Device;
+import stuff.devices.PetFeeder;
+import stuff.devices.StuffType;
 import stuff.observe.PositronicBrain;
 import stuff.state.RestingState;
 
+import java.util.Random;
+
 public abstract class Pet implements Creature {
+
+    private final Random rand = new Random();
 
     private final String name, breed;
     private final int age;
@@ -35,14 +41,31 @@ public abstract class Pet implements Creature {
     }
 
     @Override
-    public void brakeStuff(UsableObject usableObject) {
+    public boolean chanceBrakeStuff(UsableObject usableObject) {
+
+        final int maxPercent = 100;
+        final int randomPercent = rand.nextInt(maxPercent);
+
+        if (randomPercent > 95) {
+            System.out.println(this.getName() + " says: I broke " + usableObject.getType());
+            usableObject.breakingDevice();
+            return true;
+        }
+        return false;
     }
 
     @Override
     public void useStuff(UsableObject usableObject) {
+        if (usableObject == null) System.out.println("waiting");
+        System.out.println(this.getName() + " says: I am using " + usableObject.getType());
         moveTo(usableObject.getCurrentRoom());
-        usingObject = usableObject;
-        usableObject.usingDevice();
+        if (!chanceBrakeStuff(usableObject)) {
+            if (usableObject.getType() == StuffType.PET_FEEDER) {
+                ((PetFeeder) usableObject).eating(); //todo
+            }
+            usingObject = usableObject;
+            usableObject.usingDevice();
+        }
     }
 
     public void stopCurrentAction() {

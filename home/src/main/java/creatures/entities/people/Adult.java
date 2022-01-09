@@ -6,6 +6,7 @@ import house.Room;
 import stuff.Auto;
 import stuff.UsableObject;
 import stuff.devices.*;
+
 import stuff.observe.PositronicBrain;
 import stuff.state.UsingState;
 import java.util.LinkedList;
@@ -14,6 +15,8 @@ import java.util.Queue;
 import java.util.Random;
 
 public class Adult extends Person {
+
+    private final Random rand = new Random();
 
     private static Queue<UsableObject> toDoList = new LinkedList<>();
 
@@ -36,28 +39,18 @@ public class Adult extends Person {
     @Override
     public void findActivity() {
 
-        if (getToDoList().isEmpty()) { //check if toDoList is empty
-
-            PositronicBrain positronicBrain = PositronicBrain.getInstance();
-            boolean doSport = flipCoin(); //choose sport or devices
-
-            if (!doSport) {
-                Device device = positronicBrain.adviceDeviceFor(this); // ask smart home for free device
-                useStuff(device);
-                return;
-            }
-            doSport();
-            return;
+        if (!getToDoList().isEmpty()) { //check if toDoList is empty
+            doTasks();
+        } else {
+            super.findActivity();
         }
-        doTasks();
     }
 
     public void doTasks() {
 
-        UsableObject currentStuff = getToDoList().poll();
+        UsableObject currentStuff = getToDoList().poll();//take first element (not remove)
         Objects.requireNonNull(currentStuff);
-
-
+        moveTo(currentStuff.getCurrentRoom());
 
         if (currentStuff.getType() == StuffType.FRIDGE ||
             currentStuff.getType() == StuffType.PET_FEEDER) {
@@ -74,33 +67,20 @@ public class Adult extends Person {
     }
 
     @Override
-    public void useStuff(UsableObject usableObject) {
-        if (usableObject == null) {
-            System.out.println("Pizda");
-        } else {
-            moveTo(usableObject.getCurrentRoom());
-            Random rand = new Random();
-            int upperbound = 100;
-            int int_random = rand.nextInt(upperbound);
-            if (int_random > 90) {
-                brakeStuff(usableObject);
-            } else {
-                System.out.println(this.getName() + " says: I am using " + usableObject.getType());
-                usingObject = usableObject;
-                usableObject.usingDevice();
-            }
-        }
-    }
+    public boolean chanceBrakeStuff(UsableObject usableObject) {
 
-    @Override
-    public void brakeStuff(UsableObject usableObject) {
-        moveTo(usableObject.getCurrentRoom());
-        System.out.println(this.getName() + " says: I broke " + usableObject.getType());
-        usableObject.breakingDevice();
+        final int maxPercent = 100;
+        final int randomPercent = rand.nextInt(maxPercent);
+
+        if (randomPercent > 95) {
+            System.out.println(this.getName() + " says: I broke " + usableObject.getType());
+            usableObject.breakingDevice();
+            return true;
+        }
+        return false;
     }
 
     public void repairStuff(UsableObject usableObject) {
-        moveTo(usableObject.getCurrentRoom());
         System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
         usingObject = usableObject;
         usableObject.fixingDevice();

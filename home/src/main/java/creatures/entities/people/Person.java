@@ -60,29 +60,16 @@ public abstract class Person implements Creature {
         usingObject = null;
     }
 
-    public void brakeStuff(UsableObject usableObject) {
-        moveTo(usableObject.getCurrentRoom());
-        usableObject.breakingDevice();
-    }
+    public abstract boolean chanceBrakeStuff(UsableObject usableObject);
 
     public void useStuff(UsableObject usableObject) {
-        moveTo(usableObject.getCurrentRoom());
-        usingObject = usableObject;
-        usableObject.usingDevice();
-        //usableObject.setState(new RestingState(usableObject));
-    }
 
-    public void doSport() {
-        System.out.println("NA SPORTIKE");
-        Sport sport = PositronicBrain.getInstance().getRandomFreeSport();
-        if (sport.getType().equals(StuffType.BIKE)) {
-            ((Bike) sport).goOutFromHome(this);
-        } else {
-            System.out.println(getName() + " is going to sport on " + sport.getType());
-            moveTo(sport.getCurrentRoom());
-            sport.usingDevice();
-            usingObject = sport;
-            //sport.setState(new RestingState(sport));
+        if (usableObject == null) System.out.println("waiting");
+        System.out.println(this.getName() + " says: I am using " + usableObject.getType());
+        moveTo(usableObject.getCurrentRoom());
+        if (!chanceBrakeStuff(usableObject)) {
+            usingObject = usableObject;
+            usableObject.usingDevice();
         }
     }
 
@@ -97,6 +84,37 @@ public abstract class Person implements Creature {
         petFeeder.refill();
     }
 
+    public void findActivity() {
+
+        UsableObject stuff;
+        PositronicBrain positronicBrain = PositronicBrain.getInstance();
+        boolean doSport = flipCoin(); //choose sport or devices
+
+        if (!doSport) {
+            stuff = positronicBrain.adviceDeviceFor(this); // ask smart home for free device
+
+        } else {
+
+            stuff = PositronicBrain.getInstance().getRandomFreeSport();
+
+//            if (stuff.getType().equals(StuffType.BIKE)) {
+//                ((Bike) stuff).goOutFromHome(this);
+//                return;
+//            } //todo
+
+        }
+        useStuff(stuff);
+    }
+
+    @Override
+    public CreaturesType getMainCreatureType() {
+        return CreaturesType.PERSON;
+    }
+
+    public CreaturesType getType() {
+        return type;
+    }
+
     public String getName() {
         return name;
     }
@@ -107,18 +125,6 @@ public abstract class Person implements Creature {
 
     public Room getCurrentRoom() {
         return room;
-    }
-
-    @Override
-    public abstract void findActivity();
-
-    @Override
-    public CreaturesType getMainCreatureType() {
-        return CreaturesType.PERSON;
-    }
-
-    public CreaturesType getType() {
-        return type;
     }
 
     @Override
