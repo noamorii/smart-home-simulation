@@ -78,7 +78,7 @@ public abstract class Person implements Creature {
         if (sport.getType().equals(StuffType.BIKE)) {
             ((Bike) sport).goOutFromHome(this);
         } else {
-            System.out.println("I am going to sport on " + sport.getType());
+            System.out.println(getName() + " is going to sport on " + sport.getType());
             moveTo(sport.getCurrentRoom());
             sport.usingDevice();
             usingObject = sport;

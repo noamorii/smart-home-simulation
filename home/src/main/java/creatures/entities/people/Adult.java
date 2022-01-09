@@ -8,9 +8,6 @@ import stuff.UsableObject;
 import stuff.devices.*;
 import stuff.observe.PositronicBrain;
 import stuff.state.UsingState;
-
-import javax.lang.model.UnknownEntityException;
-import javax.lang.model.element.UnknownElementException;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -57,7 +54,7 @@ public class Adult extends Person {
 
     public void doTasks() {
 
-        UsableObject currentStuff = getToDoList().poll();//take first element (not remove)
+        UsableObject currentStuff = getToDoList().poll();
         Objects.requireNonNull(currentStuff);
 
 
@@ -91,22 +88,9 @@ public class Adult extends Person {
                 System.out.println(this.getName() + " says: I am using " + usableObject.getType());
                 usingObject = usableObject;
                 usableObject.usingDevice();
-                usableObject.setState(new UsingState(usableObject));
             }
         }
     }
-
-//    public void zratb() {
-//        System.out.println(this.getName() + " goes to zratb");
-//        DeviceFactory deviceFactory = DeviceFactory.getInstance();
-//        List<Device> devices = deviceFactory.getDevices();
-//        for (Device d : devices) {
-//            if (d.getType().equals(StuffType.FRIDGE)) {
-//                Fridge fridge = (Fridge) d;
-//                fridge.eating();
-//            }
-//        }
-//    }
 
     @Override
     public void brakeStuff(UsableObject usableObject) {

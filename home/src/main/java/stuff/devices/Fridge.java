@@ -8,7 +8,7 @@ import stuff.state.UsingState;
 public class Fridge extends Device implements FoodContainer {
 
     private static final int USING_TICKS = 2;
-    private static final int MAX_FOOD_CAPACITY = 10;
+    private static final int MAX_FOOD_CAPACITY = 1;
     private static final int RESTING_ELECTRICITY = 5;
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 5;
@@ -35,7 +35,7 @@ public class Fridge extends Device implements FoodContainer {
     @Override
     public void refill() {
         System.out.println("Kladu kolbasu v cholodos");
-        setState(new FixingState(this));
+        setState(new UsingState(this));
         currentFoodCapacity = MAX_FOOD_CAPACITY;
     }
 

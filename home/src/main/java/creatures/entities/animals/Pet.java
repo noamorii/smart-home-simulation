@@ -4,10 +4,13 @@ import creatures.entities.Creature;
 import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
+import stuff.devices.Device;
+import stuff.observe.PositronicBrain;
+import stuff.state.RestingState;
 
 public abstract class Pet implements Creature {
 
-    private final String nickname, breed;
+    private final String name, breed;
     private final int age;
     private final CreaturesType type;
     private Room room;
@@ -16,8 +19,8 @@ public abstract class Pet implements Creature {
     private int currentActionProgress = 1;
     private UsableObject usingObject = null;
 
-    public Pet(String nickname, String breed, int age, CreaturesType type, Room room) {
-        this.nickname = nickname;
+    public Pet(String name, String breed, int age, CreaturesType type, Room room) {
+        this.name = name;
         this.breed = breed;
         this.age = age;
         this.type = type;
@@ -37,10 +40,15 @@ public abstract class Pet implements Creature {
 
     @Override
     public void useStuff(UsableObject usableObject) {
+        moveTo(usableObject.getCurrentRoom());
+        usingObject = usableObject;
+        usableObject.usingDevice();
     }
 
     public void stopCurrentAction() {
         currentActionProgress = 1;
+        getCurrentObject().setState(new RestingState(usingObject));
+        usingObject = null;
     }
 
     public int getCurrentActionProgress() {
@@ -61,10 +69,6 @@ public abstract class Pet implements Creature {
 
     public void resetHungerLevel() {
         hungerLevel = 0;
-    }
-
-    public String getNickname() {
-        return nickname;
     }
 
     public String getBreed() {
@@ -95,7 +99,7 @@ public abstract class Pet implements Creature {
 
     @Override
     public String getName() {
-        return nickname;
+        return name;
     }
 
     @Override
@@ -105,6 +109,10 @@ public abstract class Pet implements Creature {
 
     @Override
     public void findActivity() {
+        PositronicBrain positronicBrain = PositronicBrain.getInstance();
+        Device device = positronicBrain.adviceDeviceFor(this);
+        useStuff(device);
     }
+
 }
 

@@ -60,11 +60,12 @@ public class Main {
 
         PetFactory petFactory = new PetFactory();
         PeopleFactory peopleFactory = new PeopleFactory();
-        Adult papa = (Adult) peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
-        Adult mama = (Adult)peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
+        peopleFactory.create(CreaturesType.ADULT, "Papa", 40, bedroom);
+        peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
         peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
-        Child pepa = (Child) peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
+        peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
         petFactory.create(CreaturesType.CAT, "Fluffy", 2, "White", livingRoom);
+        petFactory.create(CreaturesType.PARROT, "Popka", 1, "Red", livingRoom);
         List<Creature> creatures = new ArrayList<>();
         creatures.addAll(peopleFactory.getPeople());
         creatures.addAll(petFactory.getPets());
