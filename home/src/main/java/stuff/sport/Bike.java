@@ -1,9 +1,16 @@
 package stuff.sport;
 
+import creatures.entities.people.Person;
+import house.Home;
 import house.Room;
+import stuff.Transport;
 import stuff.devices.StuffType;
+import stuff.state.BrokenState;
+import stuff.state.UsingState;
 
-public class Bike extends Sport {
+import java.util.Random;
+
+public class Bike extends Sport implements Transport{
 
     private static final int USING_TICKS = 4;
     private static final int RESTING_ELECTRICITY = 6;
@@ -11,7 +18,23 @@ public class Bike extends Sport {
     private static final int IN_USING_ELECTRICITY = 0;
 
     public Bike(Room room) {
-        super(USING_TICKS, room, StuffType.STEPPER,
+        super(USING_TICKS, room, StuffType.BIKE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
+    }
+
+    @Override
+    public void goOutFromHome(Person person) {
+        setState(new UsingState(this));
+        Home home = Home.getInstance();
+        home.goOut(person);
+        System.out.println(person.getName() + " is going to ride a bike");
+        int breakChance = new Random().nextInt(5);
+        if(breakChance > 2){
+            System.out.println("Bike is broken");
+            setState(new BrokenState(this));
+            notifyObserver();
+        }
+        home.comeBackHome(person);
+
     }
 }

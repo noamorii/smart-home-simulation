@@ -40,6 +40,7 @@ public class Fridge extends Device implements FoodContainer {
     @Override
     public void eating() {
         setState(new UsingState(this));
+
         if (currentFoodCapacity > 0) {
             currentFoodCapacity--;
             System.out.println("Food in Fridge is running out, my lord");

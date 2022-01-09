@@ -11,7 +11,7 @@ public class Orbitrek extends Sport{
     private static final int IN_USING_ELECTRICITY = 5;
 
     public Orbitrek(Room room) {
-        super(USING_TICKS, room, StuffType.STEPPER,
+        super(USING_TICKS, room, StuffType.ORBITREK,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 }

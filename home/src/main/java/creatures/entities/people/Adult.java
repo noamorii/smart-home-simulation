@@ -40,25 +40,32 @@ public class Adult extends Person {
         if (getToDoList().isEmpty()) {
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
             useStuff(positronicBrain.adviceWhatToDoFor(this));
-        }else {
-            UsableObject currentStuff = getToDoList().poll(); //todo sport
-            switch (currentStuff.getType()) {
-                case FRIDGE:
-                    if (((Fridge) currentStuff).isEmpty()) {
-                        refillFridge((Fridge) currentStuff);
-                    } else {
+        } else {
+            Random random = new Random();
+            if (random.nextBoolean()) {
+                System.out.println("NA SPORTIKE");
+                doSport();
+            } else {
+
+                UsableObject currentStuff = getToDoList().poll();
+                switch (currentStuff.getType()) {
+                    case FRIDGE:
+                        if (((Fridge) currentStuff).isEmpty()) {
+                            refillFridge((Fridge) currentStuff);
+                        } else {
+                            repairStuff(currentStuff);
+                        }
+                        break;
+                    case PET_FEEDER:
+                        if (((PetFeeder) currentStuff).isEmpty()) {
+                            refillPetFeeder((PetFeeder) currentStuff);
+                        } else {
+                            repairStuff(currentStuff);
+                        }
+                        break;
+                    default:
                         repairStuff(currentStuff);
-                    }
-                    break;
-                case PET_FEEDER:
-                    if (((PetFeeder) currentStuff).isEmpty()) {
-                        refillPetFeeder((PetFeeder) currentStuff);
-                    } else {
-                        repairStuff(currentStuff);
-                    }
-                    break;
-                default:
-                    repairStuff(currentStuff);
+                }
             }
         }
     }
@@ -82,12 +89,12 @@ public class Adult extends Person {
         }
     }
 
-    public void zratb(){
+    public void zratb() {
         System.out.println(this.getName() + " goes to zratb");
         DeviceFactory deviceFactory = DeviceFactory.getInstance();
         List<Device> devices = deviceFactory.getDevices();
-        for (Device d: devices) {
-            if(d.getType().equals(StuffType.FRIDGE)){
+        for (Device d : devices) {
+            if (d.getType().equals(StuffType.FRIDGE)) {
                 Fridge fridge = (Fridge) d;
                 fridge.eating();
             }
@@ -111,7 +118,7 @@ public class Adult extends Person {
     public void refillFridge(Fridge fridge) {
         Auto auto = Home.getInstance().getAuto();
         this.moveTo(auto.getCurrentRoom());
-        auto.goForFood(this);
+        auto.goOutFromHome(this);
         moveTo(fridge.getCurrentRoom());
         fridge.refillingFeed();
         System.out.println(this.getName() + " is going to refill the " + fridge.getType());

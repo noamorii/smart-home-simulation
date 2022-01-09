@@ -6,6 +6,8 @@ import creatures.factories.CreaturesType;
 import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
+import stuff.sport.Sport;
+import stuff.sport.factory.SportFactory;
 import stuff.state.StateType;
 
 import java.util.ArrayList;
@@ -43,7 +45,7 @@ public class PositronicBrain implements Observer {
         return instance;
     }
 
-    public Device adviceWhatToDoFor(Creature creature) {
+    public UsableObject adviceWhatToDoFor(Creature creature) {
         if (creature.getMainCreatureType() == CreaturesType.PET)
             return getRandomFreeDevice(devicesForPets);
         return getRandomFreeDevice(devicesForHumans);
@@ -69,5 +71,13 @@ public class PositronicBrain implements Observer {
                 .collect(Collectors.toList());
         int randomIndexOfList = new Random().nextInt(freeDevices.size());
         return freeDevices.get(randomIndexOfList);
+    }
+
+    public Sport getRandomFreeSport() {
+        List<Sport> freeSports = SportFactory.getInstance().getSports().stream()
+                .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
+                .collect(Collectors.toList());
+        int randomIndexOfList = new Random().nextInt(freeSports.size());
+        return freeSports.get(randomIndexOfList);
     }
 }

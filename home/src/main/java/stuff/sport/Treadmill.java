@@ -11,7 +11,7 @@ public class Treadmill extends Sport {
     private static final int IN_USING_ELECTRICITY = 4;
 
     public Treadmill(Room room) {
-        super(USING_TICKS, room, StuffType.STEPPER,
+        super(USING_TICKS, room, StuffType.TREADMILL,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
 

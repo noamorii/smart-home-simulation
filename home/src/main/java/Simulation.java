@@ -1,6 +1,9 @@
 import creatures.entities.Creature;
 import house.Home;
+import stuff.observe.PositronicBrain;
 import util.TimeRepresentation;
+
+import java.util.List;
 
 public class Simulation {
     
@@ -22,10 +25,15 @@ public class Simulation {
         for (int i = 0; i < interactionsCount; i++) {
             System.out.println("_________________" + time.getCurrentTime() + "_________________");
 
-            for (Creature creature: Home.getCreatures()) {
+            List<Creature> creatures = List.copyOf(Home.getCreatures());
+
+            for (Creature creature: creatures) {
                 if (creature.getCurrentActionProgress() == 0) {
                     creature.findActivity();
                 }
+            }
+            if (time.getCurrentTime().equals("Time: 00:00")){
+                PositronicBrain.getInstance().generateReportAboutElectricityUsedByDay();
             }
 
             System.out.println("_____________________________________________");

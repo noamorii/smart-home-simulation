@@ -7,9 +7,14 @@ import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
+import stuff.devices.StuffType;
 import stuff.observe.PositronicBrain;
+import stuff.sport.Bike;
 import stuff.sport.Sport;
+import stuff.sport.factory.SportFactory;
 import stuff.state.RestingState;
+
+import java.util.List;
 
 public abstract class Person implements Creature {
 
@@ -53,13 +58,19 @@ public abstract class Person implements Creature {
         usableObject.setState(new RestingState(usableObject));
     }
 
-//    public void doSport(Sport sport) {
-//        System.out.println("I am going to sport on " + sport.getName);
-//        moveTo(sport.getCurrentRoom());
-//        sport.usingDevice();
-//    }
+    public void doSport() {
+        Sport sport = PositronicBrain.getInstance().getRandomFreeSport();
+        if (sport.getType().equals(StuffType.BIKE)) {
+            ((Bike) sport).goOutFromHome(this);
+        } else {
+            System.out.println("I am going to sport on " + sport.getType());
+            moveTo(sport.getCurrentRoom());
+            sport.usingDevice();
+            sport.setState(new RestingState(sport));
+        }
+    }
 
-    public void refillPetFeeder(PetFeeder petFeeder){
+    public void refillPetFeeder(PetFeeder petFeeder) {
         moveTo(petFeeder.getCurrentRoom());
         System.out.println(this.name + " is going to refill Pet Feeder");
         petFeeder.refillingFeed();

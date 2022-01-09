@@ -18,6 +18,10 @@ public class SportFactory {
 
     private List<Sport> sports = new ArrayList<>();
 
+    public List<Sport> getSports() {
+        return sports;
+    }
+
     public Sport createSport(Room room, StuffType type) throws Exception {
         Sport sport = switch (type) {
             case TREADMILL -> new Treadmill(room);

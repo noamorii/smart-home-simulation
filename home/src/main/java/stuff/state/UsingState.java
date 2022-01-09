@@ -9,7 +9,7 @@ public class UsingState implements UsableObjectState {
 
     public UsingState(UsableObject stuff){
         this.stuff = stuff;
-        this.type = StateType.BROKEN;
+        this.type = StateType.USING;
     }
 
     @Override

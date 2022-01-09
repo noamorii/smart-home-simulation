@@ -10,6 +10,8 @@ import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
 import stuff.devices.Device;
 import stuff.observe.PositronicBrain;
+import stuff.sport.Sport;
+import stuff.sport.factory.SportFactory;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -78,15 +80,22 @@ public class Main {
         Device smartPhone3 = deviceFactory.createDevice(livingRoom,StuffType.PHONE);
         Device smartVacuum = deviceFactory.createDevice(hallway,StuffType.VACUUM);
         Device tv = deviceFactory.createDevice(kitchen,StuffType.TV);
-        List<Device> devices= deviceFactory.getDevices();
 
+
+        SportFactory sportFactory = SportFactory.getInstance();
+        Sport bike1 = sportFactory.createSport(garage, StuffType.BIKE);
+        Sport bike2 = sportFactory.createSport(garage, StuffType.BIKE);
+        Sport treadmill1 = sportFactory.createSport(garage, StuffType.TREADMILL);
+        Sport treadmill2 = sportFactory.createSport(garage, StuffType.TREADMILL);
+        Sport orbitek = sportFactory.createSport(garage, StuffType.ORBITREK);
+        Sport stepper = sportFactory.createSport(garage, StuffType.TREADMILL);
 
         hallway.setStuff(Arrays.asList(smartVacuum, petFeeder, airConditioner));
         bedroom.setStuff(Arrays.asList(computer, smartPhone1));
         bedroom2.setStuff(Arrays.asList(smartPhone2, computer1));
         livingRoom.setStuff(Arrays.asList(audioSystem,smartPhone3));
         kitchen.setStuff(Arrays.asList(fridge, tv));
-        garage.setStuff(new ArrayList<>());
+        garage.setStuff(Arrays.asList(bike1, bike2, treadmill1, treadmill2, orbitek, stepper));
 
         Floor firstFloor = new Floor(1, roomsForFirstFloor);
         Floor secondFloor = new Floor(2, roomsForSecondFloor);
