@@ -23,7 +23,7 @@ public class PetFeeder extends Device implements FoodContainer {
 
     @Override
     public boolean isEmpty() {
-        return isEmpty;
+        return currentFoodCapacity == 0;
     }
 
     public int getFoodCapacity() {
@@ -38,21 +38,30 @@ public class PetFeeder extends Device implements FoodContainer {
 
     @Override
     public void usingDevice(){
-        eating();
+        if (currentFoodCapacity <= 0) {
+            setState(new BrokenState(this));
+            System.out.println("Food in Pet Feeder is over");
+            isEmpty = true;
+            notifyObserver();
+        } else {
+            setState(new UsingState(this));
+            currentFoodCapacity--;
+            System.out.println("Food in Pet Feeder is running out, my lord");
+        }
         usingElectricity();
     }
 
     @Override
     public void eating() {
-        if (currentFoodCapacity > 0) {
-            //setState(new UsingState(this));
-            currentFoodCapacity--;
-            System.out.println("Food in Pet Feeder is running out, my lord");
-        } else {
-            setState(new BrokenState(this));
-            System.out.println("Food in Pet Feeder is over");
-            isEmpty = true;
-            notifyObserver();
-        }
+//        if (currentFoodCapacity <= 0) {
+//            setState(new BrokenState(this));
+//            System.out.println("Food in Pet Feeder is over");
+//            isEmpty = true;
+//            notifyObserver();
+//        } else {
+//            setState(new UsingState(this));
+//            currentFoodCapacity--;
+//            System.out.println("Food in Pet Feeder is running out, my lord");
+//        }
     }
 }

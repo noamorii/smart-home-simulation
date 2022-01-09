@@ -4,11 +4,13 @@ import creatures.entities.Creature;
 import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
+import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
 import stuff.devices.StuffType;
 import stuff.observe.PositronicBrain;
 import stuff.sport.Bike;
 import stuff.sport.Sport;
+import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
 import java.util.Random;
@@ -67,6 +69,14 @@ public abstract class Person implements Creature {
         if (usableObject == null) System.out.println("waiting");
         System.out.println(this.getName() + " says: I am using " + usableObject.getType());
         moveTo(usableObject.getCurrentRoom());
+        if (usableObject.getType() == StuffType.FRIDGE) {
+            if (((Fridge) usableObject).isEmpty()) {
+                usableObject.setState(new BrokenState(usableObject));
+                System.out.println("Food in Pet Feeder is over");
+                usableObject.notifyObserver();
+                return;
+            }
+        }
         if (!chanceBrakeStuff(usableObject)) {
             usingObject = usableObject;
             usableObject.usingDevice();

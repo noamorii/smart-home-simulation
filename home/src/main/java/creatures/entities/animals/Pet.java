@@ -8,6 +8,7 @@ import stuff.devices.Device;
 import stuff.devices.PetFeeder;
 import stuff.devices.StuffType;
 import stuff.observe.PositronicBrain;
+import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
 import java.util.Random;
@@ -59,12 +60,17 @@ public abstract class Pet implements Creature {
         if (usableObject == null) System.out.println("waiting");
         System.out.println(this.getName() + " says: I am using " + usableObject.getType());
         moveTo(usableObject.getCurrentRoom());
-        if (!chanceBrakeStuff(usableObject)) {
-            if (usableObject.getType() == StuffType.PET_FEEDER) {
-                ((PetFeeder) usableObject).eating(); //todo
+        if (usableObject.getType() == StuffType.PET_FEEDER) {
+            if (((PetFeeder) usableObject).isEmpty()) {
+                usableObject.setState(new BrokenState(usableObject));
+                System.out.println("Food in Pet Feeder is over");
+                usableObject.notifyObserver();
+                return;
             }
-            usingObject = usableObject;
+        }
+        if (!chanceBrakeStuff(usableObject)) {
             usableObject.usingDevice();
+            usingObject = usableObject;
         }
     }
 

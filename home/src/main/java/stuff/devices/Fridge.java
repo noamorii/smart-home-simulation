@@ -3,12 +3,13 @@ package stuff.devices;
 import house.Room;
 import stuff.state.BrokenState;
 import stuff.state.FixingState;
+import stuff.state.RestingState;
 import stuff.state.UsingState;
 
 public class Fridge extends Device implements FoodContainer {
 
     private static final int USING_TICKS = 2;
-    private static final int MAX_FOOD_CAPACITY = 1;
+    private static final int MAX_FOOD_CAPACITY = 2;
     private static final int RESTING_ELECTRICITY = 5;
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 5;
@@ -24,7 +25,7 @@ public class Fridge extends Device implements FoodContainer {
 
     @Override
     public boolean isEmpty() {
-        return isEmpty;
+        return currentFoodCapacity == 0;
     }
 
     @Override
@@ -35,18 +36,12 @@ public class Fridge extends Device implements FoodContainer {
     @Override
     public void refill() {
         System.out.println("Kladu kolbasu v cholodos");
-        setState(new UsingState(this));
         currentFoodCapacity = MAX_FOOD_CAPACITY;
+        setState(new RestingState(this));
     }
 
     @Override
     public void usingDevice(){
-        eating();
-        usingElectricity();
-    }
-
-    @Override
-    public void eating() {
         if (currentFoodCapacity == 0) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
@@ -57,5 +52,20 @@ public class Fridge extends Device implements FoodContainer {
             currentFoodCapacity--;
             System.out.println("Food in Fridge is running out, my lord");
         }
+        usingElectricity();
+    }
+
+    @Override
+    public void eating() {
+//        if (currentFoodCapacity == 0) {
+//            setState(new BrokenState(this));
+//            System.out.println("Food in Fridge is over");
+//            isEmpty = true;
+//            notifyObserver();
+//        } else {
+//            setState(new UsingState(this));
+//            currentFoodCapacity--;
+//            System.out.println("Food in Fridge is running out, my lord");
+//        }
     }
 }
