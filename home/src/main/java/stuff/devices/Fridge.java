@@ -16,8 +16,6 @@ public class Fridge extends Device implements FoodContainer {
 
     private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
-    private boolean isEmpty = false;
-
     public Fridge(Room room) {
         super(USING_TICKS, room, StuffType.FRIDGE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
@@ -45,7 +43,6 @@ public class Fridge extends Device implements FoodContainer {
         if (currentFoodCapacity == 0) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
-            isEmpty = true;
             notifyObserver();
         } else {
             setState(new UsingState(this));

@@ -69,6 +69,11 @@ public class PositronicBrain implements Observer {
         List<Device> freeDevices = devices.stream()
                 .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
                 .collect(Collectors.toList());
+
+        if (freeDevices.isEmpty()) {
+            return null;
+        }
+
         int randomIndexOfList = new Random().nextInt(freeDevices.size());
         return freeDevices.get(randomIndexOfList);
     }
@@ -77,6 +82,11 @@ public class PositronicBrain implements Observer {
         List<Sport> freeSports = SportFactory.getInstance().getSports().stream()
                 .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
                 .collect(Collectors.toList());
+
+        if (freeSports.isEmpty()) {
+            return null;
+        }
+
         int randomIndexOfList = new Random().nextInt(freeSports.size());
         return freeSports.get(randomIndexOfList);
     }

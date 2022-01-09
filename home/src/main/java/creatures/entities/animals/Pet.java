@@ -57,7 +57,11 @@ public abstract class Pet implements Creature {
 
     @Override
     public void useStuff(UsableObject usableObject) {
-        if (usableObject == null) System.out.println("waiting");
+
+        if (usableObject == null) {
+            System.out.println("Pet " + this.name + " is waiting for now");
+            return;
+        }
         System.out.println(this.getName() + " says: I am using " + usableObject.getType());
         moveTo(usableObject.getCurrentRoom());
         if (usableObject.getType() == StuffType.PET_FEEDER) {

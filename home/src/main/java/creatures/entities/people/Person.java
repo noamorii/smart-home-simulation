@@ -66,7 +66,10 @@ public abstract class Person implements Creature {
 
     public void useStuff(UsableObject usableObject) {
 
-        if (usableObject == null) System.out.println("waiting");
+        if (usableObject == null) {
+            System.out.println("waiting");
+            return;
+        }
         System.out.println(this.getName() + " says: I am using " + usableObject.getType());
         moveTo(usableObject.getCurrentRoom());
         if (usableObject.getType() == StuffType.FRIDGE) {
