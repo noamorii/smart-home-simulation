@@ -3,7 +3,6 @@ package stuff.devices;
 import house.Room;
 import stuff.state.BrokenState;
 import stuff.state.FixingState;
-import stuff.state.RestingState;
 import stuff.state.UsingState;
 
 public class Fridge extends Device implements FoodContainer {
@@ -34,9 +33,9 @@ public class Fridge extends Device implements FoodContainer {
     }
 
     @Override
-    public void refillingFeed() {
+    public void refill() {
         System.out.println("Kladu kolbasu v cholodos");
-        setState(new UsingState(this));
+        setState(new FixingState(this));
         currentFoodCapacity = MAX_FOOD_CAPACITY;
     }
 
@@ -48,15 +47,15 @@ public class Fridge extends Device implements FoodContainer {
 
     @Override
     public void eating() {
-        setState(new UsingState(this));
-        if (currentFoodCapacity > 0) {
-            currentFoodCapacity--;
-            System.out.println("Food in Fridge is running out, my lord");
-        } else {
+        if (currentFoodCapacity == 0) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
             isEmpty = true;
             notifyObserver();
+        } else {
+            setState(new UsingState(this));
+            currentFoodCapacity--;
+            System.out.println("Food in Fridge is running out, my lord");
         }
     }
 }

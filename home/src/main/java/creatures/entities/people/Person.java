@@ -1,20 +1,17 @@
 package creatures.entities.people;
 
-import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
+import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
-import stuff.devices.Device;
-import stuff.devices.Fridge;
 import stuff.devices.PetFeeder;
 import stuff.devices.StuffType;
 import stuff.observe.PositronicBrain;
 import stuff.sport.Bike;
 import stuff.sport.Sport;
-import stuff.sport.factory.SportFactory;
 import stuff.state.RestingState;
 
-import java.util.List;
+import java.util.Random;
 
 public abstract class Person implements Creature {
 
@@ -72,10 +69,11 @@ public abstract class Person implements Creature {
         moveTo(usableObject.getCurrentRoom());
         usingObject = usableObject;
         usableObject.usingDevice();
-        usableObject.setState(new RestingState(usableObject));
+        //usableObject.setState(new RestingState(usableObject));
     }
 
     public void doSport() {
+        System.out.println("NA SPORTIKE");
         Sport sport = PositronicBrain.getInstance().getRandomFreeSport();
         if (sport.getType().equals(StuffType.BIKE)) {
             ((Bike) sport).goOutFromHome(this);
@@ -83,17 +81,20 @@ public abstract class Person implements Creature {
             System.out.println("I am going to sport on " + sport.getType());
             moveTo(sport.getCurrentRoom());
             sport.usingDevice();
-            sport.setState(new RestingState(sport));
+            usingObject = sport;
+            //sport.setState(new RestingState(sport));
         }
     }
 
-
+    public boolean flipCoin() {
+        return (new Random()).nextBoolean();
+    }
 
     public void refillPetFeeder(PetFeeder petFeeder){
         moveTo(petFeeder.getCurrentRoom());
         System.out.println(this.name + " is going to refill Pet Feeder");
         usingObject = petFeeder;
-        petFeeder.refillingFeed();
+        petFeeder.refill();
     }
 
     public String getName() {

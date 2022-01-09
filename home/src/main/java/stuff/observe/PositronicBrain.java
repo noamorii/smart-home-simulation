@@ -45,7 +45,7 @@ public class PositronicBrain implements Observer {
         return instance;
     }
 
-    public UsableObject adviceWhatToDoFor(Creature creature) {
+    public Device adviceDeviceFor(Creature creature) {
         if (creature.getMainCreatureType() == CreaturesType.PET)
             return getRandomFreeDevice(devicesForPets);
         return getRandomFreeDevice(devicesForHumans);

@@ -1,6 +1,5 @@
 package stuff.devices.factory;
 
-import house.Home;
 import house.Room;
 import stuff.devices.*;
 

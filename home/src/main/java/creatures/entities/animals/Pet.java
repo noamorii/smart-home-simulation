@@ -1,7 +1,7 @@
 package creatures.entities.animals;
 
-import creatures.factories.CreaturesType;
 import creatures.entities.Creature;
+import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
 

@@ -5,16 +5,16 @@ import house.Home;
 import house.Room;
 import stuff.Auto;
 import stuff.UsableObject;
-import stuff.devices.Device;
-import stuff.devices.Fridge;
-import stuff.devices.PetFeeder;
-import stuff.devices.StuffType;
-import stuff.devices.factory.DeviceFactory;
+import stuff.devices.*;
 import stuff.observe.PositronicBrain;
-import stuff.state.RestingState;
 import stuff.state.UsingState;
 
-import java.util.*;
+import javax.lang.model.UnknownEntityException;
+import javax.lang.model.element.UnknownElementException;
+import java.util.LinkedList;
+import java.util.Objects;
+import java.util.Queue;
+import java.util.Random;
 
 public class Adult extends Person {
 
@@ -38,36 +38,42 @@ public class Adult extends Person {
 
     @Override
     public void findActivity() {
-        if (getToDoList().isEmpty()) {
+
+        if (getToDoList().isEmpty()) { //check if toDoList is empty
+
             PositronicBrain positronicBrain = PositronicBrain.getInstance();
-            useStuff(positronicBrain.adviceWhatToDoFor(this));
-        } else {
-            Random random = new Random();
-            if (random.nextBoolean()) {
-                System.out.println("NA SPORTIKE");
-                doSport();
-            } else {
-                UsableObject currentStuff = getToDoList().poll();
-                switch (currentStuff.getType()) {
-                    case FRIDGE:
-                        if (!((Fridge) currentStuff).isEmpty()) {
-                            repairStuff(currentStuff);
-                        } else {
-                            refillFridge((Fridge) currentStuff);
-                        }
-                        break;
-                    case PET_FEEDER:
-                        if (!((PetFeeder) currentStuff).isEmpty()) {
-                            repairStuff(currentStuff);
-                        } else {
-                            refillPetFeeder((PetFeeder) currentStuff);
-                        }
-                        break;
-                    default:
-                        repairStuff(currentStuff);
-                }
+            boolean doSport = flipCoin(); //choose sport or devices
+
+            if (!doSport) {
+                Device device = positronicBrain.adviceDeviceFor(this); // ask smart home for free device
+                useStuff(device);
+                return;
+            }
+            doSport();
+            return;
+        }
+        doTasks();
+    }
+
+    public void doTasks() {
+
+        UsableObject currentStuff = getToDoList().poll();//take first element (not remove)
+        Objects.requireNonNull(currentStuff);
+
+
+
+        if (currentStuff.getType() == StuffType.FRIDGE ||
+            currentStuff.getType() == StuffType.PET_FEEDER) {
+
+            FoodContainer container =
+                    (FoodContainer) currentStuff.getClass().cast(currentStuff);
+
+            if (container.isEmpty()) {
+                refillFridge(container);
+                //container.refill();
             }
         }
+        repairStuff(currentStuff);
     }
 
     @Override
@@ -116,13 +122,13 @@ public class Adult extends Person {
         usableObject.fixingDevice();
     }
 
-    public void refillFridge(Fridge fridge) {
+    public void refillFridge(FoodContainer container) {
         Auto auto = Home.getInstance().getAuto();
         this.moveTo(auto.getCurrentRoom());
         auto.goOutFromHome(this);
-        moveTo(fridge.getCurrentRoom());
-        fridge.refillingFeed();
-        usingObject = fridge;
-        System.out.println(this.getName() + " is going to refill the " + fridge.getType());
+        moveTo(container.getCurrentRoom());
+        container.refill();
+        usingObject = (UsableObject) container;
+        System.out.println(this.getName() + " is going to refill the " + container.getType());
     }
 }

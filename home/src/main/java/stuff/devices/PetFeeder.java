@@ -28,7 +28,7 @@ public class PetFeeder extends Device implements FoodContainer {
     }
 
     @Override
-    public void refillingFeed() {
+    public void refill() {
         currentFoodCapacity = MAX_FOOD_CAPACITY;
     }
 

@@ -1,10 +1,8 @@
 import creatures.entities.Creature;
 import house.Home;
 import stuff.UsableObject;
-import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
 import stuff.observe.PositronicBrain;
-import stuff.sport.Sport;
 import stuff.sport.factory.SportFactory;
 import stuff.state.StateType;
 import util.TimeRepresentation;
@@ -44,8 +42,9 @@ public class Simulation {
                 }
 
                 if (creature.getCurrentObject() != null) {
-                    System.out.println("-------creature " + creature.getType() + " with name: " + creature.getName()
-                            + " using obj:" + creature.getCurrentObject().getType() + " object state:" + creature.getCurrentObject().getCurrentState().getType() + " with tick " + creature.getCurrentActionProgress() +
+                    System.out.println("-------creature " + creature.getType() + " with name: " + creature.getName() + " in room: " + creature.getCurrentRoom().getName()
+                            + " using obj:" + creature.getCurrentObject().getType() + " object state:" + creature.getCurrentObject().getCurrentState().getType() +
+                            " in room: " + creature.getCurrentObject().getCurrentRoom().getName() + " with tick " + creature.getCurrentActionProgress() +
                             " from device ticks " + creature.getCurrentObject().getTicks()) ;
                 }
             }

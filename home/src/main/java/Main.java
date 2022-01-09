@@ -1,14 +1,17 @@
+import creatures.entities.Creature;
 import creatures.entities.people.Adult;
 import creatures.entities.people.Child;
+import creatures.factories.CreaturesType;
 import creatures.factories.PeopleFactory;
 import creatures.factories.PetFactory;
-import creatures.factories.CreaturesType;
-import creatures.entities.Creature;
-import house.*;
+import house.Floor;
+import house.Home;
+import house.Room;
+import house.RoomFactory;
 import stuff.Auto;
+import stuff.devices.Device;
 import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
-import stuff.devices.Device;
 import stuff.observe.PositronicBrain;
 import stuff.sport.Sport;
 import stuff.sport.factory.SportFactory;
@@ -16,7 +19,6 @@ import stuff.sport.factory.SportFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Level;
 import java.util.logging.Logger;
 
 

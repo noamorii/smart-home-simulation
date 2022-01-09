@@ -3,9 +3,7 @@ package creatures.entities.people;
 import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
-import stuff.devices.Device;
 import stuff.observe.PositronicBrain;
-import stuff.state.RestingState;
 import stuff.state.UsingState;
 
 import java.util.Random;
@@ -39,7 +37,7 @@ public class Child extends Person {
     @Override
     public void findActivity() {
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        useStuff(positronicBrain.adviceWhatToDoFor(this));
+        useStuff(positronicBrain.adviceDeviceFor(this));
     }
 
     @Override

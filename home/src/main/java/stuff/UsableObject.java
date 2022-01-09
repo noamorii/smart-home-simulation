@@ -7,7 +7,7 @@ import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
-public abstract class UsableObject implements Observed{
+public abstract class UsableObject implements Observed {
 
     private final int usingTicks;
     private final StuffType type;
