@@ -28,8 +28,6 @@ public class Simulation {
             List<Creature> creatures = List.copyOf(Home.getCreatures());
 
             for (Creature creature: creatures) {
-                if (creature.getCurrentActionProgress() == 0) {
-            for (Creature creature: Home.getCreatures()) {
                 if (creature.getCurrentObject() == null ||
                     creature.getCurrentActionProgress() == creature.getCurrentObject().getTicks()) {
                     if (creature.getCurrentObject() != null) creature.stopCurrentAction();
