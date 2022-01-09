@@ -18,7 +18,8 @@ public abstract class Person implements Creature {
     private Room room;
     private final CreaturesType type;
 
-    private int currentActionProgress = 0;
+    private int currentActionProgress = 1;
+    protected UsableObject usingObject = null;
 
     public Person(String name, int age, Room room, CreaturesType type) {
         this.name = name;
@@ -30,6 +31,11 @@ public abstract class Person implements Creature {
     @Override
     public abstract void say();
 
+    @Override
+    public UsableObject getCurrentObject() {
+        return usingObject;
+    }
+
     public void moveTo(Room room) {
         this.room = room;
     }
@@ -38,8 +44,14 @@ public abstract class Person implements Creature {
         return currentActionProgress;
     }
 
+    public void increaseProgress() {
+        currentActionProgress++;
+    }
+
     public void stopCurrentAction() {
-        currentActionProgress = 0;
+        currentActionProgress = 1;
+        getCurrentObject().setState(new RestingState(usingObject));
+        usingObject = null;
     }
 
     public void brakeStuff(UsableObject usableObject) {
@@ -49,6 +61,7 @@ public abstract class Person implements Creature {
 
     public void useStuff(UsableObject usableObject) {
         moveTo(usableObject.getCurrentRoom());
+        usingObject = usableObject;
         usableObject.usingDevice();
         usableObject.setState(new RestingState(usableObject));
     }
@@ -59,9 +72,12 @@ public abstract class Person implements Creature {
 //        sport.usingDevice();
 //    }
 
+
+
     public void refillPetFeeder(PetFeeder petFeeder){
         moveTo(petFeeder.getCurrentRoom());
         System.out.println(this.name + " is going to refill Pet Feeder");
+        usingObject = petFeeder;
         petFeeder.refillingFeed();
     }
 

@@ -12,6 +12,7 @@ import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
 import stuff.observe.PositronicBrain;
 import stuff.state.RestingState;
+import stuff.state.UsingState;
 
 import java.util.*;
 
@@ -76,8 +77,9 @@ public class Adult extends Person {
                 brakeStuff(usableObject);
             } else {
                 System.out.println(this.getName() + " says: I am using " + usableObject.getType());
+                usingObject = usableObject;
                 usableObject.usingDevice();
-                usableObject.setState(new RestingState(usableObject));
+                usableObject.setState(new UsingState(usableObject));
             }
         }
     }
@@ -104,8 +106,8 @@ public class Adult extends Person {
     public void repairStuff(UsableObject usableObject) {
         moveTo(usableObject.getCurrentRoom());
         System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
+        usingObject = usableObject;
         usableObject.fixingDevice();
-        usableObject.setState(new RestingState(usableObject));
     }
 
     public void refillFridge(Fridge fridge) {
@@ -114,6 +116,7 @@ public class Adult extends Person {
         auto.goForFood(this);
         moveTo(fridge.getCurrentRoom());
         fridge.refillingFeed();
+        usingObject = fridge;
         System.out.println(this.getName() + " is going to refill the " + fridge.getType());
     }
 }

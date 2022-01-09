@@ -25,4 +25,10 @@ public interface Creature {
     void stopCurrentAction();
 
     void findActivity();
+
+    UsableObject getCurrentObject();
+
+    void increaseProgress();
+
+    String getName();
 }

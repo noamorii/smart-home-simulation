@@ -11,7 +11,7 @@ public class FixingState implements UsableObjectState {
 
     public FixingState(UsableObject stuff){
         this.stuff = stuff;
-        this.type = StateType.BROKEN;
+        this.type = StateType.FIXING;
     }
 
     @Override
