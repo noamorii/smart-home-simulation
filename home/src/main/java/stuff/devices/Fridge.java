@@ -2,8 +2,11 @@ package stuff.devices;
 
 import house.Room;
 import stuff.state.BrokenState;
+import stuff.state.FixingState;
 import stuff.state.RestingState;
 import stuff.state.UsingState;
+
+import java.io.IOException;
 
 public class Fridge extends Device implements FoodContainer {
 
@@ -27,13 +30,14 @@ public class Fridge extends Device implements FoodContainer {
 
     @Override
     public void refill() {
-        System.out.println("Kladu klosabu do lednicky");
+        System.out.println("Kladu klobasu do lednicky");
         currentFoodCapacity = MAX_FOOD_CAPACITY;
         setState(new RestingState(this));
     }
 
     @Override
-    public void usingStuff(){
+    public void usingStuff()throws IOException{
+        setUsedTimes(getUsedTimes() + 1);
         if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");

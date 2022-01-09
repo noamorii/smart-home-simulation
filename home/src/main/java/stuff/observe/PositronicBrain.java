@@ -3,6 +3,7 @@ package stuff.observe;
 import creatures.entities.Creature;
 import creatures.entities.people.Adult;
 import creatures.factories.CreaturesType;
+import house.Home;
 import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.devices.factory.DeviceFactory;
@@ -10,6 +11,8 @@ import stuff.sport.Sport;
 import stuff.sport.factory.SportFactory;
 import stuff.state.StateType;
 
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -17,13 +20,15 @@ import java.util.stream.Collectors;
 
 public class PositronicBrain implements Observer {
 
+    public FileWriter myWriter = new FileWriter("src/main/resources/Report.txt");
     private final List<Device> devices;
     private static PositronicBrain instance = null;
 
     private final List<Device> devicesForPets = new ArrayList<>();
     private final List<Device> devicesForHumans = new ArrayList<>();
+    private static int dayCounter = 1;
 
-    private PositronicBrain() {
+    private PositronicBrain() throws IOException {
 
         devices = DeviceFactory.getInstance().getDevices();
 
@@ -40,7 +45,7 @@ public class PositronicBrain implements Observer {
         }
     }
 
-    public static PositronicBrain getInstance() {
+    public static PositronicBrain getInstance() throws IOException {
         if (instance == null) instance = new PositronicBrain();
         return instance;
     }
@@ -56,13 +61,23 @@ public class PositronicBrain implements Observer {
         Adult.addTask(stuff);
     }
 
-    public void generateReportAboutElectricityUsedByDay() {
+    public void generateReportAboutElectricityUsedByDay() throws IOException {
         int allElectricity = 0;
+        myWriter.write("_________________ Report for the " + dayCounter + " day _________________\n");
         for (Device device : devices) {
             allElectricity += device.getElectricityUsed();
-            System.out.println(device.getType() + " has used " + device.getElectricityUsed() + " electricity for today");
+            myWriter.write(device.getType() + " has used " + device.getElectricityUsed() + " electricity for today. " +
+                    "Was used " + device.getUsedTimes() + " times. " +
+                     "Was broken " + device.getBrokenTimes() + " times.\n");
+            device.resetElectricity();
+            device.resetUsedTimes();
+            device.resetBrokenTimes();
         }
-        System.out.println("All electricity used by day: " + allElectricity);
+        myWriter.write("On " + Home.getInstance().getAuto().getType() + " Adults go for food " + Home.getInstance().getAuto().getUsedTimes() + " times \n");
+        myWriter.write("All electricity used by day: " + allElectricity + "\n");
+        myWriter.flush();
+        Home.getInstance().getAuto().setUsedTimes(0);
+        dayCounter++;
     }
 
     public Device getRandomFreeDevice(List<Device> devices) {

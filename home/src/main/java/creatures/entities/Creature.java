@@ -4,6 +4,7 @@ import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
 
+import java.io.IOException;
 import java.util.Random;
 
 public interface Creature {
@@ -19,9 +20,9 @@ public interface Creature {
 
     void moveTo(Room room);
 
-    boolean chanceBrakeStuff(UsableObject usableObject);
+    boolean chanceBrakeStuff(UsableObject usableObject) throws IOException;
 
-    void useStuff(UsableObject usableObject);
+    void useStuff(UsableObject usableObject) throws IOException;
 
     CreaturesType getType();
 
@@ -33,7 +34,7 @@ public interface Creature {
 
     void stopCurrentAction();
 
-    void findActivity();
+    void findActivity() throws IOException;
 
     UsableObject getCurrentObject();
 
@@ -46,4 +47,6 @@ public interface Creature {
     void increaseHungerLevel();
 
     void resetHungerLevel();
+
+    int getAge();
 }

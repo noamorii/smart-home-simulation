@@ -11,6 +11,9 @@ import stuff.observe.PositronicBrain;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
+import java.io.IOException;
+import java.util.Random;
+
 public abstract class Pet implements Creature {
 
     private static final int PET_PERCENT_CHANCE = 95; // 5%
@@ -33,14 +36,14 @@ public abstract class Pet implements Creature {
     }
 
     @Override
-    public void findActivity() {
+    public void findActivity() throws IOException{
         PositronicBrain positronicBrain = PositronicBrain.getInstance();
         Device device = positronicBrain.adviceDeviceFor(this);
         useStuff(device);
         increaseHungerLevel();
     }
 
-    private boolean isEmptyPetFeeder(UsableObject usableObject) {
+    private boolean isEmptyPetFeeder(UsableObject usableObject) throws IOException{
 
         if (usableObject.getType() == StuffType.PET_FEEDER) {
 
@@ -63,7 +66,7 @@ public abstract class Pet implements Creature {
     }
 
     @Override
-    public boolean chanceBrakeStuff(UsableObject usableObject) {
+    public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
 
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
@@ -76,7 +79,7 @@ public abstract class Pet implements Creature {
     }
 
     @Override
-    public void useStuff(UsableObject usableObject) {
+    public void useStuff(UsableObject usableObject) throws IOException {
 
         if (usableObject != null) {
             System.out.println(this.getName() + " says: I am using " + usableObject.getType());

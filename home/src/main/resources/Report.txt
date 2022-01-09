@@ -1,0 +1,112 @@
+_________________ Report for the 1 day _________________
+FRIDGE has used 447 electricity for today. Was used 4 times. Was broken 1 times.
+CONDITIONER has used 273 electricity for today. Was used 3 times. Was broken 0 times.
+AUDIO_SYSTEM has used 105 electricity for today. Was used 4 times. Was broken 0 times.
+COMPUTER has used 273 electricity for today. Was used 3 times. Was broken 1 times.
+COMPUTER has used 273 electricity for today. Was used 6 times. Was broken 0 times.
+PET_FEEDER has used 90 electricity for today. Was used 9 times. Was broken 1 times.
+PHONE has used 174 electricity for today. Was used 2 times. Was broken 0 times.
+PHONE has used 126 electricity for today. Was used 5 times. Was broken 2 times.
+PHONE has used 174 electricity for today. Was used 2 times. Was broken 0 times.
+VACUUM has used 110 electricity for today. Was used 21 times. Was broken 0 times.
+PET_TOY has used 55 electricity for today. Was used 10 times. Was broken 1 times.
+TV has used 131 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 135 electricity for today. Was used 11 times. Was broken 1 times.
+On AUTO Adults go for food 1 times 
+All electricity used by day: 2366
+_________________ Report for the 2 day _________________
+FRIDGE has used 700 electricity for today. Was used 4 times. Was broken 0 times.
+CONDITIONER has used 381 electricity for today. Was used 6 times. Was broken 1 times.
+AUDIO_SYSTEM has used 158 electricity for today. Was used 7 times. Was broken 0 times.
+COMPUTER has used 392 electricity for today. Was used 8 times. Was broken 0 times.
+COMPUTER has used 380 electricity for today. Was used 8 times. Was broken 0 times.
+PET_FEEDER has used 131 electricity for today. Was used 17 times. Was broken 0 times.
+PHONE has used 228 electricity for today. Was used 6 times. Was broken 0 times.
+PHONE has used 226 electricity for today. Was used 5 times. Was broken 1 times.
+PHONE has used 238 electricity for today. Was used 5 times. Was broken 0 times.
+VACUUM has used 175 electricity for today. Was used 27 times. Was broken 1 times.
+PET_TOY has used 89 electricity for today. Was used 13 times. Was broken 0 times.
+TV has used 185 electricity for today. Was used 14 times. Was broken 0 times.
+TV has used 195 electricity for today. Was used 16 times. Was broken 0 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 3478
+_________________ Report for the 3 day _________________
+FRIDGE has used 657 electricity for today. Was used 6 times. Was broken 1 times.
+CONDITIONER has used 372 electricity for today. Was used 8 times. Was broken 1 times.
+AUDIO_SYSTEM has used 153 electricity for today. Was used 5 times. Was broken 1 times.
+COMPUTER has used 403 electricity for today. Was used 7 times. Was broken 0 times.
+COMPUTER has used 392 electricity for today. Was used 8 times. Was broken 0 times.
+PET_FEEDER has used 132 electricity for today. Was used 12 times. Was broken 0 times.
+PHONE has used 250 electricity for today. Was used 3 times. Was broken 1 times.
+PHONE has used 248 electricity for today. Was used 3 times. Was broken 1 times.
+PHONE has used 206 electricity for today. Was used 7 times. Was broken 1 times.
+VACUUM has used 185 electricity for today. Was used 24 times. Was broken 1 times.
+PET_TOY has used 83 electricity for today. Was used 16 times. Was broken 0 times.
+TV has used 193 electricity for today. Was used 15 times. Was broken 1 times.
+TV has used 198 electricity for today. Was used 16 times. Was broken 1 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 3472
+_________________ Report for the 4 day _________________
+FRIDGE has used 680 electricity for today. Was used 5 times. Was broken 0 times.
+CONDITIONER has used 402 electricity for today. Was used 5 times. Was broken 0 times.
+AUDIO_SYSTEM has used 161 electricity for today. Was used 7 times. Was broken 1 times.
+COMPUTER has used 396 electricity for today. Was used 6 times. Was broken 0 times.
+COMPUTER has used 402 electricity for today. Was used 6 times. Was broken 0 times.
+PET_FEEDER has used 133 electricity for today. Was used 14 times. Was broken 1 times.
+PHONE has used 228 electricity for today. Was used 6 times. Was broken 0 times.
+PHONE has used 228 electricity for today. Was used 6 times. Was broken 0 times.
+PHONE has used 198 electricity for today. Was used 9 times. Was broken 0 times.
+VACUUM has used 193 electricity for today. Was used 22 times. Was broken 1 times.
+PET_TOY has used 79 electricity for today. Was used 14 times. Was broken 1 times.
+TV has used 196 electricity for today. Was used 16 times. Was broken 1 times.
+TV has used 192 electricity for today. Was used 17 times. Was broken 0 times.
+On AUTO Adults go for food 2 times 
+All electricity used by day: 3488
+_________________ Report for the 5 day _________________
+FRIDGE has used 634 electricity for today. Was used 5 times. Was broken 2 times.
+CONDITIONER has used 420 electricity for today. Was used 2 times. Was broken 0 times.
+AUDIO_SYSTEM has used 153 electricity for today. Was used 5 times. Was broken 0 times.
+COMPUTER has used 417 electricity for today. Was used 3 times. Was broken 0 times.
+COMPUTER has used 394 electricity for today. Was used 10 times. Was broken 0 times.
+PET_FEEDER has used 129 electricity for today. Was used 9 times. Was broken 4 times.
+PHONE has used 224 electricity for today. Was used 7 times. Was broken 0 times.
+PHONE has used 208 electricity for today. Was used 8 times. Was broken 0 times.
+PHONE has used 242 electricity for today. Was used 5 times. Was broken 0 times.
+VACUUM has used 200 electricity for today. Was used 22 times. Was broken 0 times.
+PET_TOY has used 87 electricity for today. Was used 14 times. Was broken 0 times.
+TV has used 202 electricity for today. Was used 18 times. Was broken 0 times.
+TV has used 209 electricity for today. Was used 18 times. Was broken 2 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 3519
+_________________ Report for the 6 day _________________
+FRIDGE has used 695 electricity for today. Was used 5 times. Was broken 0 times.
+CONDITIONER has used 408 electricity for today. Was used 4 times. Was broken 0 times.
+AUDIO_SYSTEM has used 152 electricity for today. Was used 4 times. Was broken 0 times.
+COMPUTER has used 392 electricity for today. Was used 8 times. Was broken 0 times.
+COMPUTER has used 388 electricity for today. Was used 7 times. Was broken 0 times.
+PET_FEEDER has used 128 electricity for today. Was used 13 times. Was broken 2 times.
+PHONE has used 202 electricity for today. Was used 7 times. Was broken 1 times.
+PHONE has used 220 electricity for today. Was used 6 times. Was broken 1 times.
+PHONE has used 234 electricity for today. Was used 5 times. Was broken 0 times.
+VACUUM has used 175 electricity for today. Was used 26 times. Was broken 1 times.
+PET_TOY has used 80 electricity for today. Was used 16 times. Was broken 0 times.
+TV has used 189 electricity for today. Was used 12 times. Was broken 3 times.
+TV has used 203 electricity for today. Was used 17 times. Was broken 1 times.
+On AUTO Adults go for food 2 times 
+All electricity used by day: 3466
+_________________ Report for the 7 day _________________
+FRIDGE has used 675 electricity for today. Was used 4 times. Was broken 0 times.
+CONDITIONER has used 378 electricity for today. Was used 9 times. Was broken 0 times.
+AUDIO_SYSTEM has used 152 electricity for today. Was used 4 times. Was broken 0 times.
+COMPUTER has used 403 electricity for today. Was used 4 times. Was broken 1 times.
+COMPUTER has used 419 electricity for today. Was used 2 times. Was broken 0 times.
+PET_FEEDER has used 136 electricity for today. Was used 9 times. Was broken 0 times.
+PHONE has used 228 electricity for today. Was used 6 times. Was broken 0 times.
+PHONE has used 186 electricity for today. Was used 10 times. Was broken 0 times.
+PHONE has used 234 electricity for today. Was used 6 times. Was broken 0 times.
+VACUUM has used 196 electricity for today. Was used 23 times. Was broken 0 times.
+PET_TOY has used 84 electricity for today. Was used 16 times. Was broken 0 times.
+TV has used 212 electricity for today. Was used 21 times. Was broken 1 times.
+TV has used 190 electricity for today. Was used 16 times. Was broken 0 times.
+On AUTO Adults go for food 2 times 
+All electricity used by day: 3493

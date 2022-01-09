@@ -7,6 +7,7 @@ import stuff.devices.StuffType;
 import stuff.state.BrokenState;
 import stuff.state.UsingState;
 
+import java.io.IOException;
 import java.util.Random;
 
 public class Bike extends Sport implements Transport{
@@ -22,7 +23,7 @@ public class Bike extends Sport implements Transport{
     }
 
     @Override
-    public void goOutFromHome(Person person) {
+    public void goOutFromHome(Person person) throws IOException {
         setState(new UsingState(this));
         home.goOut(person);
         System.out.println(person.getName() + " is going to ride a bike");

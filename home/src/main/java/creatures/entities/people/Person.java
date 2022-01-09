@@ -10,6 +10,7 @@ import stuff.observe.PositronicBrain;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
+import java.io.IOException;
 import java.util.Random;
 
 public abstract class Person implements Creature {
@@ -35,7 +36,7 @@ public abstract class Person implements Creature {
     public abstract void say();
 
     @Override
-    public abstract boolean chanceBrakeStuff(UsableObject usableObject);
+    public abstract boolean chanceBrakeStuff(UsableObject usableObject) throws IOException;
 
     public boolean flipCoin() {
         return (new Random()).nextBoolean();
@@ -46,7 +47,7 @@ public abstract class Person implements Creature {
         System.out.println("Person: " + name + " is waiting for now");
     }
 
-    public void findActivity() {
+    public void findActivity() throws IOException {
 
         UsableObject stuff;
 
@@ -61,7 +62,7 @@ public abstract class Person implements Creature {
         useStuff(stuff);
     }
 
-    public void useStuff(UsableObject usableObject) {
+    public void useStuff(UsableObject usableObject) throws IOException {
 
         if (usableObject != null) {
             System.out.println(this.getName() + " says: I am using " + usableObject.getType());
@@ -135,6 +136,7 @@ public abstract class Person implements Creature {
         return name;
     }
 
+    @Override
     public int getAge() {
         return age;
     }

@@ -7,6 +7,10 @@ import stuff.Auto;
 import stuff.UsableObject;
 import stuff.devices.*;
 
+import stuff.observe.PositronicBrain;
+import stuff.state.UsingState;
+
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
@@ -26,7 +30,7 @@ public class Adult extends Person {
     }
 
     @Override
-    public void findActivity() {
+    public void findActivity() throws IOException {
 
         if (!getToDoList().isEmpty()) { //check if toDoList is empty
             doTasks();
@@ -55,7 +59,7 @@ public class Adult extends Person {
     }
 
     @Override
-    public boolean chanceBrakeStuff(UsableObject usableObject) {
+    public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
 
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 

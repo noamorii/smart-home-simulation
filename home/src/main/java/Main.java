@@ -64,8 +64,8 @@ public class Main {
         peopleFactory.create(CreaturesType.ADULT, "Mama", 35, bedroom2);
         peopleFactory.create(CreaturesType.CHILD, "Pepa", 14, hallway);
         peopleFactory.create(CreaturesType.CHILD, "George", 9, bedroom);
-        petFactory.create(CreaturesType.CAT, "Fluffy", 2, "White", livingRoom);
-        petFactory.create(CreaturesType.PARROT, "Popka", 1, "Red", livingRoom);
+        petFactory.create(CreaturesType.CAT, "Fluffy", 2, "Persian cat", livingRoom);
+        petFactory.create(CreaturesType.PARROT, "Popka", 1, "Ara parrot", livingRoom);
         List<Creature> creatures = new ArrayList<>();
         creatures.addAll(peopleFactory.getPeople());
         creatures.addAll(petFactory.getPets());
@@ -82,7 +82,9 @@ public class Main {
         Device smartPhone2 = deviceFactory.createDevice(bedroom2,StuffType.PHONE);
         Device smartPhone3 = deviceFactory.createDevice(livingRoom,StuffType.PHONE);
         Device smartVacuum = deviceFactory.createDevice(hallway,StuffType.VACUUM);
+        Device pet_toy = deviceFactory.createDevice(hallway,StuffType.PET_TOY);
         Device tv = deviceFactory.createDevice(kitchen,StuffType.TV);
+        Device tv2 = deviceFactory.createDevice(bedroom, StuffType.TV);
 
 
         SportFactory sportFactory = SportFactory.getInstance();
@@ -93,8 +95,8 @@ public class Main {
         Sport orbitek = sportFactory.createSport(garage, StuffType.ORBITREK);
         Sport stepper = sportFactory.createSport(garage, StuffType.TREADMILL);
 
-        hallway.setStuff(Arrays.asList(smartVacuum, petFeeder, airConditioner));
-        bedroom.setStuff(Arrays.asList(computer, smartPhone1));
+        hallway.setStuff(Arrays.asList(smartVacuum, petFeeder, airConditioner, pet_toy));
+        bedroom.setStuff(Arrays.asList(computer, smartPhone1, tv2));
         bedroom2.setStuff(Arrays.asList(smartPhone2, computer1));
         livingRoom.setStuff(Arrays.asList(audioSystem,smartPhone3));
         kitchen.setStuff(Arrays.asList(fridge, tv));
@@ -132,7 +134,7 @@ public class Main {
 ////            System.out.println(papa.toString());}
 //        }
 //        positronicBrain.generateReportAboutElectricityUsedByDay();
-        Simulation simulation = new Simulation(144, "8:10");
+        Simulation simulation = new Simulation(1008, "8:00");
         simulation.run();
     }
 }

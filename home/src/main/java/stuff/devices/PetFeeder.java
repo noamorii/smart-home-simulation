@@ -5,6 +5,8 @@ import stuff.state.BrokenState;
 import stuff.state.RestingState;
 import stuff.state.UsingState;
 
+import java.io.IOException;
+
 public class PetFeeder extends Device implements FoodContainer {
 
     private static final int USING_TICKS = 2;
@@ -32,8 +34,8 @@ public class PetFeeder extends Device implements FoodContainer {
     }
 
     @Override
-    public void usingStuff() {
-
+    public void usingStuff() throws IOException {
+        setUsedTimes(getUsedTimes() + 1);
         if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Pet Feeder is over");

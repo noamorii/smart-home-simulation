@@ -4,6 +4,9 @@ import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
 
+import java.io.IOException;
+import java.util.Random;
+
 public class Child extends Person {
 
     private static final int CHILD_PERCENT_CHANCE = 90; // 10%
@@ -17,7 +20,7 @@ public class Child extends Person {
     }
 
     @Override
-    public boolean chanceBrakeStuff(UsableObject usableObject) {
+    public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
 
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 

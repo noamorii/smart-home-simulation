@@ -7,6 +7,8 @@ import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
+import java.io.IOException;
+
 public abstract class UsableObject implements Observed {
 
     private final int usingTicks;
@@ -22,6 +24,8 @@ public abstract class UsableObject implements Observed {
     private final int electricityInRestingState;
     private final int electricityInBrokenState;
     private final int electricityInUsingState;
+    private int usedTimes = 0;
+    private int brokenTimes = 0;
 
     protected UsableObject(int usingTicks, Room room, StuffType type,
            int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
@@ -53,6 +57,21 @@ public abstract class UsableObject implements Observed {
             return currentState.getTicks();
         }
         return usingTicks;
+    }
+
+    public int getUsedTimes() {
+        return usedTimes;
+    }
+    public int getBrokenTimes() {
+        return brokenTimes;
+    }
+
+    public void setUsedTimes(int usedTimes) {
+        this.usedTimes = usedTimes;
+    }
+
+    public void setBrokenTimes(int brokenTimes) {
+        this.brokenTimes = brokenTimes;
     }
 
     public Room getCurrentRoom() {
@@ -87,12 +106,26 @@ public abstract class UsableObject implements Observed {
         currentState.usingElectricity();
     }
 
-    public void usingStuff() {
+    public void usingStuff() throws IOException{
+        usedTimes++;
         setState(new UsingState(this));
         usingElectricity();
     }
 
-    public void breakingDevice(){
+    public void resetElectricity(){
+        electricityUsed = 0;
+    }
+
+    public void resetUsedTimes(){
+        usedTimes = 0;
+    }
+
+    public void resetBrokenTimes(){
+        brokenTimes = 0;
+    }
+
+    public void breakingDevice() throws IOException {
+        brokenTimes++;
         setState(new BrokenState(this));
         notifyObserver();
         usingElectricity();
@@ -110,7 +143,7 @@ public abstract class UsableObject implements Observed {
     }
 
     @Override
-    public void notifyObserver() {
+    public void notifyObserver() throws IOException {
         System.out.println("Positronic Brain handle event with " + getType());
         PositronicBrain.getInstance().handleEvent(this);
     }

@@ -22,6 +22,14 @@ public class Home {
         instance = this;
     }
 
+    public String getAddress() {
+        return address;
+    }
+
+    public List<Floor> getFloors() {
+        return floors;
+    }
+
     public static Home getInstance() {
         return instance;
     }

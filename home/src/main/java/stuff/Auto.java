@@ -22,6 +22,7 @@ public class Auto extends UsableObject implements Transport{
     public void goOutFromHome(Person person) {
 
         if (person.getType().equals(CreaturesType.ADULT)) {
+            setUsedTimes(getUsedTimes() + 1);
             setState(new UsingState(this));
             person.setUsingObject(this);
             home.goOut(person);
