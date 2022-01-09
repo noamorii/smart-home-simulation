@@ -6,6 +6,7 @@ import stuff.UsableObject;
 import stuff.devices.Device;
 import stuff.observe.PositronicBrain;
 import stuff.state.RestingState;
+import stuff.state.UsingState;
 
 import java.util.Random;
 
@@ -26,11 +27,12 @@ public class Child extends Person {
         Random rand = new Random();
         int upperbound = 11;
         int int_random = rand.nextInt(upperbound);
-        if (int_random > 7) {
+        if (int_random > 9) {
             brakeStuff(usableObject);
         } else {
+            usingObject = usableObject;
             usableObject.usingDevice();
-            usableObject.setState(new RestingState(usableObject));
+            usableObject.setState(new UsingState(usableObject));
         }
     }
 
@@ -47,5 +49,4 @@ public class Child extends Person {
         System.out.println("Moooooooooom!");
         usableObject.breakingDevice();
     }
-
 }

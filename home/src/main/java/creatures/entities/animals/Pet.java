@@ -13,7 +13,8 @@ public abstract class Pet implements Creature {
     private Room room;
 
     private int hungerLevel = 0;
-    private int currentActionProgress = 0;
+    private int currentActionProgress = 1;
+    private UsableObject usingObject = null;
 
     public Pet(String nickname, String breed, int age, CreaturesType type, Room room) {
         this.nickname = nickname;
@@ -39,7 +40,7 @@ public abstract class Pet implements Creature {
     }
 
     public void stopCurrentAction() {
-        currentActionProgress = 0;
+        currentActionProgress = 1;
     }
 
     public int getCurrentActionProgress() {
@@ -83,13 +84,27 @@ public abstract class Pet implements Creature {
     }
 
     @Override
+    public UsableObject getCurrentObject() {
+        return usingObject;
+    }
+
+    @Override
+    public void increaseProgress() {
+        currentActionProgress++;
+    }
+
+    @Override
+    public String getName() {
+        return nickname;
+    }
+
+    @Override
     public CreaturesType getMainCreatureType() {
         return CreaturesType.PET;
     }
 
     @Override
     public void findActivity() {
-
     }
 }
 

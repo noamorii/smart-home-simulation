@@ -29,7 +29,19 @@ public class Simulation {
 
             for (Creature creature: creatures) {
                 if (creature.getCurrentActionProgress() == 0) {
+            for (Creature creature: Home.getCreatures()) {
+                if (creature.getCurrentObject() == null ||
+                    creature.getCurrentActionProgress() == creature.getCurrentObject().getTicks()) {
+                    if (creature.getCurrentObject() != null) creature.stopCurrentAction();
                     creature.findActivity();
+                } else {
+                    creature.increaseProgress();
+                }
+
+                if (creature.getCurrentObject() != null) {
+                    System.out.println("-------creature " + creature.getType() + " with name: " + creature.getName()
+                            + " using obj:" + creature.getCurrentObject().getType() + " object state:" + creature.getCurrentObject().getCurrentState().getType() + " with tick " + creature.getCurrentActionProgress() +
+                            " from device ticks " + creature.getCurrentObject().getTicks()) ;
                 }
             }
             if (time.getCurrentTime().equals("Time: 00:00")){
