@@ -1,9 +1,16 @@
 import creatures.entities.Creature;
 import house.Home;
+import stuff.UsableObject;
+import stuff.devices.Device;
+import stuff.devices.factory.DeviceFactory;
 import stuff.observe.PositronicBrain;
+import stuff.sport.Sport;
+import stuff.sport.factory.SportFactory;
+import stuff.state.StateType;
 import util.TimeRepresentation;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Simulation {
     
@@ -42,6 +49,18 @@ public class Simulation {
                             " from device ticks " + creature.getCurrentObject().getTicks()) ;
                 }
             }
+
+            List<UsableObject> usableObjects= DeviceFactory.getInstance().getDevices().stream()
+                    .filter((d) -> d.getCurrentState()
+                            .getType().equals(StateType.RESTING))
+                    .collect(Collectors.toList());
+            usableObjects.addAll(SportFactory.getInstance().getSports().stream().filter((s)->s.getCurrentState()
+                    .getType().equals(StateType.RESTING))
+                    .collect(Collectors.toList()));
+            for (UsableObject usableObject: usableObjects) {
+                usableObject.usingElectricity();
+            }
+
             if (time.getCurrentTime().equals("Time: 00:00")){
                 PositronicBrain.getInstance().generateReportAboutElectricityUsedByDay();
             }

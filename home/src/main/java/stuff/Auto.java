@@ -5,6 +5,7 @@ import creatures.factories.CreaturesType;
 import house.Home;
 import house.Room;
 import stuff.devices.StuffType;
+import stuff.state.UsingState;
 
 public class Auto extends UsableObject implements Transport{
 
@@ -20,10 +21,11 @@ public class Auto extends UsableObject implements Transport{
     @Override
     public void goOutFromHome(Person person) {
         if (person.getType().equals(CreaturesType.ADULT)) {
+            setState(new UsingState(this));
+            person.setUsingObject(this);
             Home home = Home.getInstance();
             home.goOut(person);
             System.out.println(person.getName() + " goes for food");
-            //какое-то время спустя
             home.comeBackHome(person);
         } else {
             System.out.println("Children can not drive a car");

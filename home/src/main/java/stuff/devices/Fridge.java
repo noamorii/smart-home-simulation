@@ -1,13 +1,15 @@
 package stuff.devices;
 
 import house.Room;
+import stuff.state.BrokenState;
+import stuff.state.FixingState;
 import stuff.state.RestingState;
 import stuff.state.UsingState;
 
 public class Fridge extends Device implements FoodContainer {
 
     private static final int USING_TICKS = 2;
-    private static final int MAX_FOOD_CAPACITY = 1;
+    private static final int MAX_FOOD_CAPACITY = 10;
     private static final int RESTING_ELECTRICITY = 5;
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 5;
@@ -33,18 +35,25 @@ public class Fridge extends Device implements FoodContainer {
 
     @Override
     public void refillingFeed() {
-        setState(new RestingState(this));
+        System.out.println("Kladu kolbasu v cholodos");
+        setState(new UsingState(this));
         currentFoodCapacity = MAX_FOOD_CAPACITY;
+    }
+
+    @Override
+    public void usingDevice(){
+        eating();
+        usingElectricity();
     }
 
     @Override
     public void eating() {
         setState(new UsingState(this));
-
         if (currentFoodCapacity > 0) {
             currentFoodCapacity--;
             System.out.println("Food in Fridge is running out, my lord");
         } else {
+            setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
             isEmpty = true;
             notifyObserver();

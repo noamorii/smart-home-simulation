@@ -47,21 +47,20 @@ public class Adult extends Person {
                 System.out.println("NA SPORTIKE");
                 doSport();
             } else {
-
                 UsableObject currentStuff = getToDoList().poll();
                 switch (currentStuff.getType()) {
                     case FRIDGE:
-                        if (((Fridge) currentStuff).isEmpty()) {
-                            refillFridge((Fridge) currentStuff);
-                        } else {
+                        if (!((Fridge) currentStuff).isEmpty()) {
                             repairStuff(currentStuff);
+                        } else {
+                            refillFridge((Fridge) currentStuff);
                         }
                         break;
                     case PET_FEEDER:
-                        if (((PetFeeder) currentStuff).isEmpty()) {
-                            refillPetFeeder((PetFeeder) currentStuff);
-                        } else {
+                        if (!((PetFeeder) currentStuff).isEmpty()) {
                             repairStuff(currentStuff);
+                        } else {
+                            refillPetFeeder((PetFeeder) currentStuff);
                         }
                         break;
                     default:
@@ -91,17 +90,17 @@ public class Adult extends Person {
         }
     }
 
-    public void zratb() {
-        System.out.println(this.getName() + " goes to zratb");
-        DeviceFactory deviceFactory = DeviceFactory.getInstance();
-        List<Device> devices = deviceFactory.getDevices();
-        for (Device d : devices) {
-            if (d.getType().equals(StuffType.FRIDGE)) {
-                Fridge fridge = (Fridge) d;
-                fridge.eating();
-            }
-        }
-    }
+//    public void zratb() {
+//        System.out.println(this.getName() + " goes to zratb");
+//        DeviceFactory deviceFactory = DeviceFactory.getInstance();
+//        List<Device> devices = deviceFactory.getDevices();
+//        for (Device d : devices) {
+//            if (d.getType().equals(StuffType.FRIDGE)) {
+//                Fridge fridge = (Fridge) d;
+//                fridge.eating();
+//            }
+//        }
+//    }
 
     @Override
     public void brakeStuff(UsableObject usableObject) {

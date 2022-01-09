@@ -33,6 +33,10 @@ public abstract class Person implements Creature {
         this.type = type;
     }
 
+    public void setUsingObject(UsableObject usingObject) {
+        this.usingObject = usingObject;
+    }
+
     @Override
     public abstract void say();
 
