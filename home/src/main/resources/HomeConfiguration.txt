@@ -1,0 +1,18 @@
+In our Home by address Revolution 550/1 we have 2 floors
+On the 1 floor we have 3 rooms: 
+In the Hallway are: VACUUM PET_FEEDER CONDITIONER PET_TOY 
+In the Kitchen are: FRIDGE TV 
+In the Garage are: BIKE BIKE TREADMILL TREADMILL ORBITREK TREADMILL 
+On the 2 floor we have 3 rooms: 
+In the Children's bedroom are: COMPUTER PHONE TV 
+In the Parents' bedroom are: PHONE COMPUTER 
+In the Living room are: AUDIO_SYSTEM PHONE 
+In the house living 4 people, and 2 pets.
+People:
+Pepa 14 years old.
+George 9 years old.
+Mama 35 years old.
+Papa 40 years old.
+Pets:
+Persian cat Fluffy 2 years old.
+Ara parrot Popka 1 years old.
