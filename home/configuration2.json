@@ -2,7 +2,7 @@
   "simulation": [
     {
       "starting_time": "9:00",
-      "iterations" : 1000
+      "iterations": 1000
     }
   ],
   "home": [
@@ -16,8 +16,19 @@
               "name": "Hallway",
               "staff": [
                 {
-                  "sport": [{"type": "stepper"}],
-                  "devices": [ {"type": "pet_toy"}, {"type": "tv"} ]
+                  "sport": [
+                    {
+                      "type": "stepper"
+                    }
+                  ],
+                  "devices": [
+                    {
+                      "type": "pet_toy"
+                    },
+                    {
+                      "type": "tv"
+                    }
+                  ]
                 }
               ]
             },
@@ -26,7 +37,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "pet_feeder"}, {"type": "fridge"} ]
+                  "devices": [
+                    {
+                      "type": "pet_feeder"
+                    },
+                    {
+                      "type": "fridge"
+                    }
+                  ]
                 }
               ]
             },
@@ -34,10 +52,25 @@
               "name": "Garage",
               "staff": [
                 {
-                  "sport": [ {"type": "bike"},
-                    {"type": "treadmill"}, { "type": "orbitrek"}
+                  "sport": [
+                    {
+                      "type": "bike"
+                    },
+                    {
+                      "type": "treadmill"
+                    },
+                    {
+                      "type": "orbitrek"
+                    }
                   ],
-                  "devices": [ {"type": "pet_toy"}, {"type": "phone"}]
+                  "devices": [
+                    {
+                      "type": "pet_toy"
+                    },
+                    {
+                      "type": "phone"
+                    }
+                  ]
                 }
               ]
             }
@@ -50,8 +83,22 @@
               "name": "Children's bedroom",
               "staff": [
                 {
-                  "sport": [{"type": "orbitrek"}],
-                  "devices": [ {"type": "phone"}, {"type": "computer"}, {"type": "vacuum"} ]
+                  "sport": [
+                    {
+                      "type": "orbitrek"
+                    }
+                  ],
+                  "devices": [
+                    {
+                      "type": "phone"
+                    },
+                    {
+                      "type": "computer"
+                    },
+                    {
+                      "type": "vacuum"
+                    }
+                  ]
                 }
               ]
             },
@@ -60,7 +107,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "tv"}, {"type": "computer"} ]
+                  "devices": [
+                    {
+                      "type": "tv"
+                    },
+                    {
+                      "type": "computer"
+                    }
+                  ]
                 }
               ]
             },
@@ -69,7 +123,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "audio_system"}, {"type": "tv"} ]
+                  "devices": [
+                    {
+                      "type": "audio_system"
+                    },
+                    {
+                      "type": "tv"
+                    }
+                  ]
                 }
               ]
             }
@@ -82,8 +143,19 @@
               "name": "Workplace",
               "staff": [
                 {
-                  "sport": [{"type": "treadmill"}],
-                  "devices": [ {"type": "computer"}, {"type": "conditioner"} ]
+                  "sport": [
+                    {
+                      "type": "treadmill"
+                    }
+                  ],
+                  "devices": [
+                    {
+                      "type": "computer"
+                    },
+                    {
+                      "type": "conditioner"
+                    }
+                  ]
                 }
               ]
             },
@@ -92,7 +164,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "tv"}, {"type": "audio_system"} ]
+                  "devices": [
+                    {
+                      "type": "tv"
+                    },
+                    {
+                      "type": "audio_system"
+                    }
+                  ]
                 }
               ]
             }
@@ -110,13 +189,13 @@
               "name": "Unicorn",
               "age": 3,
               "breed": "Sphinx",
-              "room" : "Workplace"
+              "room": "Workplace"
             },
             {
               "name": "Floppa",
               "age": 2,
               "breed": "Persian cat",
-              "room" : "Children's bedroom"
+              "room": "Children's bedroom"
             }
           ],
           "parrots": [
@@ -124,7 +203,7 @@
               "name": "Popka",
               "age": 1,
               "breed": "Ara-ara",
-              "room" : "Dancing room"
+              "room": "Dancing room"
             }
           ]
         }
@@ -135,22 +214,22 @@
             {
               "name": "Dad",
               "age": 40,
-              "room" : "Parents' bedroom"
+              "room": "Parents' bedroom"
             },
             {
               "name": "Mom",
               "age": 35,
-              "room" : "Parents' bedroom"
+              "room": "Parents' bedroom"
             },
             {
               "name": "Grandma",
               "age": 75,
-              "room" : "Guest room"
+              "room": "Guest room"
             },
             {
               "name": "Grandfather",
               "age": 79,
-              "room" : "Guest room"
+              "room": "Guest room"
             }
           ]
         },
@@ -159,12 +238,12 @@
             {
               "name": "Jan",
               "age": 8,
-              "room" : "Children's bedroom"
+              "room": "Children's bedroom"
             },
             {
               "name": "Dima",
               "age": 10,
-              "room" : "Living room"
+              "room": "Living room"
             }
           ]
         }

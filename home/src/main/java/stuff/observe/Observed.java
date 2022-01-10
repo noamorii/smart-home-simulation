@@ -6,7 +6,6 @@ public interface Observed {
 
     /**
      * Positronic brain notification of an incident
-     *
      */
     void notifyObserver() throws IOException;
 }

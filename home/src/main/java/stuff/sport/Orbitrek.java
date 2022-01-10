@@ -3,7 +3,9 @@ package stuff.sport;
 import house.Room;
 import stuff.devices.StuffType;
 
-public class Orbitrek extends Sport{
+import java.io.IOException;
+
+public class Orbitrek extends Sport {
 
     private static final int USING_TICKS = 4;
     private static final int RESTING_ELECTRICITY = 1;
@@ -13,9 +15,9 @@ public class Orbitrek extends Sport{
     /**
      * Instantiates a Orbitrek.
      *
-     * @param room          the location
+     * @param room the location
      */
-    public Orbitrek(Room room) {
+    public Orbitrek(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.ORBITREK,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }

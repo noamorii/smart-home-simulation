@@ -15,9 +15,9 @@ public class RestingState implements UsableObjectState {
     /**
      * Instantiates a Resting State.
      *
-     * @param stuff         Sets an object in this state.
+     * @param stuff Sets an object in this state.
      */
-    public RestingState(UsableObject stuff){
+    public RestingState(UsableObject stuff) {
         this.stuff = stuff;
         this.type = StateType.RESTING;
     }

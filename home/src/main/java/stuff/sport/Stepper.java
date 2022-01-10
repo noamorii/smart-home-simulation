@@ -3,6 +3,8 @@ package stuff.sport;
 import house.Room;
 import stuff.devices.StuffType;
 
+import java.io.IOException;
+
 public class Stepper extends Sport {
 
     private static final int USING_TICKS = 4;
@@ -13,9 +15,9 @@ public class Stepper extends Sport {
     /**
      * Instantiates a Stepper.
      *
-     * @param room          the location
+     * @param room the location
      */
-    public Stepper(Room room) {
+    public Stepper(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.STEPPER,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }

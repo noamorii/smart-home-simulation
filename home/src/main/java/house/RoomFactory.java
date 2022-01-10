@@ -1,7 +1,5 @@
 package house;
 
-import stuff.sport.Sport;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -12,7 +10,7 @@ public class RoomFactory {
     /**
      * Factory method that creates rooms.
      *
-     * @param name           room's name
+     * @param name room's name
      * @return Room
      */
     public Room create(String name) throws Exception {

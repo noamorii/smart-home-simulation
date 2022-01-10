@@ -4,7 +4,6 @@ import creatures.entities.people.Adult;
 import creatures.entities.people.Child;
 import creatures.entities.people.Person;
 import house.Room;
-import stuff.devices.factory.DeviceFactory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,7 +12,8 @@ public class PeopleFactory {
 
     private static PeopleFactory instance = null;
 
-    private PeopleFactory(){}
+    private PeopleFactory() {
+    }
 
     /**
      * List of all persons
@@ -31,12 +31,12 @@ public class PeopleFactory {
     }
 
     /**
-     *  Factory method that creates people and adds it to the list.
+     * Factory method that creates people and adds it to the list.
      *
-     * @param type           person's type
-     * @param name           person's name
-     * @param age            person's age
-     * @param room           person's room
+     * @param type person's type
+     * @param name person's name
+     * @param age  person's age
+     * @param room person's room
      * @return person
      */
     public Person create(CreaturesType type, String name, int age, Room room) throws Exception {
@@ -51,6 +51,7 @@ public class PeopleFactory {
 
     /**
      * Returns list of all persons.
+     *
      * @return List of persons
      */
     public List<Person> getPeople() {

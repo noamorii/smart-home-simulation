@@ -15,9 +15,9 @@ public class BrokenState implements UsableObjectState {
     /**
      * Instantiates a Broken State.
      *
-     * @param stuff         Sets an object in this state.
+     * @param stuff Sets an object in this state.
      */
-    public BrokenState(UsableObject stuff){
+    public BrokenState(UsableObject stuff) {
         this.stuff = stuff;
         this.type = StateType.BROKEN;
     }

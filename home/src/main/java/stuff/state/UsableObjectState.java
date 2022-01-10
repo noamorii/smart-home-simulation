@@ -23,7 +23,7 @@ public interface UsableObjectState {
     /**
      * Sets an object in this state.
      *
-     * @param usableObject              the object to be placed in this status
+     * @param usableObject the object to be placed in this status
      */
     void setUsableObject(UsableObject usableObject);
 

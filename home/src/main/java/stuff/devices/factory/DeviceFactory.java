@@ -13,7 +13,8 @@ public class DeviceFactory {
     /**
      * Private singleton constructor
      */
-    private DeviceFactory(){}
+    private DeviceFactory() {
+    }
 
     /**
      * Returns the instance ot the Device Factory.
@@ -33,8 +34,8 @@ public class DeviceFactory {
     /**
      * Factory method that creates devices and adds it to the list.
      *
-     * @param room                  the location
-     * @param type                  device's type
+     * @param room the location
+     * @param type device's type
      * @return device
      */
     public Device createDevice(Room room, StuffType type) throws Exception {
@@ -48,7 +49,7 @@ public class DeviceFactory {
             case PET_FEEDER -> new PetFeeder(room);
             case PHONE -> new SmartPhone(room);
             case TV -> new TV(room);
-            default -> throw new Exception("We don't have device: "+ type + " in the house");
+            default -> throw new Exception("We don't have device: " + type + " in the house");
         };
 
         room.addStuff(device);

@@ -2,7 +2,7 @@
   "simulation": [
     {
       "starting_time": "8:10",
-      "iterations" : 144
+      "iterations": 144
     }
   ],
   "home": [
@@ -17,8 +17,20 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "pet_toy"}, {"type": "vacuum"},
-                    {"type": "pet_feeder"}, {"type": "conditioner"} ]
+                  "devices": [
+                    {
+                      "type": "pet_toy"
+                    },
+                    {
+                      "type": "vacuum"
+                    },
+                    {
+                      "type": "pet_feeder"
+                    },
+                    {
+                      "type": "conditioner"
+                    }
+                  ]
                 }
               ]
             },
@@ -27,7 +39,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "tv"}, {"type": "fridge"} ]
+                  "devices": [
+                    {
+                      "type": "tv"
+                    },
+                    {
+                      "type": "fridge"
+                    }
+                  ]
                 }
               ]
             },
@@ -35,9 +54,25 @@
               "name": "Garage",
               "staff": [
                 {
-                  "sport": [ {"type": "bike"}, {"type": "bike"},
-                    {"type": "treadmill"},{ "type": "treadmill"},
-                    { "type": "orbitrek"}, {"type": "treadmill"}
+                  "sport": [
+                    {
+                      "type": "bike"
+                    },
+                    {
+                      "type": "bike"
+                    },
+                    {
+                      "type": "treadmill"
+                    },
+                    {
+                      "type": "treadmill"
+                    },
+                    {
+                      "type": "orbitrek"
+                    },
+                    {
+                      "type": "treadmill"
+                    }
                   ],
                   "devices": []
                 }
@@ -53,7 +88,17 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "computer"}, {"type": "phone"}, {"type": "tv"} ]
+                  "devices": [
+                    {
+                      "type": "computer"
+                    },
+                    {
+                      "type": "phone"
+                    },
+                    {
+                      "type": "tv"
+                    }
+                  ]
                 }
               ]
             },
@@ -62,7 +107,14 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "phone"}, {"type": "computer"} ]
+                  "devices": [
+                    {
+                      "type": "phone"
+                    },
+                    {
+                      "type": "computer"
+                    }
+                  ]
                 }
               ]
             },
@@ -71,14 +123,20 @@
               "staff": [
                 {
                   "sport": [],
-                  "devices": [ {"type": "audio_system"}, {"type": "phone"} ]
+                  "devices": [
+                    {
+                      "type": "audio_system"
+                    },
+                    {
+                      "type": "phone"
+                    }
+                  ]
                 }
               ]
             }
           ]
         }
       ]
-
     }
   ],
   "creatures": [
@@ -90,7 +148,7 @@
               "name": "Fluffy",
               "age": 2,
               "breed": "Persian cat",
-              "room" : "Living room"
+              "room": "Living room"
             }
           ],
           "parrots": [
@@ -98,7 +156,7 @@
               "name": "Parry",
               "age": 1,
               "breed": "Ara parrot",
-              "room" : "Living room"
+              "room": "Living room"
             }
           ]
         }
@@ -109,12 +167,12 @@
             {
               "name": "Dad",
               "age": 40,
-              "room" : "Parents' bedroom"
+              "room": "Parents' bedroom"
             },
             {
               "name": "Mom",
               "age": 35,
-              "room" : "Parents' bedroom"
+              "room": "Parents' bedroom"
             }
           ]
         },
@@ -123,12 +181,12 @@
             {
               "name": "Pepa",
               "age": 14,
-              "room" : "Children's bedroom"
+              "room": "Children's bedroom"
             },
             {
               "name": "George",
               "age": 9,
-              "room" : "Living room"
+              "room": "Living room"
             }
           ]
         }

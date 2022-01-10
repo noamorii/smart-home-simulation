@@ -47,13 +47,13 @@ public class Adult extends Person {
     /**
      * Activities that an adult should do first.
      */
-    private void doTasks() {
+    private void doTasks() throws IOException {
         UsableObject currentStuff = getToDoList().poll();//take first element (not remove)
         Objects.requireNonNull(currentStuff);
         moveTo(currentStuff.getCurrentRoom());
 
         if (currentStuff.getType() == StuffType.FRIDGE ||
-            currentStuff.getType() == StuffType.PET_FEEDER) {
+                currentStuff.getType() == StuffType.PET_FEEDER) {
 
             FoodContainer container =
                     (FoodContainer) currentStuff.getClass().cast(currentStuff);
@@ -66,12 +66,12 @@ public class Adult extends Person {
     }
 
     @Override
-    public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
+    public boolean chanceBrakeStuff(UsableObject usableObject) {
 
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
         if (randomPercent > ADULT_PERCENT_CHANCE) {
-            System.out.println(this.getName() + " says: I broke " + usableObject.getType());
+            usableObject.addEventToReport(this.getName() + " says: I broke " + usableObject.getType());
             usableObject.breakingDevice();
             return true;
         }
@@ -81,10 +81,10 @@ public class Adult extends Person {
     /**
      * Repairing of the devices and sport inventory.
      *
-     * @param usableObject          an object that an adult will fix
+     * @param usableObject an object that an adult will fix
      */
-    private void repairStuff(UsableObject usableObject) {
-        System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
+    private void repairStuff(UsableObject usableObject) throws IOException {
+        usableObject.addEventToReport(this.getName() + " is going to repair the " + usableObject.getType());
         Manual manual = usableObject.getManual();
         manual.readManual();
         usingObject = usableObject;
@@ -94,9 +94,9 @@ public class Adult extends Person {
     /**
      * Replenishment of food supplies.
      *
-     * @param container               container in which food is replenished
+     * @param container container in which food is replenished
      */
-    private void refill(FoodContainer container) {
+    private void refill(FoodContainer container) throws IOException {
         Auto auto = Home.getInstance().getAuto();
 
         this.moveTo(auto.getCurrentRoom());
@@ -107,11 +107,11 @@ public class Adult extends Person {
 
         container.refill();
         usingObject = (UsableObject) container;
-        System.out.println(this.getName() + " is going to refill the " + container.getType());
+        usingObject.addEventToReport(this.getName() + " is going to refill the " + container.getType());
     }
 
     /**
-     *Returns the queue of objects to deal with first
+     * Returns the queue of objects to deal with first
      *
      * @return Queue of UsableObject
      */
@@ -122,7 +122,7 @@ public class Adult extends Person {
     /**
      * Adding an object to your to-do list.
      *
-     * @param object                 object to add to your to-do list
+     * @param object object to add to your to-do list
      */
     public static void addTask(UsableObject object) {
         toDoList.add(object);

@@ -12,7 +12,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import stuff.Auto;
-import stuff.UsableObject;
 import stuff.devices.StuffType;
 import stuff.devices.factory.DeviceFactory;
 import stuff.sport.factory.SportFactory;

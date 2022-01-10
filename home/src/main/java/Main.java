@@ -1,6 +1,3 @@
-
-import house.Home;
-import house.Room;
 import util.Config;
 import util.Simulation;
 

@@ -2,7 +2,9 @@ package stuff.devices;
 
 import house.Room;
 
-public class TV extends Device{
+import java.io.IOException;
+
+public class TV extends Device {
 
     private static final int USING_TICKS = 5;
     private static final int RESTING_ELECTRICITY = 1;
@@ -10,11 +12,11 @@ public class TV extends Device{
     private static final int IN_USING_ELECTRICITY = 8;
 
     /**
-     *  The instance ot TV.
+     * The instance ot TV.
      *
-     * @param room           the location
+     * @param room the location
      */
-    public TV(Room room) {
+    public TV(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.TV,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }

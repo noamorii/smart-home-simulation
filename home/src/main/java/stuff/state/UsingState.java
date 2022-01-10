@@ -13,9 +13,9 @@ public class UsingState implements UsableObjectState {
     /**
      * Instantiates a Using State.
      *
-     * @param stuff         Sets an object in this state.
+     * @param stuff Sets an object in this state.
      */
-    public UsingState(UsableObject stuff){
+    public UsingState(UsableObject stuff) {
         this.stuff = stuff;
         this.type = StateType.USING;
     }

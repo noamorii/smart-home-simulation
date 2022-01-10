@@ -18,11 +18,11 @@ public class Fridge extends Device implements FoodContainer {
     private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
     /**
-     *  The instance ot Fridge.
+     * The instance ot Fridge.
      *
-     * @param room           the location
+     * @param room the location
      */
-    public Fridge(Room room) {
+    public Fridge(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.FRIDGE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
@@ -35,16 +35,18 @@ public class Fridge extends Device implements FoodContainer {
     @Override
     public void refill() {
         System.out.println("Kladu klobasu do lednicky");
+        addEventToReport("Kladu klobasu do lednicky");
         currentFoodCapacity = MAX_FOOD_CAPACITY;
         setState(new RestingState(this));
     }
 
     @Override
-    public void usingStuff()throws IOException{
+    public void usingStuff() {
         setUsedTimes(getUsedTimes() + 1);
         if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Fridge is over");
+            addEventToReport("Food in Fridge is over");
             notifyObserver();
         } else {
             setState(new UsingState(this));

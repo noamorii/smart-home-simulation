@@ -16,14 +16,15 @@ public class Room {
 
     /**
      * Instantiates a new Room.
-     * @param name     room's name
+     *
+     * @param name room's name
      */
-    public Room(String name){
+    public Room(String name) {
         this.name = name;
     }
 
     /**
-     *  Returns list of all usable objects in the room
+     * Returns list of all usable objects in the room
      *
      * @return List of UsableObject
      */
@@ -41,10 +42,11 @@ public class Room {
     }
 
     /**
-     *  Adding usable object to the room
-     * @param stuff      added object
+     * Adding usable object to the room
+     *
+     * @param stuff added object
      */
-    public void addStuff(UsableObject stuff){
+    public void addStuff(UsableObject stuff) {
         usableObjects.add(stuff);
     }
 

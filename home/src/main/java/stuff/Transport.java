@@ -13,7 +13,7 @@ public interface Transport {
     /**
      * Method to leave home.
      *
-     * @param person            The person who leaves the house in transport
+     * @param person The person who leaves the house in transport
      */
     void goOutFromHome(Person person) throws IOException;
 
@@ -22,7 +22,7 @@ public interface Transport {
     /**
      * Method to returning at home.
      *
-     * @param person               The person who will return home by transport
+     * @param person The person who will return home by transport
      */
-    void comeBackHome(Person person);
+    void comeBackHome(Person person) throws IOException;
 }

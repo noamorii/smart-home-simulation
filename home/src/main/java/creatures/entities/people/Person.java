@@ -3,10 +3,10 @@ package creatures.entities.people;
 import creatures.entities.Creature;
 import creatures.factories.CreaturesType;
 import house.Room;
+import house.strategy.Strategy;
 import stuff.UsableObject;
 import stuff.devices.Fridge;
 import stuff.devices.StuffType;
-import stuff.observe.PositronicBrain;
 import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
@@ -23,6 +23,8 @@ public abstract class Person implements Creature {
     private Room room;
     private final CreaturesType type;
 
+    private Strategy strategy;
+
     private int hungerLevel = DEFAULT_HUNGRY_LEVEL;
 
     private int currentActionProgress = 1;
@@ -31,10 +33,10 @@ public abstract class Person implements Creature {
     /**
      * Instantiates a new Person.
      *
-     * @param name                   person's name
-     * @param age                    person's age
-     * @param room                   person's location
-     * @param type                   person's type
+     * @param name person's name
+     * @param age  person's age
+     * @param room person's location
+     * @param type person's type
      */
     public Person(String name, int age, Room room, CreaturesType type) {
         this.name = name;
@@ -47,7 +49,7 @@ public abstract class Person implements Creature {
     public abstract void say();
 
     @Override
-    public abstract boolean chanceBrakeStuff(UsableObject usableObject) throws IOException;
+    public abstract boolean chanceBrakeStuff(UsableObject usableObject);
 
     /**
      * A method that helps a person choose what to do: sports or use devices.
@@ -65,22 +67,11 @@ public abstract class Person implements Creature {
 
     @Override
     public void findActivity() throws IOException {
-
-        UsableObject stuff;
-
-        PositronicBrain positronicBrain = PositronicBrain.getInstance();
-        boolean doSport = flipCoin(); //choose sport or devices
-
-        if (!doSport) {
-            stuff = positronicBrain.adviceDeviceFor(this); // ask smart home for free device
-        } else {
-            stuff = PositronicBrain.getInstance().getRandomFreeSport(); // ask smart home for free sport staff
-        }
-        useStuff(stuff);
+        strategy.findActivity(this);
     }
 
     @Override
-    public void useStuff(UsableObject usableObject) throws IOException {
+    public void useStuff(UsableObject usableObject) {
 
         if (usableObject != null) {
             System.out.println(this.getName() + " says: I am using " + usableObject.getType());
@@ -89,7 +80,7 @@ public abstract class Person implements Creature {
             if (usableObject.getType() == StuffType.FRIDGE) {
                 if (((Fridge) usableObject).isEmpty()) {
                     usableObject.setState(new BrokenState(usableObject));
-                    System.out.println("Food in Pet Feeder is over");
+                    usableObject.addEventToReport("Food in Pet Feeder is over");
                     usableObject.notifyObserver();
                     return;
                 }
@@ -98,8 +89,10 @@ public abstract class Person implements Creature {
             if (!chanceBrakeStuff(usableObject)) {
                 usingObject = usableObject;
                 usableObject.usingStuff();
-            } return;
-        } waiting();
+            }
+            return;
+        }
+        waiting();
     }
 
     public void setUsingObject(UsableObject usingObject) {
@@ -166,5 +159,9 @@ public abstract class Person implements Creature {
     @Override
     public Room getCurrentRoom() {
         return room;
+    }
+
+    public void setStrategy(Strategy strategy) {
+        this.strategy = strategy;
     }
 }

@@ -18,11 +18,20 @@ import java.util.List;
 
 public class Reporter {
 
-    private final FileWriter electricity_report = new FileWriter("src/main/resources/Report.txt");
-    private final FileWriter journal = new FileWriter("src/main/resources/Journal.txt");
-    private final FileWriter writer = new FileWriter("src/main/resources/HomeConfiguration.txt");
+    private FileWriter electricity_report = null;
+    private FileWriter journal = null;
+    private FileWriter writer = null;
+    private static FileWriter events = null;
 
-    public Reporter() throws IOException {
+    public Reporter() {
+        try {
+            this.electricity_report = new FileWriter("src/main/resources/Report.txt");
+            this.journal = new FileWriter("src/main/resources/Journal.txt");
+            this.writer = new FileWriter("src/main/resources/HomeConfiguration.txt");
+            events = new FileWriter("src/main/resources/Events.txt");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<UsableObject> getAllUsableObjects() {
@@ -37,7 +46,6 @@ public class Reporter {
 
     /**
      * Generates a report on the electricity used for the day
-     *
      */
     public void generateReportAboutElectricityUsedByDay(int day) throws IOException {
 
@@ -74,13 +82,13 @@ public class Reporter {
         for (int i = 0; i < home.getFloors().size(); i++) {
             writer.write("On the " + floors.get(i).getLevel() + " floor we have " + floors.get(i).getRooms().size() + " rooms: \n");
 
-            for (int j = 0; j < home.getFloors().get(i).getRooms().size(); j++){
+            for (int j = 0; j < home.getFloors().get(i).getRooms().size(); j++) {
                 writer.write("In the " + home.getFloors().get(i).getRooms().get(j).getName() + " are: ");
 
-                for (int p = 0; p < home.getFloors().get(i).getRooms().get(j).getStuff().size(); p++){
-                    writer.write(  home.getFloors().get(i).getRooms().get(j).getStuff().get(p).getType() + " ");
+                for (int p = 0; p < home.getFloors().get(i).getRooms().get(j).getStuff().size(); p++) {
+                    writer.write(home.getFloors().get(i).getRooms().get(j).getStuff().get(p).getType() + " ");
 
-                    if (p == home.getFloors().get(i).getRooms().get(j).getStuff().size() - 1){
+                    if (p == home.getFloors().get(i).getRooms().get(j).getStuff().size() - 1) {
                         writer.write("\n");
                     }
                 }
@@ -100,21 +108,36 @@ public class Reporter {
             writer.write(pet.getBreed() + " " + pet.getName() + " " + pet.getAge() + " years old.\n");
         }
         writer.flush();
+        writer.close();
     }
+
 
     void startJournal(TimeRepresentation time) throws IOException {
         journal.write("_________________" + time.getCurrentTime() + "_________________" + "\n");
     }
 
     void generateJournal(Creature creature) throws IOException {
-        journal.write("creature " + creature.getType() + " with name: " + creature.getName() + " in room: " + creature.getCurrentRoom().getName()
-                + " using obj:" + creature.getCurrentObject().getType() + " object state:" + creature.getCurrentObject().getCurrentState().getType() +
-                " in room: " + creature.getCurrentObject().getCurrentRoom().getName() + " with tick " + creature.getCurrentActionProgress() +
-                " from device ticks " + creature.getCurrentObject().getTicks() + "\n");
+        if (creature.getCurrentObject() == null) {
+            journal.write(creature.getType() + " " + creature.getName() + " is sleeping now\n");
+        } else {
+            journal.write(creature.getType() + " " + creature.getName() + " is in room " + creature.getCurrentRoom().getName()
+                    + " " + creature.getCurrentObject().getCurrentState().getType() + " " + creature.getCurrentObject().getType() +
+                    " in room " + creature.getCurrentObject().getCurrentRoom().getName() + " with tick " + creature.getCurrentActionProgress() +
+                    " from " + creature.getCurrentObject().getTicks() + "\n");
+        }
     }
 
     void endLifeJournal() throws IOException {
         journal.write("_____________________________________________\n");
         journal.flush();
+    }
+
+    public static void generateEventReport(String event) {
+        try {
+            events.write(event + '\n');
+            events.flush();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

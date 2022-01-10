@@ -15,9 +15,9 @@ public class FixingState implements UsableObjectState {
     /**
      * Instantiates a Fixing State.
      *
-     * @param stuff         Sets an object in this state.
+     * @param stuff Sets an object in this state.
      */
-    public FixingState(UsableObject stuff){
+    public FixingState(UsableObject stuff) {
         this.stuff = stuff;
         this.type = StateType.FIXING;
     }

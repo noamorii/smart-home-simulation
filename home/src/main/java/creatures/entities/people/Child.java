@@ -4,8 +4,6 @@ import creatures.factories.CreaturesType;
 import house.Room;
 import stuff.UsableObject;
 
-import java.io.IOException;
-
 /**
  * Class representing a child.
  */
@@ -26,16 +24,15 @@ public class Child extends Person {
     }
 
     @Override
-    public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
-
-        /**
+    public boolean chanceBrakeStuff(UsableObject usableObject) {
+        /*
          * Random chance to break the device.
          */
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
         if (randomPercent > CHILD_PERCENT_CHANCE) {
-            System.out.println(this.getName() + " says: I broke " + usableObject.getType());
-            System.out.println("Moooooooooom!");
+            usableObject.addEventToReport(this.getName() + " says: I broke " + usableObject.getType());
+            usableObject.addEventToReport("Moooooooooom!");
             usableObject.breakingDevice();
             return true;
         }

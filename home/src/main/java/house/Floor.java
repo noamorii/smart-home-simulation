@@ -11,7 +11,7 @@ public class Floor {
     /**
      * Instantiates a new Floor.
      *
-     * @param level        level of the floor
+     * @param level level of the floor
      */
     public Floor(int level) {
         this.level = level;

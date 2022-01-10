@@ -3,6 +3,8 @@ package stuff.sport;
 import house.Room;
 import stuff.devices.StuffType;
 
+import java.io.IOException;
+
 public class Treadmill extends Sport {
 
     private static final int USING_TICKS = 5;
@@ -13,9 +15,9 @@ public class Treadmill extends Sport {
     /**
      * Instantiates a Treadmill.
      *
-     * @param room          the location
+     * @param room the location
      */
-    public Treadmill(Room room) {
+    public Treadmill(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.TREADMILL,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }

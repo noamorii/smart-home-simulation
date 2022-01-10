@@ -18,11 +18,11 @@ public class PetFeeder extends Device implements FoodContainer {
     private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
     /**
-     *  The instance ot Pet Feeder.
+     * The instance ot Pet Feeder.
      *
-     * @param room           the location
+     * @param room the location
      */
-    public PetFeeder(Room room) {
+    public PetFeeder(Room room) throws IOException {
         super(USING_TICKS, room, StuffType.PET_FEEDER,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);
     }
@@ -39,11 +39,12 @@ public class PetFeeder extends Device implements FoodContainer {
     }
 
     @Override
-    public void usingStuff() throws IOException {
+    public void usingStuff() {
         setUsedTimes(getUsedTimes() + 1);
         if (isEmpty()) {
             setState(new BrokenState(this));
             System.out.println("Food in Pet Feeder is over");
+            addEventToReport("Food in Pet Feeder is over");
             notifyObserver();
         } else {
             setState(new UsingState(this));

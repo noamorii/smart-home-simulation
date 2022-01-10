@@ -6,8 +6,8 @@ import stuff.devices.StuffType;
 import stuff.observe.Observed;
 import stuff.observe.PositronicBrain;
 import stuff.state.*;
+import util.Reporter;
 
-import java.io.IOException;
 /**
  * Class representing objects that can be used by creatures
  */
@@ -33,15 +33,15 @@ public abstract class UsableObject implements Observed {
     /**
      * Instantiates a new UsableObject.
      *
-     * @param usingTicks                         use time
-     * @param room                               the location
-     * @param type                               the type of object used
-     * @param electricityInRestingState          the electricity consumption in resting state
-     * @param electricityInBrokenState           the electricity consumption in broken state
-     * @param electricityInUsingState            the electricity consumption in using state
+     * @param usingTicks                use time
+     * @param room                      the location
+     * @param type                      the type of object used
+     * @param electricityInRestingState the electricity consumption in resting state
+     * @param electricityInBrokenState  the electricity consumption in broken state
+     * @param electricityInUsingState   the electricity consumption in using state
      */
     protected UsableObject(int usingTicks, Room room, StuffType type,
-           int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
+                           int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
 
         this.usingTicks = usingTicks;
         this.currentRoom = room;
@@ -50,7 +50,6 @@ public abstract class UsableObject implements Observed {
         this.electricityInRestingState = electricityInRestingState;
         this.electricityInBrokenState = electricityInBrokenState;
         this.electricityInUsingState = electricityInUsingState;
-
     }
 
     /**
@@ -65,7 +64,7 @@ public abstract class UsableObject implements Observed {
     /**
      * Places an object in a specific state.
      *
-     * @param newState              the state in which the object will be placed
+     * @param newState the state in which the object will be placed
      */
     public void setState(UsableObjectState newState) {
         this.currentState = newState;
@@ -113,7 +112,7 @@ public abstract class UsableObject implements Observed {
     /**
      * Sets the number of uses.
      *
-     * @param usedTimes             number of uses
+     * @param usedTimes number of uses
      */
     public void setUsedTimes(int usedTimes) {
         this.usedTimes = usedTimes;
@@ -176,7 +175,7 @@ public abstract class UsableObject implements Observed {
     /**
      * Adds electricity to total electricity used.
      *
-     * @param electricity            electricity to be added
+     * @param electricity electricity to be added
      */
     public void addUsedElectricity(int electricity) {
         electricityUsed += electricity;
@@ -191,9 +190,8 @@ public abstract class UsableObject implements Observed {
 
     /**
      * Places an object in a using state.
-     *
      */
-    public void usingStuff() throws IOException{
+    public void usingStuff() {
         usedTimes++;
         setState(new UsingState(this));
     }
@@ -201,29 +199,28 @@ public abstract class UsableObject implements Observed {
     /**
      * Resets the electricity meter.
      */
-    public void resetElectricity(){
+    public void resetElectricity() {
         electricityUsed = 0;
     }
 
     /**
      * Resets the number of uses.
      */
-    public void resetUsedTimes(){
+    public void resetUsedTimes() {
         usedTimes = 0;
     }
 
     /**
      * Resets the number of breakdowns.
      */
-    public void resetBrokenTimes(){
+    public void resetBrokenTimes() {
         brokenTimes = 0;
     }
 
     /**
      * Places an object in a broken state and uses electricity.
-     *
      */
-    public void breakingDevice() throws IOException {
+    public void breakingDevice() {
         brokenTimes++;
         setState(new BrokenState(this));
         notifyObserver();
@@ -232,7 +229,7 @@ public abstract class UsableObject implements Observed {
     /**
      * Places an object in a fixing state.
      */
-        public void fixingDevice(){
+    public void fixingDevice() {
         setState(new FixingState(this));
     }
 
@@ -242,15 +239,20 @@ public abstract class UsableObject implements Observed {
      * @return manual
      */
     public Manual getManual() {
-        System.out.println("Taking out a huge book from the shelf");
+        addEventToReport("Taking out a huge book from the shelf");
         if (manual == null) manual = new Manual(this);
         return manual;
     }
 
     @Override
-    public void notifyObserver() throws IOException {
-        System.out.println("Positronic Brain handle event with " + getType());
+    public void notifyObserver() {
+        addEventToReport("Positronic Brain handle event with " + getType());
         PositronicBrain.getInstance().handleEvent(this);
+    }
+
+
+    public void addEventToReport(String event) {
+        Reporter.generateEventReport(event);
     }
 
 }

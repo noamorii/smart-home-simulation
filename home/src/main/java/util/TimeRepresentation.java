@@ -29,7 +29,8 @@ public class TimeRepresentation {
 
     /**
      * Setting simulation start time and division into hours and minutes
-     * @param time         simulation start time
+     *
+     * @param time simulation start time
      */
     public void setTime(String time) {
         this.currentHours = Integer.parseInt(time.split(":")[0]);
@@ -38,13 +39,14 @@ public class TimeRepresentation {
 
     /**
      * Getting the current simulation time
+     *
      * @return time
      */
     public String getCurrentTime() {
 
         String time = "Day:" + currentDay + " ";
 
-        if (currentHours < 10)  {
+        if (currentHours < 10) {
             time += "0" + currentHours;
         } else {
             time += currentHours;
@@ -60,5 +62,9 @@ public class TimeRepresentation {
 
     public boolean isMidNight() {
         return (currentHours == 0 && currentMinutes == 0);
+    }
+
+    public boolean isNight() {
+        return currentHours > 2 && currentHours <= 6;
     }
 }

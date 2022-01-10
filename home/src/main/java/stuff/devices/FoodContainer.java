@@ -2,12 +2,15 @@ package stuff.devices;
 
 import house.Room;
 
+import java.io.IOException;
+
 /**
  * Interface for objects containing food.
  */
 public interface FoodContainer {
     /**
      * Returns true if the container is empty
+     *
      * @return boolean
      */
     boolean isEmpty();
@@ -15,7 +18,7 @@ public interface FoodContainer {
     /**
      * Replenishment of food supplies.
      */
-    void refill();
+    void refill() throws IOException;
 
     /**
      * Returns the room where the container is located.

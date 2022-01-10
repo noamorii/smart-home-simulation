@@ -21,7 +21,7 @@ public class Home {
     /**
      * Instantiates a new Home.
      *
-     * @param builder        home builder
+     * @param builder home builder
      */
     private Home(HomeBuilder builder) {
         address = builder.address;
@@ -56,7 +56,7 @@ public class Home {
     }
 
     /**
-     *  Returns list of all of the creatures
+     * Returns list of all of the creatures
      *
      * @return List of Creature
      */
@@ -67,7 +67,7 @@ public class Home {
     /**
      * Method for leaving home method
      *
-     * @param creature   creature to be removed from home
+     * @param creature creature to be removed from home
      */
     public void goOut(Creature creature) {
         creatures.remove(creature);
@@ -94,7 +94,7 @@ public class Home {
     /*================BUILDER===================*/
 
     /**
-     *  Class represents Home Builder
+     * Class represents Home Builder
      */
     public static final class HomeBuilder {
 
@@ -106,7 +106,8 @@ public class Home {
         /**
          * Private singleton constructor
          */
-        private HomeBuilder(){}
+        private HomeBuilder() {
+        }
 
         public HomeBuilder address(String address) {
             this.address = address;
@@ -114,9 +115,9 @@ public class Home {
         }
 
         /**
-         *  Setting list of floors.
+         * Setting list of floors.
          *
-         * @param floors      list of floors
+         * @param floors list of floors
          * @return HomeBuilder
          */
         public HomeBuilder addFloors(List<Floor> floors) {
@@ -132,8 +133,8 @@ public class Home {
         /**
          * Setting list of creatures.
          *
-         * @param creatures    list of creatures
-         * @return             HomeBuilder
+         * @param creatures list of creatures
+         * @return HomeBuilder
          */
         public HomeBuilder addCreatures(List<Creature> creatures) {
             this.creatures = creatures;
@@ -143,7 +144,7 @@ public class Home {
         /**
          * Setting auto
          *
-         * @param auto     Auto
+         * @param auto Auto
          * @return HomeBuilder
          */
         public HomeBuilder addAuto(Auto auto) {
