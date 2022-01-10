@@ -25,7 +25,7 @@ public class Room {
     /**
      *  Returns list of all usable objects in the room
      *
-     * @return List<UsableObject>
+     * @return List of UsableObject
      */
     public List<UsableObject> getStuff() {
         return usableObjects;

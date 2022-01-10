@@ -59,7 +59,7 @@ public class DeviceFactory {
     /**
      * Returns list of all devices.
      *
-     * @return List<Sport>
+     * @return List of Device
      */
     public List<Device> getDevices() {
         return devices;

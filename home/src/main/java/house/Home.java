@@ -5,6 +5,9 @@ import stuff.Auto;
 
 import java.util.List;
 
+/**
+ * Class represents Home
+ */
 public class Home {
 
     private static Home instance = null;
@@ -14,6 +17,11 @@ public class Home {
     private final List<Creature> creatures;
     private final Auto auto;
 
+    /**
+     * Instantiates a new Home.
+     *
+     * @param builder        home builder
+     */
     private Home(HomeBuilder builder) {
         address = builder.address;
         floors = builder.floors;
@@ -22,6 +30,11 @@ public class Home {
         instance = this;
     }
 
+    /**
+     * Returns the instance ot the Home Builder.
+     *
+     * @return HomeBuilder
+     */
     public static HomeBuilder newBuilder() {
         if (instance != null) {
             throw new IllegalStateException("Home has already been built.");
@@ -41,24 +54,47 @@ public class Home {
         return floors;
     }
 
+    /**
+     *  Returns list of all of the creatures
+     *
+     * @return List of Creature
+     */
     public static List<Creature> getCreatures() {
         return instance.creatures;
     }
 
+    /**
+     * Method for leaving home method
+     *
+     * @param creature   creature to be removed from home
+     */
     public void goOut(Creature creature) {
         creatures.remove(creature);
     }
 
+    /**
+     * Method to return home
+     *
+     * @param creature creature to be brought home
+     */
     public void comeBackHome(Creature creature) {
         creatures.add(creature);
     }
 
+    /**
+     * Returns auto
+     *
+     * @return Auto
+     */
     public Auto getAuto() {
         return auto;
     }
 
     /*================BUILDER===================*/
 
+    /**
+     *  Class represents Home Builder
+     */
     public static final class HomeBuilder {
 
         private String address;
@@ -66,6 +102,9 @@ public class Home {
         private List<Creature> creatures;
         private Auto auto;
 
+        /**
+         * Private singleton constructor
+         */
         private HomeBuilder(){}
 
         public HomeBuilder address(String address) {
@@ -73,21 +112,44 @@ public class Home {
             return this;
         }
 
+        /**
+         *  Setting list of floors.
+         *
+         * @param floors      list of floors
+         * @return HomeBuilder
+         */
         public HomeBuilder addFloors(List<Floor> floors) {
             this.floors = floors;
             return this;
         }
 
+        /**
+         * Setting list of creatures.
+         *
+         * @param creatures    list of creatures
+         * @return             HomeBuilder
+         */
         public HomeBuilder addCreatures(List<Creature> creatures) {
             this.creatures = creatures;
             return this;
         }
 
+        /**
+         * Setting auto
+         *
+         * @param auto     Auto
+         * @return HomeBuilder
+         */
         public HomeBuilder addAuto(Auto auto) {
             this.auto = auto;
             return this;
         }
 
+        /**
+         * Method that returns a ready-made instance at home
+         *
+         * @return Home
+         */
         public Home build() {
             return new Home(this);
         }

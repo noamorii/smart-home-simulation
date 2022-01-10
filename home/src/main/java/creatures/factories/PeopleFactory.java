@@ -36,7 +36,7 @@ public class PeopleFactory {
 
     /**
      * Returns list of all persons.
-     * @return List<Person>
+     * @return List of persons
      */
     public List<Person> getPeople() {
         return people;

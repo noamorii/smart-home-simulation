@@ -113,7 +113,7 @@ public class Adult extends Person {
     /**
      *Returns the queue of objects to deal with first
      *
-     * @return Queue<UsableObject>
+     * @return Queue of UsableObject
      */
     public static Queue<UsableObject> getToDoList() {
         return toDoList;

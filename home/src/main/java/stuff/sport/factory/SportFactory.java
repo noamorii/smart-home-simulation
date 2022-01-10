@@ -35,7 +35,7 @@ public class SportFactory {
     /**
      * Returns list of all sports equipment.
      *
-     * @return List<Sport>
+     * @return List of Sport
      */
     public List<Sport> getSports() {
         return sports;

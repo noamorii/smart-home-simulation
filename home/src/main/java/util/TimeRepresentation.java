@@ -8,6 +8,9 @@ public class TimeRepresentation {
     private int currentMinutes, currentHours = 0;
     private static final int TICK_TIME = 10;
 
+    /**
+     * Simulates the passage of time
+     */
     public void increase() {
 
         if (currentMinutes < 50) {
@@ -49,7 +52,4 @@ public class TimeRepresentation {
         return time + ":" + currentMinutes;
     }
 
-    public int hoursForSimulation(int hours) {
-        return hours * 6;
-    }
 }

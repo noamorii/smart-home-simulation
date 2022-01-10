@@ -37,7 +37,7 @@ public class PetFactory {
 
     /**
      * Returns list of all persons.
-     * @return List<Person>
+     * @return List of Person
      */
     public List<Pet> getPets() {
         return pets;
