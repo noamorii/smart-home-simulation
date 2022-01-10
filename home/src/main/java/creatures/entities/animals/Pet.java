@@ -12,8 +12,10 @@ import stuff.state.BrokenState;
 import stuff.state.RestingState;
 
 import java.io.IOException;
-import java.util.Random;
 
+/**
+ * Class representing a pet.
+ */
 public abstract class Pet implements Creature {
 
     private static final int PET_PERCENT_CHANCE = 95; // 5%
@@ -27,6 +29,16 @@ public abstract class Pet implements Creature {
     private int currentActionProgress = STARTING_ACTION_ITERATION;
     private UsableObject usingObject = null;
 
+
+    /**
+     * Instantiates a new Pet.
+     *
+     * @param name                   pet's name
+     * @param breed                  pet's breed
+     * @param age                    pet's age
+     * @param type                   pet's type
+     * @param room                   pet's location
+     */
     public Pet(String name, String breed, int age, CreaturesType type, Room room) {
         this.name = name;
         this.breed = breed;
@@ -43,8 +55,13 @@ public abstract class Pet implements Creature {
         increaseHungerLevel();
     }
 
+    /**
+     * Checks if the Pet Feeder is empty.
+     *
+     * @param usableObject Pet Feeder
+     * @return boolean
+     */
     private boolean isEmptyPetFeeder(UsableObject usableObject) throws IOException{
-
         if (usableObject.getType() == StuffType.PET_FEEDER) {
 
             if (((PetFeeder) usableObject).isEmpty()) {
@@ -68,6 +85,9 @@ public abstract class Pet implements Creature {
     @Override
     public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
 
+        /**
+         * Random chance to break the device.
+         */
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
         if (randomPercent > PET_PERCENT_CHANCE) {
@@ -149,10 +169,16 @@ public abstract class Pet implements Creature {
         return CreaturesType.PET;
     }
 
+    /**
+     * Returns pet's breed.
+     *
+     * @return breed
+     */
     public String getBreed() {
         return breed;
     }
 
+    @Override
     public int getAge() {
         return age;
     }

@@ -11,8 +11,8 @@ In the house living 4 people, and 2 pets.
 People:
 Pepa 14 years old.
 George 9 years old.
-Mama 35 years old.
 Papa 40 years old.
+Mama 35 years old.
 Pets:
 Persian cat Fluffy 2 years old.
 Ara parrot Popka 1 years old.

@@ -1,5 +1,8 @@
 package stuff.devices;
 
+/**
+ * Types of Usable Objects
+ */
 public enum StuffType {
     CONDITIONER,
     AUDIO_SYSTEM,

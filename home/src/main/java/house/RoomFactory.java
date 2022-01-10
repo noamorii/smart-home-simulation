@@ -2,6 +2,12 @@ package house;
 
 public class RoomFactory {
 
+    /**
+     * Factory method that creates rooms.
+     *
+     * @param name           room's name
+     * @return Room
+     */
     public Room create(String name) throws Exception {
         return switch (name) {
             case "Kitchen" -> new Room("Kitchen");

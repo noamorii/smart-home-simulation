@@ -1,6 +1,4 @@
 import creatures.entities.Creature;
-import creatures.entities.people.Adult;
-import creatures.entities.people.Child;
 import creatures.factories.CreaturesType;
 import creatures.factories.PeopleFactory;
 import creatures.factories.PetFactory;
@@ -19,31 +17,9 @@ import stuff.sport.factory.SportFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.logging.Logger;
-
 
 public class Main {
     public static void main(String[] args) throws Exception {
-
-        Logger LOGGER = Logger.getLogger("d");
-
-
-
-//        for (int i = 0; i < 100; i++) {
-//            papa.useStuff(fridge);
-//            System.out.println(fridge.toString());
-//        }
-//
-//
-//        List<Device> devices = new ArrayList<>();
-//        Room room = new Kitchen();
-//        Device device1 = new Computer(room);
-//        devices.add(device1);
-//
-//        CreatureFactory creatureFactory = new CreatureFactory();
-//        Creature man = creatureFactory.createCreature(CreaturesType.ADULT, "Name1", 23);
-
-
 
                             /* test configuration*/
 
@@ -114,26 +90,6 @@ public class Main {
         Home house = home.address("Revolution 550/1")
                 .addFloors(floors).addCreatures(creatures).addAuto(auto).build();
 
-        PositronicBrain positronicBrain = PositronicBrain.getInstance();
-//        papa.zratb();
-//        mama.zratb();
-//        for (int i = 0; i < 1000; i++) {
-//            //           Random rand = new Random();
-////            int upperbound = devices.size();
-////            int int_random = rand.nextInt(upperbound);
-////            Device device = devices.get(int_random);
-//            Device device = positronicBrain.adviceWhatToDoFor(papa);
-//            mama.findActivity();
-//            papa.findActivity();
-//            pepa.findActivity();
-//            if(device == null){
-//                LOGGER.log(Level.INFO, "v maine toze pizda");
-//            }
-////            }else{
-////            System.out.println(device.toString());
-////            System.out.println(papa.toString());}
-//        }
-//        positronicBrain.generateReportAboutElectricityUsedByDay();
         Simulation simulation = new Simulation(1008, "8:00");
         simulation.run();
     }

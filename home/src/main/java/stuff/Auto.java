@@ -2,11 +2,13 @@ package stuff;
 
 import creatures.entities.people.Person;
 import creatures.factories.CreaturesType;
-import house.Home;
 import house.Room;
 import stuff.devices.StuffType;
 import stuff.state.UsingState;
 
+/**
+ * Class representing an auto.
+ */
 public class Auto extends UsableObject implements Transport{
 
     private static final int USING_TICKS = 6;

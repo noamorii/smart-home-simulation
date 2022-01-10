@@ -22,18 +22,6 @@ public class Home {
         instance = this;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
-    public List<Floor> getFloors() {
-        return floors;
-    }
-
-    public static Home getInstance() {
-        return instance;
-    }
-
     public static HomeBuilder newBuilder() {
         if (instance != null) {
             throw new IllegalStateException("Home has already been built.");
@@ -41,12 +29,16 @@ public class Home {
         return new HomeBuilder();
     }
 
-    public static String address() {
-        return instance.address;
+    public static Home getInstance() {
+        return instance;
     }
 
-    public static List<Floor> floors() {
-        return instance.floors;
+    public String getAddress() {
+        return address;
+    }
+
+    public List<Floor> getFloors() {
+        return floors;
     }
 
     public static List<Creature> getCreatures() {

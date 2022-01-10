@@ -17,6 +17,11 @@ public class PetFeeder extends Device implements FoodContainer {
 
     private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
+    /**
+     *  The instance ot Pet Feeder.
+     *
+     * @param room           the location
+     */
     public PetFeeder(Room room) {
         super(USING_TICKS, room, StuffType.PET_FEEDER,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);

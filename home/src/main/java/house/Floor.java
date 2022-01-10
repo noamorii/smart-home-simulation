@@ -1,6 +1,5 @@
 package house;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
@@ -8,17 +7,15 @@ public class Floor {
     private final int level;
     private final List<Room> rooms;
 
+    /**
+     * Instantiates a new Floor.
+     *
+     * @param level        level of the floor
+     * @param rooms        list of rooms on the floor
+     */
     public Floor(int level, List<Room> rooms) {
         this.level = level;
         this.rooms = rooms;
-    }
-
-    public void addRoom(Room room) {
-        rooms.add(room);
-    }
-
-    public void removeRoom(Room room) {
-        rooms.remove(room);
     }
 
     public List<Room> getRooms() {

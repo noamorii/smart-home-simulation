@@ -2,6 +2,9 @@ package stuff.state;
 
 import stuff.UsableObject;
 
+/**
+ * Fixing State
+ */
 public class FixingState implements UsableObjectState {
 
     UsableObject stuff;
@@ -9,6 +12,11 @@ public class FixingState implements UsableObjectState {
 
     private final static int IN_FIXING_TICKS = 4;
 
+    /**
+     * Instantiates a Fixing State.
+     *
+     * @param stuff         Sets an object in this state.
+     */
     public FixingState(UsableObject stuff){
         this.stuff = stuff;
         this.type = StateType.FIXING;

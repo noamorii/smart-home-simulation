@@ -17,6 +17,11 @@ public class Bike extends Sport implements Transport{
     private static final int BROKEN_ELECTRICITY = 7;
     private static final int IN_USING_ELECTRICITY = 0;
 
+    /**
+     * Instantiates a Bike.
+     *
+     * @param room          the location
+     */
     public Bike(Room room) {
         super(USING_TICKS, room, StuffType.BIKE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);

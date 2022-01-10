@@ -18,9 +18,12 @@ import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
 
+/**
+ * Class representing the central home control system
+ */
 public class PositronicBrain implements Observer {
 
-    public FileWriter myWriter = new FileWriter("src/main/resources/Report.txt");
+    private final FileWriter myWriter = new FileWriter("src/main/resources/Report.txt");
     private final List<Device> devices;
     private static PositronicBrain instance = null;
 
@@ -28,6 +31,9 @@ public class PositronicBrain implements Observer {
     private final List<Device> devicesForHumans = new ArrayList<>();
     private static int dayCounter = 1;
 
+    /**
+     * Private singleton constructor that creates lists of devices for people and pets
+     */
     private PositronicBrain() throws IOException {
 
         devices = DeviceFactory.getInstance().getDevices();
@@ -45,11 +51,21 @@ public class PositronicBrain implements Observer {
         }
     }
 
+    /**
+     * Returns the instance ot the Positronic Brain
+     *
+     * @return instance
+     */
     public static PositronicBrain getInstance() throws IOException {
         if (instance == null) instance = new PositronicBrain();
         return instance;
     }
 
+    /**
+     * Helps the creature choose a free device to use
+     * @param creature         creature that will receive advice
+     * @return device
+     */
     public Device adviceDeviceFor(Creature creature) {
         if (creature.getMainCreatureType() == CreaturesType.PET)
             return getRandomFreeDevice(devicesForPets);
@@ -61,6 +77,10 @@ public class PositronicBrain implements Observer {
         Adult.addTask(stuff);
     }
 
+    /**
+     * Generates a report on the electricity used for the day
+     *
+     */
     public void generateReportAboutElectricityUsedByDay() throws IOException {
         int allElectricity = 0;
         myWriter.write("_________________ Report for the " + dayCounter + " day _________________\n");
@@ -80,7 +100,13 @@ public class PositronicBrain implements Observer {
         dayCounter++;
     }
 
-    public Device getRandomFreeDevice(List<Device> devices) {
+    /**
+     * Sport
+     *
+     * @param devices       list of all devices in the house
+     * @return Device
+     */
+    private Device getRandomFreeDevice(List<Device> devices) {
         List<Device> freeDevices = devices.stream()
                 .filter(device -> device.getCurrentState().getType() == StateType.RESTING)
                 .collect(Collectors.toList());
@@ -93,6 +119,11 @@ public class PositronicBrain implements Observer {
         return freeDevices.get(randomIndexOfList);
     }
 
+    /**
+     * Returns a random free sports equipment
+     *
+     * @return Sport
+     */
     public Sport getRandomFreeSport() {
         List<Sport> freeSports = SportFactory.getInstance().getSports().stream()
                 .filter(device -> device.getCurrentState().getType() == StateType.RESTING)

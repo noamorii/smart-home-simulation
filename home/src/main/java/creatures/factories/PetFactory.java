@@ -10,8 +10,21 @@ import java.util.List;
 
 public class PetFactory {
 
+    /**
+     * List of all pets
+     */
     private final List<Pet> pets = new ArrayList<>();
 
+    /**
+     * Factory method that creates pets and adds it to the list.
+     *
+     * @param type              pet's type
+     * @param petName           pet's name
+     * @param petAge            pet's age
+     * @param petBreed          pet's breed
+     * @param room              pet's location
+     * @return pet
+     */
     public Pet create(CreaturesType type, String petName, int petAge, String petBreed, Room room) throws Exception {
         Pet pet = switch (type) {
             case PARROT -> new Parrot(petName, petAge, petBreed, type, room);
@@ -22,6 +35,10 @@ public class PetFactory {
         return pet;
     }
 
+    /**
+     * Returns list of all persons.
+     * @return List<Person>
+     */
     public List<Pet> getPets() {
         return pets;
     }

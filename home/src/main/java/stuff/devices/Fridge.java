@@ -2,7 +2,6 @@ package stuff.devices;
 
 import house.Room;
 import stuff.state.BrokenState;
-import stuff.state.FixingState;
 import stuff.state.RestingState;
 import stuff.state.UsingState;
 
@@ -18,6 +17,11 @@ public class Fridge extends Device implements FoodContainer {
 
     private int currentFoodCapacity = MAX_FOOD_CAPACITY;
 
+    /**
+     *  The instance ot Fridge.
+     *
+     * @param room           the location
+     */
     public Fridge(Room room) {
         super(USING_TICKS, room, StuffType.FRIDGE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);

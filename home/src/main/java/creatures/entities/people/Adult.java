@@ -5,18 +5,23 @@ import house.Home;
 import house.Room;
 import stuff.Auto;
 import stuff.UsableObject;
-import stuff.devices.*;
-
-import stuff.observe.PositronicBrain;
-import stuff.state.UsingState;
+import stuff.devices.FoodContainer;
+import stuff.devices.Manual;
+import stuff.devices.StuffType;
 
 import java.io.IOException;
 import java.util.LinkedList;
 import java.util.Objects;
 import java.util.Queue;
 
+/**
+ * Class representing an adult person.
+ */
 public class Adult extends Person {
 
+    /**
+     * Chance to break the device.
+     */
     private static final int ADULT_PERCENT_CHANCE = 95; // 5%
 
     private static final Queue<UsableObject> toDoList = new LinkedList<>();
@@ -39,8 +44,10 @@ public class Adult extends Person {
         }
     }
 
-    public void doTasks() {
-
+    /**
+     * Activities that an adult should do first.
+     */
+    private void doTasks() {
         UsableObject currentStuff = getToDoList().poll();//take first element (not remove)
         Objects.requireNonNull(currentStuff);
         moveTo(currentStuff.getCurrentRoom());
@@ -71,7 +78,12 @@ public class Adult extends Person {
         return false;
     }
 
-    public void repairStuff(UsableObject usableObject) {
+    /**
+     * Repairing of the devices and sport inventory.
+     *
+     * @param usableObject          an object that an adult will fix
+     */
+    private void repairStuff(UsableObject usableObject) {
         System.out.println(this.getName() + " is going to repair the " + usableObject.getType());
         Manual manual = usableObject.getManual();
         manual.readManual();
@@ -79,7 +91,12 @@ public class Adult extends Person {
         usableObject.fixingDevice();
     }
 
-    public void refill(FoodContainer container) {
+    /**
+     * Replenishment of food supplies.
+     *
+     * @param container               container in which food is replenished
+     */
+    private void refill(FoodContainer container) {
         Auto auto = Home.getInstance().getAuto();
 
         this.moveTo(auto.getCurrentRoom());
@@ -93,10 +110,20 @@ public class Adult extends Person {
         System.out.println(this.getName() + " is going to refill the " + container.getType());
     }
 
+    /**
+     *Returns the queue of objects to deal with first
+     *
+     * @return Queue<UsableObject>
+     */
     public static Queue<UsableObject> getToDoList() {
         return toDoList;
     }
 
+    /**
+     * Adding an object to your to-do list.
+     *
+     * @param object                 object to add to your to-do list
+     */
     public static void addTask(UsableObject object) {
         toDoList.add(object);
     }

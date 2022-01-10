@@ -8,7 +8,9 @@ import stuff.observe.PositronicBrain;
 import stuff.state.*;
 
 import java.io.IOException;
-
+/**
+ * Class representing objects that can be used by creatures
+ */
 public abstract class UsableObject implements Observed {
 
     private final int usingTicks;
@@ -27,6 +29,17 @@ public abstract class UsableObject implements Observed {
     private int usedTimes = 0;
     private int brokenTimes = 0;
 
+
+    /**
+     * Instantiates a new UsableObject.
+     *
+     * @param usingTicks                         use time
+     * @param room                               the location
+     * @param type                               the type of object used
+     * @param electricityInRestingState          the electricity consumption in resting state
+     * @param electricityInBrokenState           the electricity consumption in broken state
+     * @param electricityInUsingState            the electricity consumption in using state
+     */
     protected UsableObject(int usingTicks, Room room, StuffType type,
            int electricityInRestingState, int electricityInBrokenState, int electricityInUsingState) {
 
@@ -40,18 +53,38 @@ public abstract class UsableObject implements Observed {
 
     }
 
+    /**
+     * Returns the state of the object.
+     *
+     * @return UsableObjectState
+     */
     public UsableObjectState getCurrentState() {
         return currentState;
     }
 
+    /**
+     * Places an object in a specific state.
+     *
+     * @param newState              the state in which the object will be placed
+     */
     public void setState(UsableObjectState newState) {
         this.currentState = newState;
     }
 
+    /**
+     * Returns the type of the object.
+     *
+     * @return type
+     */
     public StuffType getType() {
         return type;
     }
 
+    /**
+     * Returns the number of ticks in a certain state
+     *
+     * @return Ticks
+     */
     public int getTicks() {
         if (currentState.getType() != StateType.USING) {
             return currentState.getTicks();
@@ -59,71 +92,138 @@ public abstract class UsableObject implements Observed {
         return usingTicks;
     }
 
+    /**
+     * Returns the number of times the object has been used.
+     *
+     * @return int
+     */
     public int getUsedTimes() {
         return usedTimes;
     }
+
+    /**
+     * Returns the number of breakages of an object.
+     *
+     * @return int
+     */
     public int getBrokenTimes() {
         return brokenTimes;
     }
 
+    /**
+     * Sets the number of uses.
+     *
+     * @param usedTimes             number of uses
+     */
     public void setUsedTimes(int usedTimes) {
         this.usedTimes = usedTimes;
     }
 
-    public void setBrokenTimes(int brokenTimes) {
-        this.brokenTimes = brokenTimes;
-    }
-
+    /**
+     * Returns the room where the object is located.
+     *
+     * @return Room
+     */
     public Room getCurrentRoom() {
         return currentRoom;
     }
 
+    /**
+     * Returns electricity consumed by the object in a resting state per tick.
+     *
+     * @return electricity In Resting State
+     */
     public int getElectricityInRestingState() {
         return electricityInRestingState;
     }
 
+    /**
+     * Returns electricity consumed by the object in a broken state per tick.
+     *
+     * @return electricity In Broken State
+     */
     public int getElectricityInBrokenState() {
         return electricityInBrokenState;
     }
 
+    /**
+     * Returns electricity consumed by the object in a fixing state per tick.
+     *
+     * @return electricity In Fixing State
+     */
     public int getElectricityInFixingState() {
         return ELECTRICITY_IN_FIXING;
     }
 
+    /**
+     * Returns electricity consumed by the object in a using state per tick.
+     *
+     * @return electricity In Using State
+     */
     public int getElectricityInUsingState() {
         return electricityInUsingState;
     }
 
+    /**
+     * The amount of electricity during use.
+     *
+     * @return electricityUsed
+     */
     public int getElectricityUsed() {
         return electricityUsed;
     }
 
+    /**
+     * Adds electricity to total electricity used.
+     *
+     * @param electricity            electricity to be added
+     */
     public void addUsedElectricity(int electricity) {
         electricityUsed += electricity;
     }
 
+    /**
+     * Using of electricity in a specific state
+     */
     public void usingElectricity() {
         currentState.usingElectricity();
     }
 
+    /**
+     * Places an object in a using state and uses electricity.
+     *
+     */
     public void usingStuff() throws IOException{
         usedTimes++;
         setState(new UsingState(this));
         usingElectricity();
     }
 
+    /**
+     * Resets the electricity meter.
+     */
     public void resetElectricity(){
         electricityUsed = 0;
     }
 
+    /**
+     * Resets the number of uses.
+     */
     public void resetUsedTimes(){
         usedTimes = 0;
     }
 
+    /**
+     * Resets the number of breakdowns.
+     */
     public void resetBrokenTimes(){
         brokenTimes = 0;
     }
 
+    /**
+     * Places an object in a broken state and uses electricity.
+     *
+     */
     public void breakingDevice() throws IOException {
         brokenTimes++;
         setState(new BrokenState(this));
@@ -131,11 +231,19 @@ public abstract class UsableObject implements Observed {
         usingElectricity();
     }
 
-    public void fixingDevice(){
+    /**
+     * Places an object in a fixing state and uses electricity.
+     */
+        public void fixingDevice(){
         setState(new FixingState(this));
         usingElectricity();
     }
 
+    /**
+     * Returns a manual for repairing an object.
+     *
+     * @return manual
+     */
     public Manual getManual() {
         System.out.println("Taking out a huge book from the shelf");
         if (manual == null) manual = new Manual(this);

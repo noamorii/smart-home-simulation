@@ -5,16 +5,22 @@ import house.Room;
 import stuff.UsableObject;
 
 import java.io.IOException;
-import java.util.Random;
 
+/**
+ * Class representing a child.
+ */
 public class Child extends Person {
 
+    /**
+     * Chance to break the device.
+     */
     private static final int CHILD_PERCENT_CHANCE = 90; // 10%
 
     public Child(String name, int age, Room room, CreaturesType type) {
         super(name, age, room, type);
     }
 
+    @Override
     public void say() {
         System.out.println("Crying...");
     }
@@ -22,6 +28,9 @@ public class Child extends Person {
     @Override
     public boolean chanceBrakeStuff(UsableObject usableObject) throws IOException {
 
+        /**
+         * Random chance to break the device.
+         */
         final int randomPercent = rand.nextInt(MAX_PERCENT_CHANCE);
 
         if (randomPercent > CHILD_PERCENT_CHANCE) {

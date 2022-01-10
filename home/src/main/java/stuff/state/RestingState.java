@@ -2,6 +2,9 @@ package stuff.state;
 
 import stuff.UsableObject;
 
+/**
+ * Resting State
+ */
 public class RestingState implements UsableObjectState {
 
     private final static int RESTING_TICKS = 0;
@@ -9,6 +12,11 @@ public class RestingState implements UsableObjectState {
     UsableObject stuff;
     final private StateType type;
 
+    /**
+     * Instantiates a Resting State.
+     *
+     * @param stuff         Sets an object in this state.
+     */
     public RestingState(UsableObject stuff){
         this.stuff = stuff;
         this.type = StateType.RESTING;

@@ -9,6 +9,11 @@ public class SmartPhone extends Device{
     private static final int BROKEN_ELECTRICITY = 0;
     private static final int IN_USING_ELECTRICITY = 0;
 
+    /**
+     *  The instance ot Smart Phone.
+     *
+     * @param room           the location
+     */
     public SmartPhone(Room room) {
         super(USING_TICKS, room, StuffType.PHONE,
                 RESTING_ELECTRICITY, BROKEN_ELECTRICITY, IN_USING_ELECTRICITY);

@@ -2,6 +2,9 @@ package stuff.state;
 
 import stuff.UsableObject;
 
+/**
+ * Broken State
+ */
 public class BrokenState implements UsableObjectState {
 
     private final static int BROKEN_TICKS = 0;
@@ -9,6 +12,11 @@ public class BrokenState implements UsableObjectState {
     UsableObject stuff;
     final private StateType type;
 
+    /**
+     * Instantiates a Broken State.
+     *
+     * @param stuff         Sets an object in this state.
+     */
     public BrokenState(UsableObject stuff){
         this.stuff = stuff;
         this.type = StateType.BROKEN;

@@ -9,15 +9,34 @@ import java.util.List;
 public class DeviceFactory {
 
     private static DeviceFactory instance = null;
+
+    /**
+     * Private singleton constructor
+     */
     private DeviceFactory(){}
 
+    /**
+     * Returns the instance ot the Device Factory.
+     *
+     * @return instance
+     */
     public static DeviceFactory getInstance() {
         if (instance == null) instance = new DeviceFactory();
         return instance;
     }
 
+    /**
+     * List of all devices.
+     */
     private final List<Device> devices = new ArrayList<>();
 
+    /**
+     * Factory method that creates devices and adds it to the list.
+     *
+     * @param room                  the location
+     * @param type                  device's type
+     * @return device
+     */
     public Device createDevice(Room room, StuffType type) throws Exception {
         Device device = switch (type) {
             case COMPUTER -> new Computer(room);
@@ -37,6 +56,11 @@ public class DeviceFactory {
         return device;
     }
 
+    /**
+     * Returns list of all devices.
+     *
+     * @return List<Sport>
+     */
     public List<Device> getDevices() {
         return devices;
     }

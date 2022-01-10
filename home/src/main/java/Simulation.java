@@ -1,6 +1,5 @@
 import creatures.entities.Creature;
 import creatures.entities.animals.Pet;
-import creatures.entities.people.Person;
 import creatures.factories.CreaturesType;
 import house.Floor;
 import house.Home;
@@ -17,14 +16,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Simulation {
-    
-    private final Home home = Home.getInstance();
+
     private final TimeRepresentation time = new TimeRepresentation();
     
     private final int interactionsCount;
     private final String startingTime;
 
-    public Simulation(int interactionsCount, String startingTime) throws IOException {
+    public Simulation(int interactionsCount, String startingTime){
         this.interactionsCount = interactionsCount;
         this.startingTime = startingTime;
     }
