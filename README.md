@@ -49,7 +49,7 @@ NF5. 	Konfigurace domu, zařízení a obyvatel domu nahrávána z externího jso
 -   Singleton
     - třídy `PositronicBrain`, `SportFactory`, `DeviceFactory`, `Home`, `HomeBuilder`
 - 	Lazy Initialization
-    -  třída `UsableObject` metoda `getManual`
+    -  třída `Manual` ve třídě `UsableObject` 
 -   Builder 
     - třída `HomeBuilder` 
 
