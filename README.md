@@ -55,7 +55,7 @@ NF5. 	Konfigurace domu, zařízení a obyvatel domu nahrávána z externího jso
 
 # Načítání dat a konfigurace domu
 
-Načítání dat ze souboru ve formátu `json` probíhá ve třídě `Configuration`. Program se spouští v `Main` třídě, kde můžete vybrat soubor pro načtení konfigurace.
+Načítání dat ze souboru ve formátu `json` probíhá ve třídě `Configuration`. Program se spouští v `Main` třídě, kde můžete vybrat soubor pro načtení konfigurace. Javadoc a reporty se zapisují do složky `resources`.
 
 # Druhy zařízení
 
