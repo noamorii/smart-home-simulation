@@ -1,182 +1,182 @@
 _________________ Report for the 1 day _________________
-PET_TOY has used 145 electricity for today. Was used 9 times. Was broken 0 times.
-TV has used 476 electricity for today. Was used 11 times. Was broken 0 times.
-PET_FEEDER has used 109 electricity for today. Was used 11 times. Was broken 0 times.
-FRIDGE has used 435 electricity for today. Was used 6 times. Was broken 1 times.
-PET_TOY has used 138 electricity for today. Was used 8 times. Was broken 0 times.
-PHONE has used 112 electricity for today. Was used 7 times. Was broken 0 times.
-PHONE has used 122 electricity for today. Was used 6 times. Was broken 0 times.
-COMPUTER has used 413 electricity for today. Was used 4 times. Was broken 0 times.
-VACUUM has used 104 electricity for today. Was used 18 times. Was broken 1 times.
-TV has used 301 electricity for today. Was used 6 times. Was broken 0 times.
-COMPUTER has used 363 electricity for today. Was used 3 times. Was broken 2 times.
+PET_TOY has used 151 electricity for today. Was used 10 times. Was broken 0 times.
+TV has used 427 electricity for today. Was used 10 times. Was broken 0 times.
+PET_FEEDER has used 109 electricity for today. Was used 10 times. Was broken 0 times.
+FRIDGE has used 443 electricity for today. Was used 7 times. Was broken 1 times.
+PET_TOY has used 148 electricity for today. Was used 10 times. Was broken 0 times.
+PHONE has used 132 electricity for today. Was used 5 times. Was broken 0 times.
+PHONE has used 118 electricity for today. Was used 7 times. Was broken 0 times.
+COMPUTER has used 312 electricity for today. Was used 2 times. Was broken 1 times.
+VACUUM has used 130 electricity for today. Was used 11 times. Was broken 1 times.
+TV has used 504 electricity for today. Was used 12 times. Was broken 0 times.
+COMPUTER has used 448 electricity for today. Was used 5 times. Was broken 0 times.
 AUDIO_SYSTEM has used 121 electricity for today. Was used 5 times. Was broken 0 times.
-TV has used 441 electricity for today. Was used 10 times. Was broken 0 times.
-COMPUTER has used 483 electricity for today. Was used 6 times. Was broken 0 times.
-CONDITIONER has used 273 electricity for today. Was used 7 times. Was broken 0 times.
-TV has used 483 electricity for today. Was used 12 times. Was broken 0 times.
-AUDIO_SYSTEM has used 115 electricity for today. Was used 4 times. Was broken 0 times.
-STEPPER has used 233 electricity for today. Was used 9 times. Was broken 1 times.
-BIKE has used 308 electricity for today. Was used 8 times. Was broken 2 times.
-TREADMILL has used 223 electricity for today. Was used 9 times. Was broken 0 times.
-ORBITREK has used 285 electricity for today. Was used 12 times. Was broken 1 times.
-ORBITREK has used 251 electricity for today. Was used 10 times. Was broken 0 times.
-TREADMILL has used 229 electricity for today. Was used 10 times. Was broken 0 times.
+TV has used 390 electricity for today. Was used 9 times. Was broken 1 times.
+COMPUTER has used 459 electricity for today. Was used 6 times. Was broken 1 times.
+CONDITIONER has used 273 electricity for today. Was used 4 times. Was broken 0 times.
+TV has used 429 electricity for today. Was used 9 times. Was broken 1 times.
+AUDIO_SYSTEM has used 121 electricity for today. Was used 5 times. Was broken 0 times.
+STEPPER has used 291 electricity for today. Was used 13 times. Was broken 0 times.
+BIKE has used 331 electricity for today. Was used 8 times. Was broken 1 times.
+TREADMILL has used 212 electricity for today. Was used 8 times. Was broken 1 times.
+ORBITREK has used 267 electricity for today. Was used 11 times. Was broken 0 times.
+ORBITREK has used 267 electricity for today. Was used 11 times. Was broken 0 times.
+TREADMILL has used 218 electricity for today. Was used 8 times. Was broken 2 times.
 On AUTO Adults go for food 1 times 
-All electricity used by day: 6163
+All electricity used by day: 6301
 _________________ Report for the 2 day _________________
-PET_TOY has used 195 electricity for today. Was used 10 times. Was broken 1 times.
-TV has used 480 electricity for today. Was used 10 times. Was broken 0 times.
-PET_FEEDER has used 150 electricity for today. Was used 7 times. Was broken 1 times.
-FRIDGE has used 720 electricity for today. Was used 4 times. Was broken 0 times.
-PET_TOY has used 207 electricity for today. Was used 11 times. Was broken 1 times.
-PHONE has used 208 electricity for today. Was used 8 times. Was broken 0 times.
-PHONE has used 200 electricity for today. Was used 8 times. Was broken 1 times.
-COMPUTER has used 607 electricity for today. Was used 5 times. Was broken 0 times.
-VACUUM has used 210 electricity for today. Was used 19 times. Was broken 0 times.
-TV has used 711 electricity for today. Was used 17 times. Was broken 0 times.
-COMPUTER has used 630 electricity for today. Was used 6 times. Was broken 1 times.
-AUDIO_SYSTEM has used 198 electricity for today. Was used 9 times. Was broken 0 times.
-TV has used 578 electricity for today. Was used 13 times. Was broken 0 times.
-COMPUTER has used 712 electricity for today. Was used 8 times. Was broken 0 times.
-CONDITIONER has used 432 electricity for today. Was used 4 times. Was broken 0 times.
-TV has used 558 electricity for today. Was used 11 times. Was broken 2 times.
-AUDIO_SYSTEM has used 198 electricity for today. Was used 9 times. Was broken 0 times.
-STEPPER has used 350 electricity for today. Was used 13 times. Was broken 0 times.
-BIKE has used 414 electricity for today. Was used 18 times. Was broken 1 times.
-TREADMILL has used 309 electricity for today. Was used 11 times. Was broken 2 times.
-ORBITREK has used 384 electricity for today. Was used 15 times. Was broken 0 times.
-ORBITREK has used 338 electricity for today. Was used 12 times. Was broken 1 times.
-TREADMILL has used 354 electricity for today. Was used 14 times. Was broken 2 times.
-On AUTO Adults go for food 2 times 
-All electricity used by day: 9143
-_________________ Report for the 3 day _________________
-PET_TOY has used 209 electricity for today. Was used 11 times. Was broken 0 times.
-TV has used 614 electricity for today. Was used 13 times. Was broken 2 times.
-PET_FEEDER has used 166 electricity for today. Was used 15 times. Was broken 1 times.
-FRIDGE has used 700 electricity for today. Was used 6 times. Was broken 0 times.
-PET_TOY has used 198 electricity for today. Was used 9 times. Was broken 0 times.
-PHONE has used 198 electricity for today. Was used 9 times. Was broken 0 times.
-PHONE has used 208 electricity for today. Was used 8 times. Was broken 0 times.
-COMPUTER has used 642 electricity for today. Was used 6 times. Was broken 0 times.
-VACUUM has used 224 electricity for today. Was used 16 times. Was broken 0 times.
-TV has used 539 electricity for today. Was used 11 times. Was broken 1 times.
-COMPUTER has used 770 electricity for today. Was used 10 times. Was broken 1 times.
-AUDIO_SYSTEM has used 180 electricity for today. Was used 6 times. Was broken 0 times.
-TV has used 530 electricity for today. Was used 11 times. Was broken 2 times.
-COMPUTER has used 754 electricity for today. Was used 10 times. Was broken 0 times.
-CONDITIONER has used 432 electricity for today. Was used 5 times. Was broken 0 times.
-TV has used 665 electricity for today. Was used 15 times. Was broken 1 times.
-AUDIO_SYSTEM has used 210 electricity for today. Was used 11 times. Was broken 0 times.
-STEPPER has used 390 electricity for today. Was used 16 times. Was broken 1 times.
-BIKE has used 546 electricity for today. Was used 13 times. Was broken 0 times.
-TREADMILL has used 357 electricity for today. Was used 15 times. Was broken 0 times.
-ORBITREK has used 336 electricity for today. Was used 12 times. Was broken 0 times.
-ORBITREK has used 340 electricity for today. Was used 13 times. Was broken 1 times.
-TREADMILL has used 260 electricity for today. Was used 8 times. Was broken 1 times.
-On AUTO Adults go for food 3 times 
-All electricity used by day: 9468
-_________________ Report for the 4 day _________________
-PET_TOY has used 220 electricity for today. Was used 12 times. Was broken 0 times.
-TV has used 560 electricity for today. Was used 12 times. Was broken 1 times.
-PET_FEEDER has used 158 electricity for today. Was used 11 times. Was broken 0 times.
-FRIDGE has used 684 electricity for today. Was used 10 times. Was broken 1 times.
-PET_TOY has used 204 electricity for today. Was used 10 times. Was broken 0 times.
-PHONE has used 208 electricity for today. Was used 8 times. Was broken 0 times.
-PHONE has used 258 electricity for today. Was used 3 times. Was broken 0 times.
-COMPUTER has used 560 electricity for today. Was used 4 times. Was broken 1 times.
-VACUUM has used 198 electricity for today. Was used 22 times. Was broken 1 times.
-TV has used 634 electricity for today. Was used 14 times. Was broken 0 times.
-COMPUTER has used 677 electricity for today. Was used 7 times. Was broken 0 times.
-AUDIO_SYSTEM has used 171 electricity for today. Was used 5 times. Was broken 0 times.
-TV has used 564 electricity for today. Was used 12 times. Was broken 0 times.
-COMPUTER has used 754 electricity for today. Was used 9 times. Was broken 0 times.
-CONDITIONER has used 420 electricity for today. Was used 13 times. Was broken 1 times.
-TV has used 634 electricity for today. Was used 14 times. Was broken 0 times.
-AUDIO_SYSTEM has used 186 electricity for today. Was used 7 times. Was broken 0 times.
-STEPPER has used 408 electricity for today. Was used 16 times. Was broken 2 times.
-BIKE has used 528 electricity for today. Was used 13 times. Was broken 1 times.
-TREADMILL has used 311 electricity for today. Was used 11 times. Was broken 2 times.
-ORBITREK has used 368 electricity for today. Was used 14 times. Was broken 0 times.
-ORBITREK has used 312 electricity for today. Was used 10 times. Was broken 0 times.
-TREADMILL has used 319 electricity for today. Was used 11 times. Was broken 1 times.
-On AUTO Adults go for food 3 times 
-All electricity used by day: 9336
-_________________ Report for the 5 day _________________
-PET_TOY has used 206 electricity for today. Was used 11 times. Was broken 0 times.
-TV has used 690 electricity for today. Was used 16 times. Was broken 0 times.
-PET_FEEDER has used 153 electricity for today. Was used 11 times. Was broken 1 times.
+PET_TOY has used 196 electricity for today. Was used 11 times. Was broken 2 times.
+TV has used 718 electricity for today. Was used 16 times. Was broken 0 times.
+PET_FEEDER has used 162 electricity for today. Was used 11 times. Was broken 0 times.
 FRIDGE has used 702 electricity for today. Was used 6 times. Was broken 0 times.
-PET_TOY has used 210 electricity for today. Was used 11 times. Was broken 0 times.
-PHONE has used 248 electricity for today. Was used 4 times. Was broken 0 times.
-PHONE has used 212 electricity for today. Was used 6 times. Was broken 2 times.
-COMPUTER has used 586 electricity for today. Was used 5 times. Was broken 3 times.
-VACUUM has used 206 electricity for today. Was used 17 times. Was broken 2 times.
-TV has used 613 electricity for today. Was used 13 times. Was broken 0 times.
-COMPUTER has used 548 electricity for today. Was used 4 times. Was broken 2 times.
-AUDIO_SYSTEM has used 171 electricity for today. Was used 4 times. Was broken 0 times.
-TV has used 616 electricity for today. Was used 13 times. Was broken 1 times.
-COMPUTER has used 625 electricity for today. Was used 5 times. Was broken 1 times.
-CONDITIONER has used 432 electricity for today. Was used 6 times. Was broken 0 times.
-TV has used 476 electricity for today. Was used 10 times. Was broken 2 times.
-AUDIO_SYSTEM has used 206 electricity for today. Was used 10 times. Was broken 2 times.
-STEPPER has used 372 electricity for today. Was used 14 times. Was broken 0 times.
-BIKE has used 409 electricity for today. Was used 18 times. Was broken 1 times.
-TREADMILL has used 336 electricity for today. Was used 12 times. Was broken 0 times.
-ORBITREK has used 336 electricity for today. Was used 12 times. Was broken 0 times.
-ORBITREK has used 324 electricity for today. Was used 12 times. Was broken 3 times.
-TREADMILL has used 328 electricity for today. Was used 13 times. Was broken 1 times.
-On AUTO Adults go for food 3 times 
-All electricity used by day: 9005
-_________________ Report for the 6 day _________________
-PET_TOY has used 228 electricity for today. Was used 14 times. Was broken 1 times.
-TV has used 578 electricity for today. Was used 12 times. Was broken 0 times.
-PET_FEEDER has used 165 electricity for today. Was used 13 times. Was broken 0 times.
-FRIDGE has used 720 electricity for today. Was used 4 times. Was broken 0 times.
-PET_TOY has used 212 electricity for today. Was used 12 times. Was broken 0 times.
-PHONE has used 218 electricity for today. Was used 7 times. Was broken 0 times.
-PHONE has used 234 electricity for today. Was used 5 times. Was broken 1 times.
-COMPUTER has used 593 electricity for today. Was used 4 times. Was broken 0 times.
-VACUUM has used 201 electricity for today. Was used 21 times. Was broken 1 times.
-TV has used 473 electricity for today. Was used 10 times. Was broken 0 times.
-COMPUTER has used 709 electricity for today. Was used 8 times. Was broken 1 times.
-AUDIO_SYSTEM has used 174 electricity for today. Was used 5 times. Was broken 0 times.
-TV has used 602 electricity for today. Was used 14 times. Was broken 1 times.
-COMPUTER has used 628 electricity for today. Was used 6 times. Was broken 0 times.
-CONDITIONER has used 432 electricity for today. Was used 6 times. Was broken 0 times.
-TV has used 627 electricity for today. Was used 13 times. Was broken 0 times.
-AUDIO_SYSTEM has used 198 electricity for today. Was used 9 times. Was broken 0 times.
-STEPPER has used 330 electricity for today. Was used 11 times. Was broken 3 times.
-BIKE has used 480 electricity for today. Was used 15 times. Was broken 1 times.
-TREADMILL has used 309 electricity for today. Was used 11 times. Was broken 0 times.
-ORBITREK has used 386 electricity for today. Was used 15 times. Was broken 1 times.
-ORBITREK has used 364 electricity for today. Was used 14 times. Was broken 1 times.
-TREADMILL has used 396 electricity for today. Was used 16 times. Was broken 0 times.
-On AUTO Adults go for food 2 times 
-All electricity used by day: 9257
-_________________ Report for the 7 day _________________
-PET_TOY has used 213 electricity for today. Was used 13 times. Was broken 2 times.
-TV has used 704 electricity for today. Was used 16 times. Was broken 0 times.
-PET_FEEDER has used 170 electricity for today. Was used 14 times. Was broken 0 times.
-FRIDGE has used 684 electricity for today. Was used 7 times. Was broken 1 times.
-PET_TOY has used 187 electricity for today. Was used 7 times. Was broken 0 times.
-PHONE has used 240 electricity for today. Was used 4 times. Was broken 1 times.
-PHONE has used 208 electricity for today. Was used 8 times. Was broken 0 times.
+PET_TOY has used 201 electricity for today. Was used 9 times. Was broken 0 times.
+PHONE has used 226 electricity for today. Was used 7 times. Was broken 0 times.
+PHONE has used 214 electricity for today. Was used 7 times. Was broken 0 times.
+COMPUTER has used 594 electricity for today. Was used 4 times. Was broken 3 times.
+VACUUM has used 222 electricity for today. Was used 17 times. Was broken 0 times.
+TV has used 501 electricity for today. Was used 10 times. Was broken 0 times.
+COMPUTER has used 600 electricity for today. Was used 5 times. Was broken 0 times.
+AUDIO_SYSTEM has used 152 electricity for today. Was used 2 times. Was broken 1 times.
+TV has used 669 electricity for today. Was used 15 times. Was broken 0 times.
 COMPUTER has used 677 electricity for today. Was used 7 times. Was broken 0 times.
-VACUUM has used 207 electricity for today. Was used 16 times. Was broken 2 times.
-TV has used 480 electricity for today. Was used 9 times. Was broken 0 times.
+CONDITIONER has used 420 electricity for today. Was used 6 times. Was broken 1 times.
+TV has used 564 electricity for today. Was used 12 times. Was broken 0 times.
+AUDIO_SYSTEM has used 180 electricity for today. Was used 6 times. Was broken 0 times.
+STEPPER has used 362 electricity for today. Was used 13 times. Was broken 1 times.
+BIKE has used 504 electricity for today. Was used 13 times. Was broken 2 times.
+TREADMILL has used 297 electricity for today. Was used 11 times. Was broken 3 times.
+ORBITREK has used 420 electricity for today. Was used 17 times. Was broken 2 times.
+ORBITREK has used 416 electricity for today. Was used 17 times. Was broken 0 times.
+TREADMILL has used 369 electricity for today. Was used 15 times. Was broken 0 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 9366
+_________________ Report for the 3 day _________________
+PET_TOY has used 206 electricity for today. Was used 10 times. Was broken 0 times.
+TV has used 525 electricity for today. Was used 11 times. Was broken 1 times.
+PET_FEEDER has used 159 electricity for today. Was used 12 times. Was broken 0 times.
+FRIDGE has used 702 electricity for today. Was used 9 times. Was broken 0 times.
+PET_TOY has used 230 electricity for today. Was used 15 times. Was broken 0 times.
+PHONE has used 202 electricity for today. Was used 7 times. Was broken 1 times.
+PHONE has used 216 electricity for today. Was used 6 times. Was broken 1 times.
+COMPUTER has used 658 electricity for today. Was used 7 times. Was broken 0 times.
+VACUUM has used 188 electricity for today. Was used 25 times. Was broken 0 times.
+TV has used 599 electricity for today. Was used 13 times. Was broken 0 times.
+COMPUTER has used 614 electricity for today. Was used 5 times. Was broken 0 times.
+AUDIO_SYSTEM has used 204 electricity for today. Was used 10 times. Was broken 0 times.
+TV has used 555 electricity for today. Was used 11 times. Was broken 1 times.
+COMPUTER has used 663 electricity for today. Was used 6 times. Was broken 0 times.
+CONDITIONER has used 420 electricity for today. Was used 11 times. Was broken 1 times.
+TV has used 452 electricity for today. Was used 9 times. Was broken 2 times.
+AUDIO_SYSTEM has used 184 electricity for today. Was used 8 times. Was broken 2 times.
+STEPPER has used 322 electricity for today. Was used 11 times. Was broken 1 times.
+BIKE has used 540 electricity for today. Was used 14 times. Was broken 0 times.
+TREADMILL has used 339 electricity for today. Was used 13 times. Was broken 0 times.
+ORBITREK has used 322 electricity for today. Was used 11 times. Was broken 1 times.
+ORBITREK has used 318 electricity for today. Was used 11 times. Was broken 1 times.
+TREADMILL has used 354 electricity for today. Was used 14 times. Was broken 0 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 8972
+_________________ Report for the 4 day _________________
+PET_TOY has used 213 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 739 electricity for today. Was used 17 times. Was broken 0 times.
+PET_FEEDER has used 167 electricity for today. Was used 14 times. Was broken 0 times.
+FRIDGE has used 702 electricity for today. Was used 5 times. Was broken 1 times.
+PET_TOY has used 200 electricity for today. Was used 10 times. Was broken 1 times.
+PHONE has used 224 electricity for today. Was used 7 times. Was broken 0 times.
+PHONE has used 224 electricity for today. Was used 6 times. Was broken 1 times.
+COMPUTER has used 509 electricity for today. Was used 2 times. Was broken 0 times.
+VACUUM has used 218 electricity for today. Was used 15 times. Was broken 1 times.
+TV has used 494 electricity for today. Was used 10 times. Was broken 0 times.
+COMPUTER has used 817 electricity for today. Was used 11 times. Was broken 0 times.
+AUDIO_SYSTEM has used 186 electricity for today. Was used 7 times. Was broken 0 times.
+TV has used 590 electricity for today. Was used 13 times. Was broken 1 times.
+COMPUTER has used 747 electricity for today. Was used 9 times. Was broken 0 times.
+CONDITIONER has used 432 electricity for today. Was used 8 times. Was broken 0 times.
+TV has used 598 electricity for today. Was used 13 times. Was broken 0 times.
+AUDIO_SYSTEM has used 171 electricity for today. Was used 5 times. Was broken 0 times.
+STEPPER has used 352 electricity for today. Was used 13 times. Was broken 0 times.
+BIKE has used 444 electricity for today. Was used 16 times. Was broken 1 times.
+TREADMILL has used 302 electricity for today. Was used 11 times. Was broken 2 times.
+ORBITREK has used 372 electricity for today. Was used 14 times. Was broken 2 times.
+ORBITREK has used 388 electricity for today. Was used 15 times. Was broken 0 times.
+TREADMILL has used 338 electricity for today. Was used 14 times. Was broken 1 times.
+On AUTO Adults go for food 2 times 
+All electricity used by day: 9427
+_________________ Report for the 5 day _________________
+PET_TOY has used 198 electricity for today. Was used 9 times. Was broken 0 times.
+TV has used 620 electricity for today. Was used 14 times. Was broken 0 times.
+PET_FEEDER has used 160 electricity for today. Was used 11 times. Was broken 0 times.
+FRIDGE has used 700 electricity for today. Was used 10 times. Was broken 0 times.
+PET_TOY has used 213 electricity for today. Was used 11 times. Was broken 0 times.
+PHONE has used 226 electricity for today. Was used 5 times. Was broken 1 times.
+PHONE has used 224 electricity for today. Was used 5 times. Was broken 1 times.
+COMPUTER has used 754 electricity for today. Was used 10 times. Was broken 0 times.
+VACUUM has used 230 electricity for today. Was used 15 times. Was broken 0 times.
+TV has used 644 electricity for today. Was used 15 times. Was broken 1 times.
 COMPUTER has used 642 electricity for today. Was used 6 times. Was broken 0 times.
 AUDIO_SYSTEM has used 192 electricity for today. Was used 8 times. Was broken 0 times.
-TV has used 548 electricity for today. Was used 11 times. Was broken 1 times.
-COMPUTER has used 516 electricity for today. Was used 2 times. Was broken 0 times.
-CONDITIONER has used 420 electricity for today. Was used 7 times. Was broken 1 times.
-TV has used 627 electricity for today. Was used 14 times. Was broken 0 times.
-AUDIO_SYSTEM has used 182 electricity for today. Was used 7 times. Was broken 1 times.
-STEPPER has used 370 electricity for today. Was used 14 times. Was broken 1 times.
-BIKE has used 432 electricity for today. Was used 18 times. Was broken 0 times.
-TREADMILL has used 327 electricity for today. Was used 13 times. Was broken 2 times.
-ORBITREK has used 336 electricity for today. Was used 13 times. Was broken 1 times.
-ORBITREK has used 380 electricity for today. Was used 15 times. Was broken 1 times.
-TREADMILL has used 321 electricity for today. Was used 12 times. Was broken 2 times.
+TV has used 606 electricity for today. Was used 13 times. Was broken 0 times.
+COMPUTER has used 642 electricity for today. Was used 6 times. Was broken 0 times.
+CONDITIONER has used 432 electricity for today. Was used 9 times. Was broken 0 times.
+TV has used 648 electricity for today. Was used 15 times. Was broken 0 times.
+AUDIO_SYSTEM has used 195 electricity for today. Was used 8 times. Was broken 0 times.
+STEPPER has used 310 electricity for today. Was used 11 times. Was broken 1 times.
+BIKE has used 552 electricity for today. Was used 13 times. Was broken 0 times.
+TREADMILL has used 337 electricity for today. Was used 13 times. Was broken 2 times.
+ORBITREK has used 412 electricity for today. Was used 17 times. Was broken 1 times.
+ORBITREK has used 352 electricity for today. Was used 13 times. Was broken 0 times.
+TREADMILL has used 351 electricity for today. Was used 13 times. Was broken 0 times.
+On AUTO Adults go for food 3 times 
+All electricity used by day: 9640
+_________________ Report for the 6 day _________________
+PET_TOY has used 205 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 613 electricity for today. Was used 13 times. Was broken 0 times.
+PET_FEEDER has used 158 electricity for today. Was used 10 times. Was broken 1 times.
+FRIDGE has used 677 electricity for today. Was used 5 times. Was broken 2 times.
+PET_TOY has used 212 electricity for today. Was used 12 times. Was broken 1 times.
+PHONE has used 276 electricity for today. Was used 1 times. Was broken 0 times.
+PHONE has used 214 electricity for today. Was used 7 times. Was broken 1 times.
+COMPUTER has used 740 electricity for today. Was used 8 times. Was broken 0 times.
+VACUUM has used 194 electricity for today. Was used 23 times. Was broken 0 times.
+TV has used 529 electricity for today. Was used 10 times. Was broken 1 times.
+COMPUTER has used 642 electricity for today. Was used 6 times. Was broken 0 times.
+AUDIO_SYSTEM has used 210 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 458 electricity for today. Was used 9 times. Was broken 2 times.
+COMPUTER has used 607 electricity for today. Was used 5 times. Was broken 0 times.
+CONDITIONER has used 420 electricity for today. Was used 5 times. Was broken 1 times.
+TV has used 515 electricity for today. Was used 10 times. Was broken 0 times.
+AUDIO_SYSTEM has used 170 electricity for today. Was used 5 times. Was broken 1 times.
+STEPPER has used 336 electricity for today. Was used 12 times. Was broken 2 times.
+BIKE has used 408 electricity for today. Was used 18 times. Was broken 1 times.
+TREADMILL has used 387 electricity for today. Was used 16 times. Was broken 0 times.
+ORBITREK has used 396 electricity for today. Was used 16 times. Was broken 1 times.
+ORBITREK has used 350 electricity for today. Was used 13 times. Was broken 2 times.
+TREADMILL has used 346 electricity for today. Was used 14 times. Was broken 1 times.
 On AUTO Adults go for food 3 times 
 All electricity used by day: 9063
+_________________ Report for the 7 day _________________
+PET_TOY has used 215 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 644 electricity for today. Was used 15 times. Was broken 1 times.
+PET_FEEDER has used 166 electricity for today. Was used 16 times. Was broken 1 times.
+FRIDGE has used 705 electricity for today. Was used 5 times. Was broken 0 times.
+PET_TOY has used 212 electricity for today. Was used 12 times. Was broken 0 times.
+PHONE has used 228 electricity for today. Was used 6 times. Was broken 0 times.
+PHONE has used 216 electricity for today. Was used 6 times. Was broken 1 times.
+COMPUTER has used 560 electricity for today. Was used 4 times. Was broken 1 times.
+VACUUM has used 232 electricity for today. Was used 14 times. Was broken 0 times.
+TV has used 425 electricity for today. Was used 8 times. Was broken 2 times.
+COMPUTER has used 572 electricity for today. Was used 4 times. Was broken 0 times.
+AUDIO_SYSTEM has used 210 electricity for today. Was used 11 times. Was broken 0 times.
+TV has used 614 electricity for today. Was used 14 times. Was broken 2 times.
+COMPUTER has used 607 electricity for today. Was used 5 times. Was broken 0 times.
+CONDITIONER has used 432 electricity for today. Was used 2 times. Was broken 0 times.
+TV has used 599 electricity for today. Was used 13 times. Was broken 0 times.
+AUDIO_SYSTEM has used 169 electricity for today. Was used 4 times. Was broken 1 times.
+STEPPER has used 372 electricity for today. Was used 14 times. Was broken 0 times.
+BIKE has used 462 electricity for today. Was used 17 times. Was broken 0 times.
+TREADMILL has used 402 electricity for today. Was used 18 times. Was broken 0 times.
+ORBITREK has used 396 electricity for today. Was used 16 times. Was broken 0 times.
+ORBITREK has used 414 electricity for today. Was used 17 times. Was broken 2 times.
+TREADMILL has used 359 electricity for today. Was used 14 times. Was broken 1 times.
+On AUTO Adults go for food 2 times 
+All electricity used by day: 9211
