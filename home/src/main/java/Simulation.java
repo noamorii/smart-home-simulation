@@ -14,7 +14,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * Class representing a simulation.
+ */
 public class Simulation {
 
     private final TimeRepresentation time = new TimeRepresentation();
@@ -22,11 +24,20 @@ public class Simulation {
     private final int interactionsCount;
     private final String startingTime;
 
+    /**
+     * Simulation constructor
+     *
+     * @param interactionsCount             number of ten minute ticks
+     * @param startingTime                  simulation start time
+     */
     public Simulation(int interactionsCount, String startingTime){
         this.interactionsCount = interactionsCount;
         this.startingTime = startingTime;
     }
 
+    /**
+     * Simulation start method and creating an action journal.
+     */
     public void run() throws IOException {
         FileWriter myWriter = new FileWriter("src/main/resources/Journal.txt");
 
@@ -77,6 +88,9 @@ public class Simulation {
         }
     }
 
+    /**
+     * Generating a report with a home configuration.
+     */
     private void generateHomeConfigurationReport() throws IOException {
         FileWriter writer = new FileWriter("src/main/resources/HomeConfiguration.txt");
         Home home = Home.getInstance();

@@ -1,5 +1,8 @@
 package util;
 
+/**
+ * Class representing time.
+ */
 public class TimeRepresentation {
 
     private int currentMinutes, currentHours = 0;
@@ -19,11 +22,19 @@ public class TimeRepresentation {
         }
     }
 
+    /**
+     * Setting simulation start time and division into hours and minutes
+     * @param time         simulation start time
+     */
     public void setTime(String time) {
         this.currentHours = Integer.parseInt(time.split(":")[0]);
         this.currentMinutes = Integer.parseInt(time.split(":")[1]);
     }
 
+    /**
+     * Getting the current simulation time
+     * @return time
+     */
     public String getCurrentTime() {
 
         String time = "Time: ";
