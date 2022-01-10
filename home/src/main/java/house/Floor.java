@@ -1,21 +1,20 @@
 package house;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Floor {
 
     private final int level;
-    private final List<Room> rooms;
+    private final List<Room> rooms = new ArrayList<>();
 
     /**
      * Instantiates a new Floor.
      *
      * @param level        level of the floor
-     * @param rooms        list of rooms on the floor
      */
-    public Floor(int level, List<Room> rooms) {
+    public Floor(int level) {
         this.level = level;
-        this.rooms = rooms;
     }
 
     public List<Room> getRooms() {
@@ -24,5 +23,9 @@ public class Floor {
 
     public int getLevel() {
         return level;
+    }
+
+    public void addRoom(Room room) {
+        rooms.add(room);
     }
 }

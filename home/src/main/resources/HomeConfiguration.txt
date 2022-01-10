@@ -1,18 +1,24 @@
-In our Home by address Revolution 550/1 we have 2 floors
+In our Home by address Technicka 4 we have 3 floors
 On the 1 floor we have 3 rooms: 
-In the Hallway are: VACUUM PET_FEEDER CONDITIONER PET_TOY 
-In the Kitchen are: FRIDGE TV 
-In the Garage are: BIKE BIKE TREADMILL TREADMILL ORBITREK TREADMILL 
+In the Hallway are: STEPPER PET_TOY TV 
+In the Kitchen are: PET_FEEDER FRIDGE 
+In the Garage are: BIKE TREADMILL ORBITREK PET_TOY PHONE 
 On the 2 floor we have 3 rooms: 
-In the Children's bedroom are: COMPUTER PHONE TV 
-In the Parents' bedroom are: PHONE COMPUTER 
-In the Living room are: AUDIO_SYSTEM PHONE 
-In the house living 4 people, and 2 pets.
+In the Children's bedroom are: ORBITREK PHONE COMPUTER VACUUM 
+In the Parents' bedroom are: TV COMPUTER 
+In the Dancing room are: AUDIO_SYSTEM TV 
+On the 3 floor we have 2 rooms: 
+In the Workplace are: TREADMILL COMPUTER CONDITIONER 
+In the Guest room are: TV AUDIO_SYSTEM 
+In the house living 6 people, and 3 pets.
 People:
-Pepa 14 years old.
-George 9 years old.
-Papa 40 years old.
-Mama 35 years old.
+Jan 8 years old.
+Dima 10 years old.
+Mom 35 years old.
+Dad 40 years old.
+Grandma 75 years old.
+Grandfather 79 years old.
 Pets:
-Persian cat Fluffy 2 years old.
-Ara parrot Popka 1 years old.
+Sphinx Unicorn 3 years old.
+Persian cat Floppa 2 years old.
+Ara-ara Popka 1 years old.

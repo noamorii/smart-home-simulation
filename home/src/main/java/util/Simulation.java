@@ -1,3 +1,5 @@
+package util;
+
 import creatures.entities.Creature;
 import creatures.entities.animals.Pet;
 import creatures.factories.CreaturesType;
@@ -30,7 +32,7 @@ public class Simulation {
      * @param interactionsCount             number of ten minute ticks
      * @param startingTime                  simulation start time
      */
-    public Simulation(int interactionsCount, String startingTime){
+    public Simulation(int interactionsCount, String startingTime) throws IOException {
         this.interactionsCount = interactionsCount;
         this.startingTime = startingTime;
     }

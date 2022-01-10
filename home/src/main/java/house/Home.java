@@ -3,6 +3,7 @@ package house;
 import creatures.entities.Creature;
 import stuff.Auto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -98,7 +99,7 @@ public class Home {
     public static final class HomeBuilder {
 
         private String address;
-        private List<Floor> floors;
+        private List<Floor> floors = new ArrayList<>();
         private List<Creature> creatures;
         private Auto auto;
 
@@ -120,6 +121,11 @@ public class Home {
          */
         public HomeBuilder addFloors(List<Floor> floors) {
             this.floors = floors;
+            return this;
+        }
+
+        public HomeBuilder addFloor(Floor floor) {
+            this.floors.add(floor);
             return this;
         }
 

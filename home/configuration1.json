@@ -1,0 +1,138 @@
+{
+  "simulation": [
+    {
+      "starting_time": "8:10",
+      "iterations" : 144
+    }
+  ],
+  "home": [
+    {
+      "address": "Revolution 550/1",
+      "floors": [
+        {
+          "level": 1,
+          "rooms": [
+            {
+              "name": "Hallway",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "pet_toy"}, {"type": "vacuum"},
+                    {"type": "pet_feeder"}, {"type": "conditioner"} ]
+                }
+              ]
+            },
+            {
+              "name": "Kitchen",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "tv"}, {"type": "fridge"} ]
+                }
+              ]
+            },
+            {
+              "name": "Garage",
+              "staff": [
+                {
+                  "sport": [ {"type": "bike"}, {"type": "bike"},
+                    {"type": "treadmill"},{ "type": "treadmill"},
+                    { "type": "orbitrek"}, {"type": "treadmill"}
+                  ],
+                  "devices": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "rooms": [
+            {
+              "name": "Children's bedroom",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "computer"}, {"type": "phone"}, {"type": "tv"} ]
+                }
+              ]
+            },
+            {
+              "name": "Parents' bedroom",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "phone"}, {"type": "computer"} ]
+                }
+              ]
+            },
+            {
+              "name": "Living room",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "audio_system"}, {"type": "phone"} ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+
+    }
+  ],
+  "creatures": [
+    {
+      "pets": [
+        {
+          "cats": [
+            {
+              "name": "Fluffy",
+              "age": 2,
+              "breed": "Persian cat",
+              "room" : "Living room"
+            }
+          ],
+          "parrots": [
+            {
+              "name": "Parry",
+              "age": 1,
+              "breed": "Ara parrot",
+              "room" : "Living room"
+            }
+          ]
+        }
+      ],
+      "people": [
+        {
+          "adults": [
+            {
+              "name": "Dad",
+              "age": 40,
+              "room" : "Parents' bedroom"
+            },
+            {
+              "name": "Mom",
+              "age": 35,
+              "room" : "Parents' bedroom"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "name": "Pepa",
+              "age": 14,
+              "room" : "Children's bedroom"
+            },
+            {
+              "name": "George",
+              "age": 9,
+              "room" : "Living room"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

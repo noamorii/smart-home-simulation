@@ -1,0 +1,174 @@
+{
+  "simulation": [
+    {
+      "starting_time": "9:00",
+      "iterations" : 288
+    }
+  ],
+  "home": [
+    {
+      "address": "Technicka 4",
+      "floors": [
+        {
+          "level": 1,
+          "rooms": [
+            {
+              "name": "Hallway",
+              "staff": [
+                {
+                  "sport": [{"type": "stepper"}],
+                  "devices": [ {"type": "pet_toy"}, {"type": "tv"} ]
+                }
+              ]
+            },
+            {
+              "name": "Kitchen",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "pet_feeder"}, {"type": "fridge"} ]
+                }
+              ]
+            },
+            {
+              "name": "Garage",
+              "staff": [
+                {
+                  "sport": [ {"type": "bike"},
+                    {"type": "treadmill"}, { "type": "orbitrek"}
+                  ],
+                  "devices": [ {"type": "pet_toy"}, {"type": "phone"}]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 2,
+          "rooms": [
+            {
+              "name": "Children's bedroom",
+              "staff": [
+                {
+                  "sport": [{"type": "orbitrek"}],
+                  "devices": [ {"type": "phone"}, {"type": "computer"}, {"type": "vacuum"} ]
+                }
+              ]
+            },
+            {
+              "name": "Parents' bedroom",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "tv"}, {"type": "computer"} ]
+                }
+              ]
+            },
+            {
+              "name": "Dancing room",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "audio_system"}, {"type": "tv"} ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "level": 3,
+          "rooms": [
+            {
+              "name": "Workplace",
+              "staff": [
+                {
+                  "sport": [{"type": "treadmill"}],
+                  "devices": [ {"type": "computer"}, {"type": "conditioner"} ]
+                }
+              ]
+            },
+            {
+              "name": "Guest room",
+              "staff": [
+                {
+                  "sport": [],
+                  "devices": [ {"type": "tv"}, {"type": "audio_system"} ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "creatures": [
+    {
+      "pets": [
+        {
+          "cats": [
+            {
+              "name": "Unicorn",
+              "age": 3,
+              "breed": "Sphinx",
+              "room" : "Workplace"
+            },
+            {
+              "name": "Floppa",
+              "age": 2,
+              "breed": "Persian cat",
+              "room" : "Children's bedroom"
+            }
+          ],
+          "parrots": [
+            {
+              "name": "Popka",
+              "age": 1,
+              "breed": "Ara-ara",
+              "room" : "Dancing room"
+            }
+          ]
+        }
+      ],
+      "people": [
+        {
+          "adults": [
+            {
+              "name": "Dad",
+              "age": 40,
+              "room" : "Parents' bedroom"
+            },
+            {
+              "name": "Mom",
+              "age": 35,
+              "room" : "Parents' bedroom"
+            },
+            {
+              "name": "Grandma",
+              "age": 75,
+              "room" : "Guest room"
+            },
+            {
+              "name": "Grandfather",
+              "age": 79,
+              "room" : "Guest room"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "name": "Jan",
+              "age": 8,
+              "room" : "Children's bedroom"
+            },
+            {
+              "name": "Dima",
+              "age": 10,
+              "room" : "Living room"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

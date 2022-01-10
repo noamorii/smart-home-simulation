@@ -1,21 +1,37 @@
 package stuff.devices;
 
-/**
- * Types of Usable Objects
- */
+
+import java.util.Objects;
+
 public enum StuffType {
-    CONDITIONER,
-    AUDIO_SYSTEM,
-    COMPUTER,
-    FRIDGE,
-    PET_TOY,
-    PET_FEEDER,
-    PHONE,
-    VACUUM,
-    TV,
-    BIKE,
-    TREADMILL,
-    STEPPER,
-    ORBITREK,
-    AUTO
+    CONDITIONER("conditioner"),
+    AUDIO_SYSTEM("audio_system"),
+    COMPUTER("computer"),
+    FRIDGE("fridge"),
+    PET_TOY("pet_toy"),
+    PET_FEEDER("pet_feeder"),
+    PHONE("phone"),
+    VACUUM("vacuum"),
+    TV("tv"),
+    BIKE("bike"),
+    TREADMILL("treadmill"),
+    STEPPER("stepper"),
+    ORBITREK("orbitrek"),
+    AUTO("auto");
+
+    private final String name;
+
+    /**
+     * Types of Usable Objects
+     */
+    StuffType(String name) {
+        this.name = name;
+    }
+
+    public static StuffType getTypeByName(String name) {
+        for (StuffType stuff : StuffType.values()) {
+            if (Objects.equals(stuff.name, name)) return stuff;
+        }
+        return null;
+    }
 }
