@@ -1,28 +1,33 @@
 # Smart Home
 by **Olesia Cheremnykh** and **Chiril Babaev**
 
+# UML
+Naše diagramy [UML](https://drive.google.com/drive/folders/1ecBQ5YxsUWEcK3Zshvg_v-kB49vOgqzN?usp=sharing)
+
 # Funkční požadavky
-F1. 
+
+F1.  **Splněno**
 <br>
-F2. 
+F2.  **Splněno**
 <br>
-F3. 
+F3.  **Splněno**
 <br>
-F4. 
+F4.  **Splněno**
 <br>
-F5. 
+F5.  **Splněno**
 <br>
-F6. 
+F6.  **Splněno**
 <br>
-F7. 
+F7.  **Splněno**
 <br>
-F8. 
+F8.  **Splněno**
 <br>
-F9. 
+F9.  **Splněno**
 <br>
-F10.
+F10. **Splněno**
 <br> 
-F11. 
+F11. **Splněno**
+
 # Nefunkční požadavky
 NF1.	Není požadována autentizace ani autorizace.✔️
 <br>
@@ -46,4 +51,27 @@ NF5. 	Konfigurace domu, zařízení a obyvatel domu nahrávána z externího jso
 - 	Lazy Initialization
     -  třída `UsableObject` metoda `getManual`
 -   Builder 
-    - třída `HomeBuilder`
+    - třída `HomeBuilder` 
+
+# Načítání dat a konfigurace domu
+
+Načítání dat ze souboru ve formátu `json` probíhá ve třídě `Configuration`. Program se spouští v `Main` třídě, kde můžete vybrat soubor pro načtení konfigurace.
+
+# Druhy zařízení
+
+- class AirConditioner
+- class AudioSystem
+- class Computer
+- class Fridge
+- class PetFeeder
+- class PetToy
+- class SmartPhone
+- class SmartVacuum
+- class TV
+
+# Druhy sportovního vybavení
+
+- class Bike
+- class Orbitrek
+- class Stepper
+- class Treadmill
