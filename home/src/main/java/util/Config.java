@@ -26,13 +26,13 @@ public class Config {
     private final DeviceFactory deviceFactory = DeviceFactory.getInstance();
     private final SportFactory sportFactory = SportFactory.getInstance();
     private final RoomFactory roomFactory = new RoomFactory();
-    private final PetFactory petFactory = new PetFactory();
-    private final PeopleFactory peopleFactory = new PeopleFactory();
+    private final PetFactory petFactory = PetFactory.getInstance();
+    private final PeopleFactory peopleFactory = PeopleFactory.getInstance();
     private final Home.HomeBuilder home = Home.newBuilder();
 
     private Simulation simulation = null;
 
-    public Home configureHouse(String fileName) throws Exception {
+    public void configureHouse(String fileName) throws Exception {
 
         Object level = new JSONParser().parse(new FileReader(fileName));
         JSONObject levelObj = (JSONObject) level;
@@ -47,10 +47,10 @@ public class Config {
         creatures.addAll(petFactory.getPets());
         creatures.addAll(peopleFactory.getPeople());
 
-        return home.addCreatures(creatures).addAuto(new Auto(new Room("Auto-Garage"))).build();
+        home.addCreatures(creatures).addAuto(new Auto(new Room("Auto-Garage"))).build();
     }
 
-    public void loadJson(String element, JSONObject levelObj) throws Exception {
+    private void loadJson(String element, JSONObject levelObj) throws Exception {
 
         JSONArray array = (JSONArray) levelObj.get(element);
 

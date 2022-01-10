@@ -12,12 +12,12 @@ In the Workplace are: TREADMILL COMPUTER CONDITIONER
 In the Guest room are: TV AUDIO_SYSTEM 
 In the house living 6 people, and 3 pets.
 People:
-Jan 8 years old.
-Dima 10 years old.
-Mom 35 years old.
 Dad 40 years old.
+Mom 35 years old.
 Grandma 75 years old.
 Grandfather 79 years old.
+Jan 8 years old.
+Dima 10 years old.
 Pets:
 Sphinx Unicorn 3 years old.
 Persian cat Floppa 2 years old.

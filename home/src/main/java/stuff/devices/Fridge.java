@@ -51,6 +51,5 @@ public class Fridge extends Device implements FoodContainer {
             currentFoodCapacity--;
             System.out.println("Food in Fridge is running out, my lord");
         }
-        usingElectricity();
     }
 }

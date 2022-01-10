@@ -51,6 +51,5 @@ public class PetFeeder extends Device implements FoodContainer {
             currentFoodCapacity--;
             System.out.println("Food in Pet Feeder is running out, my lord");
         }
-        usingElectricity();
     }
 }

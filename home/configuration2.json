@@ -2,7 +2,7 @@
   "simulation": [
     {
       "starting_time": "9:00",
-      "iterations" : 288
+      "iterations" : 1000
     }
   ],
   "home": [

@@ -23,20 +23,17 @@ import java.util.stream.Collectors;
  */
 public class PositronicBrain implements Observer {
 
-    private final FileWriter myWriter = new FileWriter("src/main/resources/Report.txt");
-    private final List<Device> devices;
     private static PositronicBrain instance = null;
 
     private final List<Device> devicesForPets = new ArrayList<>();
     private final List<Device> devicesForHumans = new ArrayList<>();
-    private static int dayCounter = 1;
 
     /**
      * Private singleton constructor that creates lists of devices for people and pets
      */
-    private PositronicBrain() throws IOException {
+    private PositronicBrain() {
 
-        devices = DeviceFactory.getInstance().getDevices();
+        List<Device> devices = DeviceFactory.getInstance().getDevices();
 
         for (Device device: devices) {
             switch (device.getType()) {
@@ -75,29 +72,6 @@ public class PositronicBrain implements Observer {
     @Override
     public void handleEvent(UsableObject stuff) {
         Adult.addTask(stuff);
-    }
-
-    /**
-     * Generates a report on the electricity used for the day
-     *
-     */
-    public void generateReportAboutElectricityUsedByDay() throws IOException {
-        int allElectricity = 0;
-        myWriter.write("_________________ Report for the " + dayCounter + " day _________________\n");
-        for (Device device : devices) {
-            allElectricity += device.getElectricityUsed();
-            myWriter.write(device.getType() + " has used " + device.getElectricityUsed() + " electricity for today. " +
-                    "Was used " + device.getUsedTimes() + " times. " +
-                     "Was broken " + device.getBrokenTimes() + " times.\n");
-            device.resetElectricity();
-            device.resetUsedTimes();
-            device.resetBrokenTimes();
-        }
-        myWriter.write("On " + Home.getInstance().getAuto().getType() + " Adults go for food " + Home.getInstance().getAuto().getUsedTimes() + " times \n");
-        myWriter.write("All electricity used by day: " + allElectricity + "\n");
-        myWriter.flush();
-        Home.getInstance().getAuto().setUsedTimes(0);
-        dayCounter++;
     }
 
     /**

@@ -4,11 +4,29 @@ import creatures.entities.animals.Cat;
 import creatures.entities.animals.Parrot;
 import creatures.entities.animals.Pet;
 import house.Room;
+import stuff.devices.factory.DeviceFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PetFactory {
+
+    private static PetFactory instance = null;
+
+    /**
+     * Private singleton constructor
+     */
+    private PetFactory(){}
+
+    /**
+     * Returns the instance ot the Pet Factory.
+     *
+     * @return instance
+     */
+    public static PetFactory getInstance() {
+        if (instance == null) instance = new PetFactory();
+        return instance;
+    }
 
     /**
      * List of all pets

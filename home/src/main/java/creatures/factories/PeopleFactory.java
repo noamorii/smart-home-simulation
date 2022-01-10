@@ -4,16 +4,31 @@ import creatures.entities.people.Adult;
 import creatures.entities.people.Child;
 import creatures.entities.people.Person;
 import house.Room;
+import stuff.devices.factory.DeviceFactory;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class PeopleFactory {
 
+    private static PeopleFactory instance = null;
+
+    private PeopleFactory(){}
+
     /**
      * List of all persons
      */
     private final List<Person> people = new ArrayList<>();
+
+    /**
+     * Returns the instance ot the People Factory.
+     *
+     * @return instance
+     */
+    public static PeopleFactory getInstance() {
+        if (instance == null) instance = new PeopleFactory();
+        return instance;
+    }
 
     /**
      *  Factory method that creates people and adds it to the list.

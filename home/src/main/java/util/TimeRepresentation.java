@@ -6,6 +6,7 @@ package util;
 public class TimeRepresentation {
 
     private int currentMinutes, currentHours = 0;
+    private int currentDay = 1;
     private static final int TICK_TIME = 10;
 
     /**
@@ -21,6 +22,7 @@ public class TimeRepresentation {
                 currentHours++;
             } else {
                 currentHours = 0;
+                currentDay++;
             }
         }
     }
@@ -40,7 +42,7 @@ public class TimeRepresentation {
      */
     public String getCurrentTime() {
 
-        String time = "Time: ";
+        String time = "Day:" + currentDay + " ";
 
         if (currentHours < 10)  {
             time += "0" + currentHours;
@@ -52,4 +54,11 @@ public class TimeRepresentation {
         return time + ":" + currentMinutes;
     }
 
+    public int getCurrentDay() {
+        return currentDay;
+    }
+
+    public boolean isMidNight() {
+        return (currentHours == 0 && currentMinutes == 0);
+    }
 }

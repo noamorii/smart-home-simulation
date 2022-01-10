@@ -190,13 +190,12 @@ public abstract class UsableObject implements Observed {
     }
 
     /**
-     * Places an object in a using state and uses electricity.
+     * Places an object in a using state.
      *
      */
     public void usingStuff() throws IOException{
         usedTimes++;
         setState(new UsingState(this));
-        usingElectricity();
     }
 
     /**
@@ -228,15 +227,13 @@ public abstract class UsableObject implements Observed {
         brokenTimes++;
         setState(new BrokenState(this));
         notifyObserver();
-        usingElectricity();
     }
 
     /**
-     * Places an object in a fixing state and uses electricity.
+     * Places an object in a fixing state.
      */
         public void fixingDevice(){
         setState(new FixingState(this));
-        usingElectricity();
     }
 
     /**
