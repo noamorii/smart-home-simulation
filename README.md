@@ -3,7 +3,7 @@
 The main goal of this project was to create a simple simulation of a house, in the implementation of which various design patterns were used.
 
 ## UseCase diagram
-Detail use-case diagram [UML](https://github.com/noamorii/smart-home-simulation/blob/main/docs/UseCases.PNG)
+Detail use-case diagram [here](https://github.com/noamorii/smart-home-simulation/blob/main/docs/UseCases.PNG)
 
 ## Implementation
 
